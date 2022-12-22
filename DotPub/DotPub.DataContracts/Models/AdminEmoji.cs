@@ -13,279 +13,281 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
-    /// <summary>
-    /// 
-    /// </summary>
-    [DataContract]
-    public partial class AdminEmoji : IEquatable<AdminEmoji>
-    { 
-        /// <summary>
-        /// Used for sorting custom emoji in the picker.
-        /// </summary>
-        /// <value>Used for sorting custom emoji in the picker.</value>
+{
+	/// <summary>
+	/// 
+	/// </summary>
+	[DataContract]
+	public partial class AdminEmoji : IEquatable<AdminEmoji>
+	{
+		/// <summary>
+		/// Used for sorting custom emoji in the picker.
+		/// </summary>
+		/// <value>Used for sorting custom emoji in the picker.</value>
 
-        [DataMember(Name="category")]
-        public string Category { get; set; }
+		[DataMember(Name = "category")]
+		public string Category { get; set; }
 
-        /// <summary>
-        /// The MIME content type of the emoji.
-        /// </summary>
-        /// <value>The MIME content type of the emoji.</value>
+		/// <summary>
+		/// The MIME content type of the emoji.
+		/// </summary>
+		/// <value>The MIME content type of the emoji.</value>
 
-        [DataMember(Name="content_type")]
-        public string ContentType { get; set; }
+		[DataMember(Name = "content_type")]
+		public string ContentType { get; set; }
 
-        /// <summary>
-        /// True if this emoji has been disabled by an admin action.
-        /// </summary>
-        /// <value>True if this emoji has been disabled by an admin action.</value>
+		/// <summary>
+		/// True if this emoji has been disabled by an admin action.
+		/// </summary>
+		/// <value>True if this emoji has been disabled by an admin action.</value>
 
-        [DataMember(Name="disabled")]
-        public bool? Disabled { get; set; }
+		[DataMember(Name = "disabled")]
+		public bool? Disabled { get; set; }
 
-        /// <summary>
-        /// The domain from which the emoji originated. Only defined for remote domains, otherwise key will not be set.
-        /// </summary>
-        /// <value>The domain from which the emoji originated. Only defined for remote domains, otherwise key will not be set.</value>
+		/// <summary>
+		/// The domain from which the emoji originated. Only defined for remote domains, otherwise key will not be set.
+		/// </summary>
+		/// <value>The domain from which the emoji originated. Only defined for remote domains, otherwise key will not be set.</value>
 
-        [DataMember(Name="domain")]
-        public string Domain { get; set; }
+		[DataMember(Name = "domain")]
+		public string Domain { get; set; }
 
-        /// <summary>
-        /// The ID of the emoji.
-        /// </summary>
-        /// <value>The ID of the emoji.</value>
+		/// <summary>
+		/// The ID of the emoji.
+		/// </summary>
+		/// <value>The ID of the emoji.</value>
 
-        [DataMember(Name="id")]
-        public string Id { get; set; }
+		[DataMember(Name = "id")]
+		public string Id { get; set; }
 
-        /// <summary>
-        /// The name of the custom emoji.
-        /// </summary>
-        /// <value>The name of the custom emoji.</value>
+		/// <summary>
+		/// The name of the custom emoji.
+		/// </summary>
+		/// <value>The name of the custom emoji.</value>
 
-        [DataMember(Name="shortcode")]
-        public string Shortcode { get; set; }
+		[DataMember(Name = "shortcode")]
+		public string Shortcode { get; set; }
 
-        /// <summary>
-        /// A link to a static copy of the custom emoji.
-        /// </summary>
-        /// <value>A link to a static copy of the custom emoji.</value>
+		/// <summary>
+		/// A link to a static copy of the custom emoji.
+		/// </summary>
+		/// <value>A link to a static copy of the custom emoji.</value>
 
-        [DataMember(Name="static_url")]
-        public string StaticUrl { get; set; }
+		[DataMember(Name = "static_url")]
+		public string StaticUrl { get; set; }
 
-        /// <summary>
-        /// The total file size taken up by the emoji in bytes, including static and animated versions.
-        /// </summary>
-        /// <value>The total file size taken up by the emoji in bytes, including static and animated versions.</value>
+		/// <summary>
+		/// The total file size taken up by the emoji in bytes, including static and animated versions.
+		/// </summary>
+		/// <value>The total file size taken up by the emoji in bytes, including static and animated versions.</value>
 
-        [DataMember(Name="total_file_size")]
-        public long? TotalFileSize { get; set; }
+		[DataMember(Name = "total_file_size")]
+		public long? TotalFileSize { get; set; }
 
-        /// <summary>
-        /// Time when the emoji image was last updated.
-        /// </summary>
-        /// <value>Time when the emoji image was last updated.</value>
+		/// <summary>
+		/// Time when the emoji image was last updated.
+		/// </summary>
+		/// <value>Time when the emoji image was last updated.</value>
 
-        [DataMember(Name="updated_at")]
-        public string UpdatedAt { get; set; }
+		[DataMember(Name = "updated_at")]
+		public string UpdatedAt { get; set; }
 
-        /// <summary>
-        /// The ActivityPub URI of the emoji.
-        /// </summary>
-        /// <value>The ActivityPub URI of the emoji.</value>
+		/// <summary>
+		/// The ActivityPub URI of the emoji.
+		/// </summary>
+		/// <value>The ActivityPub URI of the emoji.</value>
 
-        [DataMember(Name="uri")]
-        public string Uri { get; set; }
+		[DataMember(Name = "uri")]
+		public string Uri { get; set; }
 
-        /// <summary>
-        /// Web URL of the custom emoji.
-        /// </summary>
-        /// <value>Web URL of the custom emoji.</value>
+		/// <summary>
+		/// Web URL of the custom emoji.
+		/// </summary>
+		/// <value>Web URL of the custom emoji.</value>
 
-        [DataMember(Name="url")]
-        public string Url { get; set; }
+		[DataMember(Name = "url")]
+		public string Url { get; set; }
 
-        /// <summary>
-        /// Emoji is visible in the emoji picker of the instance.
-        /// </summary>
-        /// <value>Emoji is visible in the emoji picker of the instance.</value>
+		/// <summary>
+		/// Emoji is visible in the emoji picker of the instance.
+		/// </summary>
+		/// <value>Emoji is visible in the emoji picker of the instance.</value>
 
-        [DataMember(Name="visible_in_picker")]
-        public bool? VisibleInPicker { get; set; }
+		[DataMember(Name = "visible_in_picker")]
+		public bool? VisibleInPicker { get; set; }
 
-        /// <summary>
-        /// Returns the string presentation of the object
-        /// </summary>
-        /// <returns>String presentation of the object</returns>
-        public override string ToString()
-        {
-            var sb = new StringBuilder();
-            sb.Append("class AdminEmoji {\n");
-            sb.Append("  Category: ").Append(Category).Append("\n");
-            sb.Append("  ContentType: ").Append(ContentType).Append("\n");
-            sb.Append("  Disabled: ").Append(Disabled).Append("\n");
-            sb.Append("  Domain: ").Append(Domain).Append("\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Shortcode: ").Append(Shortcode).Append("\n");
-            sb.Append("  StaticUrl: ").Append(StaticUrl).Append("\n");
-            sb.Append("  TotalFileSize: ").Append(TotalFileSize).Append("\n");
-            sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
-            sb.Append("  Uri: ").Append(Uri).Append("\n");
-            sb.Append("  Url: ").Append(Url).Append("\n");
-            sb.Append("  VisibleInPicker: ").Append(VisibleInPicker).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
-        }
+		/// <summary>
+		/// Returns the string presentation of the object
+		/// </summary>
+		/// <returns>String presentation of the object</returns>
+		public override string ToString()
+		{
+			var sb = new StringBuilder();
+			sb.Append("class AdminEmoji {\n");
+			sb.Append("  Category: ").Append(Category).Append("\n");
+			sb.Append("  ContentType: ").Append(ContentType).Append("\n");
+			sb.Append("  Disabled: ").Append(Disabled).Append("\n");
+			sb.Append("  Domain: ").Append(Domain).Append("\n");
+			sb.Append("  Id: ").Append(Id).Append("\n");
+			sb.Append("  Shortcode: ").Append(Shortcode).Append("\n");
+			sb.Append("  StaticUrl: ").Append(StaticUrl).Append("\n");
+			sb.Append("  TotalFileSize: ").Append(TotalFileSize).Append("\n");
+			sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
+			sb.Append("  Uri: ").Append(Uri).Append("\n");
+			sb.Append("  Url: ").Append(Url).Append("\n");
+			sb.Append("  VisibleInPicker: ").Append(VisibleInPicker).Append("\n");
+			sb.Append("}\n");
+			return sb.ToString();
+		}
 
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonSerializer.Serialize(this,new JsonSerializerOptions(){WriteIndented = true});
-        }
+		/// <summary>
+		/// Returns the JSON string presentation of the object
+		/// </summary>
+		/// <returns>JSON string presentation of the object</returns>
+		public string ToJson()
+		{
+			return JsonSerializer.Serialize(this, new JsonSerializerOptions() { WriteIndented = true });
+		}
 
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="obj">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj)) return false;
-            if (ReferenceEquals(this, obj)) return true;
-            return obj.GetType() == GetType() && Equals((AdminEmoji)obj);
-        }
+		/// <summary>
+		/// Returns true if objects are equal
+		/// </summary>
+		/// <param name="obj">Object to be compared</param>
+		/// <returns>Boolean</returns>
+		public override bool Equals(object obj)
+		{
+			if (ReferenceEquals(null, obj)) return false;
+			if (ReferenceEquals(this, obj)) return true;
+			return obj.GetType() == GetType() && Equals((AdminEmoji)obj);
+		}
 
-        /// <summary>
-        /// Returns true if AdminEmoji instances are equal
-        /// </summary>
-        /// <param name="other">Instance of AdminEmoji to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(AdminEmoji other)
-        {
-            if (ReferenceEquals(null, other)) return false;
-            if (ReferenceEquals(this, other)) return true;
+		/// <summary>
+		/// Returns true if AdminEmoji instances are equal
+		/// </summary>
+		/// <param name="other">Instance of AdminEmoji to be compared</param>
+		/// <returns>Boolean</returns>
+		public bool Equals(AdminEmoji other)
+		{
+			if (ReferenceEquals(null, other)) return false;
+			if (ReferenceEquals(this, other)) return true;
 
-            return 
-                (
-                    Category == other.Category ||
-                    Category != null &&
-                    Category.Equals(other.Category)
-                ) && 
-                (
-                    ContentType == other.ContentType ||
-                    ContentType != null &&
-                    ContentType.Equals(other.ContentType)
-                ) && 
-                (
-                    Disabled == other.Disabled ||
-                    Disabled != null &&
-                    Disabled.Equals(other.Disabled)
-                ) && 
-                (
-                    Domain == other.Domain ||
-                    Domain != null &&
-                    Domain.Equals(other.Domain)
-                ) && 
-                (
-                    Id == other.Id ||
-                    Id != null &&
-                    Id.Equals(other.Id)
-                ) && 
-                (
-                    Shortcode == other.Shortcode ||
-                    Shortcode != null &&
-                    Shortcode.Equals(other.Shortcode)
-                ) && 
-                (
-                    StaticUrl == other.StaticUrl ||
-                    StaticUrl != null &&
-                    StaticUrl.Equals(other.StaticUrl)
-                ) && 
-                (
-                    TotalFileSize == other.TotalFileSize ||
-                    TotalFileSize != null &&
-                    TotalFileSize.Equals(other.TotalFileSize)
-                ) && 
-                (
-                    UpdatedAt == other.UpdatedAt ||
-                    UpdatedAt != null &&
-                    UpdatedAt.Equals(other.UpdatedAt)
-                ) && 
-                (
-                    Uri == other.Uri ||
-                    Uri != null &&
-                    Uri.Equals(other.Uri)
-                ) && 
-                (
-                    Url == other.Url ||
-                    Url != null &&
-                    Url.Equals(other.Url)
-                ) && 
-                (
-                    VisibleInPicker == other.VisibleInPicker ||
-                    VisibleInPicker != null &&
-                    VisibleInPicker.Equals(other.VisibleInPicker)
-                );
-        }
+			return
+				(
+					Category == other.Category ||
+					Category != null &&
+					Category.Equals(other.Category)
+				) &&
+				(
+					ContentType == other.ContentType ||
+					ContentType != null &&
+					ContentType.Equals(other.ContentType)
+				) &&
+				(
+					Disabled == other.Disabled ||
+					Disabled != null &&
+					Disabled.Equals(other.Disabled)
+				) &&
+				(
+					Domain == other.Domain ||
+					Domain != null &&
+					Domain.Equals(other.Domain)
+				) &&
+				(
+					Id == other.Id ||
+					Id != null &&
+					Id.Equals(other.Id)
+				) &&
+				(
+					Shortcode == other.Shortcode ||
+					Shortcode != null &&
+					Shortcode.Equals(other.Shortcode)
+				) &&
+				(
+					StaticUrl == other.StaticUrl ||
+					StaticUrl != null &&
+					StaticUrl.Equals(other.StaticUrl)
+				) &&
+				(
+					TotalFileSize == other.TotalFileSize ||
+					TotalFileSize != null &&
+					TotalFileSize.Equals(other.TotalFileSize)
+				) &&
+				(
+					UpdatedAt == other.UpdatedAt ||
+					UpdatedAt != null &&
+					UpdatedAt.Equals(other.UpdatedAt)
+				) &&
+				(
+					Uri == other.Uri ||
+					Uri != null &&
+					Uri.Equals(other.Uri)
+				) &&
+				(
+					Url == other.Url ||
+					Url != null &&
+					Url.Equals(other.Url)
+				) &&
+				(
+					VisibleInPicker == other.VisibleInPicker ||
+					VisibleInPicker != null &&
+					VisibleInPicker.Equals(other.VisibleInPicker)
+				);
+		}
 
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                var hashCode = 41;
-                // Suitable nullity checks etc, of course :)
-                    if (Category != null)
-                    hashCode = hashCode * 59 + Category.GetHashCode();
-                    if (ContentType != null)
-                    hashCode = hashCode * 59 + ContentType.GetHashCode();
-                    if (Disabled != null)
-                    hashCode = hashCode * 59 + Disabled.GetHashCode();
-                    if (Domain != null)
-                    hashCode = hashCode * 59 + Domain.GetHashCode();
-                    if (Id != null)
-                    hashCode = hashCode * 59 + Id.GetHashCode();
-                    if (Shortcode != null)
-                    hashCode = hashCode * 59 + Shortcode.GetHashCode();
-                    if (StaticUrl != null)
-                    hashCode = hashCode * 59 + StaticUrl.GetHashCode();
-                    if (TotalFileSize != null)
-                    hashCode = hashCode * 59 + TotalFileSize.GetHashCode();
-                    if (UpdatedAt != null)
-                    hashCode = hashCode * 59 + UpdatedAt.GetHashCode();
-                    if (Uri != null)
-                    hashCode = hashCode * 59 + Uri.GetHashCode();
-                    if (Url != null)
-                    hashCode = hashCode * 59 + Url.GetHashCode();
-                    if (VisibleInPicker != null)
-                    hashCode = hashCode * 59 + VisibleInPicker.GetHashCode();
-                return hashCode;
-            }
-        }
+		/// <summary>
+		/// Gets the hash code
+		/// </summary>
+		/// <returns>Hash code</returns>
+		public override int GetHashCode()
+		{
+			unchecked // Overflow is fine, just wrap
+			{
+				var hashCode = 41;
+				// Suitable nullity checks etc, of course :)
+				if (Category != null)
+					hashCode = hashCode * 59 + Category.GetHashCode();
+				if (ContentType != null)
+					hashCode = hashCode * 59 + ContentType.GetHashCode();
+				if (Disabled != null)
+					hashCode = hashCode * 59 + Disabled.GetHashCode();
+				if (Domain != null)
+					hashCode = hashCode * 59 + Domain.GetHashCode();
+				if (Id != null)
+					hashCode = hashCode * 59 + Id.GetHashCode();
+				if (Shortcode != null)
+					hashCode = hashCode * 59 + Shortcode.GetHashCode();
+				if (StaticUrl != null)
+					hashCode = hashCode * 59 + StaticUrl.GetHashCode();
+				if (TotalFileSize != null)
+					hashCode = hashCode * 59 + TotalFileSize.GetHashCode();
+				if (UpdatedAt != null)
+					hashCode = hashCode * 59 + UpdatedAt.GetHashCode();
+				if (Uri != null)
+					hashCode = hashCode * 59 + Uri.GetHashCode();
+				if (Url != null)
+					hashCode = hashCode * 59 + Url.GetHashCode();
+				if (VisibleInPicker != null)
+					hashCode = hashCode * 59 + VisibleInPicker.GetHashCode();
+				return hashCode;
+			}
+		}
 
-        #region Operators
-        #pragma warning disable 1591
+		#region Operators
 
-        public static bool operator ==(AdminEmoji left, AdminEmoji right)
-        {
-            return Equals(left, right);
-        }
+#pragma warning disable 1591
 
-        public static bool operator !=(AdminEmoji left, AdminEmoji right)
-        {
-            return !Equals(left, right);
-        }
+		public static bool operator ==(AdminEmoji left, AdminEmoji right)
+		{
+			return Equals(left, right);
+		}
 
-        #pragma warning restore 1591
-        #endregion Operators
-    }
+		public static bool operator !=(AdminEmoji left, AdminEmoji right)
+		{
+			return !Equals(left, right);
+		}
+
+#pragma warning restore 1591
+
+		#endregion Operators
+	}
 }

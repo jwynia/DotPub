@@ -13,199 +13,201 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
-    /// <summary>
-    /// 
-    /// </summary>
-    [DataContract]
-    public partial class Application : IEquatable<Application>
-    { 
-        /// <summary>
-        /// Client ID associated with this application.
-        /// </summary>
-        /// <value>Client ID associated with this application.</value>
+{
+	/// <summary>
+	/// 
+	/// </summary>
+	[DataContract]
+	public partial class Application : IEquatable<Application>
+	{
+		/// <summary>
+		/// Client ID associated with this application.
+		/// </summary>
+		/// <value>Client ID associated with this application.</value>
 
-        [DataMember(Name="client_id")]
-        public string ClientId { get; set; }
+		[DataMember(Name = "client_id")]
+		public string ClientId { get; set; }
 
-        /// <summary>
-        /// Client secret associated with this application.
-        /// </summary>
-        /// <value>Client secret associated with this application.</value>
+		/// <summary>
+		/// Client secret associated with this application.
+		/// </summary>
+		/// <value>Client secret associated with this application.</value>
 
-        [DataMember(Name="client_secret")]
-        public string ClientSecret { get; set; }
+		[DataMember(Name = "client_secret")]
+		public string ClientSecret { get; set; }
 
-        /// <summary>
-        /// The ID of the application.
-        /// </summary>
-        /// <value>The ID of the application.</value>
+		/// <summary>
+		/// The ID of the application.
+		/// </summary>
+		/// <value>The ID of the application.</value>
 
-        [DataMember(Name="id")]
-        public string Id { get; set; }
+		[DataMember(Name = "id")]
+		public string Id { get; set; }
 
-        /// <summary>
-        /// The name of the application.
-        /// </summary>
-        /// <value>The name of the application.</value>
+		/// <summary>
+		/// The name of the application.
+		/// </summary>
+		/// <value>The name of the application.</value>
 
-        [DataMember(Name="name")]
-        public string Name { get; set; }
+		[DataMember(Name = "name")]
+		public string Name { get; set; }
 
-        /// <summary>
-        /// Post-authorization redirect URI for the application (OAuth2).
-        /// </summary>
-        /// <value>Post-authorization redirect URI for the application (OAuth2).</value>
+		/// <summary>
+		/// Post-authorization redirect URI for the application (OAuth2).
+		/// </summary>
+		/// <value>Post-authorization redirect URI for the application (OAuth2).</value>
 
-        [DataMember(Name="redirect_uri")]
-        public string RedirectUri { get; set; }
+		[DataMember(Name = "redirect_uri")]
+		public string RedirectUri { get; set; }
 
-        /// <summary>
-        /// Push API key for this application.
-        /// </summary>
-        /// <value>Push API key for this application.</value>
+		/// <summary>
+		/// Push API key for this application.
+		/// </summary>
+		/// <value>Push API key for this application.</value>
 
-        [DataMember(Name="vapid_key")]
-        public string VapidKey { get; set; }
+		[DataMember(Name = "vapid_key")]
+		public string VapidKey { get; set; }
 
-        /// <summary>
-        /// The website associated with the application (url)
-        /// </summary>
-        /// <value>The website associated with the application (url)</value>
+		/// <summary>
+		/// The website associated with the application (url)
+		/// </summary>
+		/// <value>The website associated with the application (url)</value>
 
-        [DataMember(Name="website")]
-        public string Website { get; set; }
+		[DataMember(Name = "website")]
+		public string Website { get; set; }
 
-        /// <summary>
-        /// Returns the string presentation of the object
-        /// </summary>
-        /// <returns>String presentation of the object</returns>
-        public override string ToString()
-        {
-            var sb = new StringBuilder();
-            sb.Append("class Application {\n");
-            sb.Append("  ClientId: ").Append(ClientId).Append("\n");
-            sb.Append("  ClientSecret: ").Append(ClientSecret).Append("\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  RedirectUri: ").Append(RedirectUri).Append("\n");
-            sb.Append("  VapidKey: ").Append(VapidKey).Append("\n");
-            sb.Append("  Website: ").Append(Website).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
-        }
+		/// <summary>
+		/// Returns the string presentation of the object
+		/// </summary>
+		/// <returns>String presentation of the object</returns>
+		public override string ToString()
+		{
+			var sb = new StringBuilder();
+			sb.Append("class Application {\n");
+			sb.Append("  ClientId: ").Append(ClientId).Append("\n");
+			sb.Append("  ClientSecret: ").Append(ClientSecret).Append("\n");
+			sb.Append("  Id: ").Append(Id).Append("\n");
+			sb.Append("  Name: ").Append(Name).Append("\n");
+			sb.Append("  RedirectUri: ").Append(RedirectUri).Append("\n");
+			sb.Append("  VapidKey: ").Append(VapidKey).Append("\n");
+			sb.Append("  Website: ").Append(Website).Append("\n");
+			sb.Append("}\n");
+			return sb.ToString();
+		}
 
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonSerializer.Serialize(this,new JsonSerializerOptions(){WriteIndented = true});
-        }
+		/// <summary>
+		/// Returns the JSON string presentation of the object
+		/// </summary>
+		/// <returns>JSON string presentation of the object</returns>
+		public string ToJson()
+		{
+			return JsonSerializer.Serialize(this, new JsonSerializerOptions() { WriteIndented = true });
+		}
 
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="obj">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj)) return false;
-            if (ReferenceEquals(this, obj)) return true;
-            return obj.GetType() == GetType() && Equals((Application)obj);
-        }
+		/// <summary>
+		/// Returns true if objects are equal
+		/// </summary>
+		/// <param name="obj">Object to be compared</param>
+		/// <returns>Boolean</returns>
+		public override bool Equals(object obj)
+		{
+			if (ReferenceEquals(null, obj)) return false;
+			if (ReferenceEquals(this, obj)) return true;
+			return obj.GetType() == GetType() && Equals((Application)obj);
+		}
 
-        /// <summary>
-        /// Returns true if Application instances are equal
-        /// </summary>
-        /// <param name="other">Instance of Application to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(Application other)
-        {
-            if (ReferenceEquals(null, other)) return false;
-            if (ReferenceEquals(this, other)) return true;
+		/// <summary>
+		/// Returns true if Application instances are equal
+		/// </summary>
+		/// <param name="other">Instance of Application to be compared</param>
+		/// <returns>Boolean</returns>
+		public bool Equals(Application other)
+		{
+			if (ReferenceEquals(null, other)) return false;
+			if (ReferenceEquals(this, other)) return true;
 
-            return 
-                (
-                    ClientId == other.ClientId ||
-                    ClientId != null &&
-                    ClientId.Equals(other.ClientId)
-                ) && 
-                (
-                    ClientSecret == other.ClientSecret ||
-                    ClientSecret != null &&
-                    ClientSecret.Equals(other.ClientSecret)
-                ) && 
-                (
-                    Id == other.Id ||
-                    Id != null &&
-                    Id.Equals(other.Id)
-                ) && 
-                (
-                    Name == other.Name ||
-                    Name != null &&
-                    Name.Equals(other.Name)
-                ) && 
-                (
-                    RedirectUri == other.RedirectUri ||
-                    RedirectUri != null &&
-                    RedirectUri.Equals(other.RedirectUri)
-                ) && 
-                (
-                    VapidKey == other.VapidKey ||
-                    VapidKey != null &&
-                    VapidKey.Equals(other.VapidKey)
-                ) && 
-                (
-                    Website == other.Website ||
-                    Website != null &&
-                    Website.Equals(other.Website)
-                );
-        }
+			return
+				(
+					ClientId == other.ClientId ||
+					ClientId != null &&
+					ClientId.Equals(other.ClientId)
+				) &&
+				(
+					ClientSecret == other.ClientSecret ||
+					ClientSecret != null &&
+					ClientSecret.Equals(other.ClientSecret)
+				) &&
+				(
+					Id == other.Id ||
+					Id != null &&
+					Id.Equals(other.Id)
+				) &&
+				(
+					Name == other.Name ||
+					Name != null &&
+					Name.Equals(other.Name)
+				) &&
+				(
+					RedirectUri == other.RedirectUri ||
+					RedirectUri != null &&
+					RedirectUri.Equals(other.RedirectUri)
+				) &&
+				(
+					VapidKey == other.VapidKey ||
+					VapidKey != null &&
+					VapidKey.Equals(other.VapidKey)
+				) &&
+				(
+					Website == other.Website ||
+					Website != null &&
+					Website.Equals(other.Website)
+				);
+		}
 
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                var hashCode = 41;
-                // Suitable nullity checks etc, of course :)
-                    if (ClientId != null)
-                    hashCode = hashCode * 59 + ClientId.GetHashCode();
-                    if (ClientSecret != null)
-                    hashCode = hashCode * 59 + ClientSecret.GetHashCode();
-                    if (Id != null)
-                    hashCode = hashCode * 59 + Id.GetHashCode();
-                    if (Name != null)
-                    hashCode = hashCode * 59 + Name.GetHashCode();
-                    if (RedirectUri != null)
-                    hashCode = hashCode * 59 + RedirectUri.GetHashCode();
-                    if (VapidKey != null)
-                    hashCode = hashCode * 59 + VapidKey.GetHashCode();
-                    if (Website != null)
-                    hashCode = hashCode * 59 + Website.GetHashCode();
-                return hashCode;
-            }
-        }
+		/// <summary>
+		/// Gets the hash code
+		/// </summary>
+		/// <returns>Hash code</returns>
+		public override int GetHashCode()
+		{
+			unchecked // Overflow is fine, just wrap
+			{
+				var hashCode = 41;
+				// Suitable nullity checks etc, of course :)
+				if (ClientId != null)
+					hashCode = hashCode * 59 + ClientId.GetHashCode();
+				if (ClientSecret != null)
+					hashCode = hashCode * 59 + ClientSecret.GetHashCode();
+				if (Id != null)
+					hashCode = hashCode * 59 + Id.GetHashCode();
+				if (Name != null)
+					hashCode = hashCode * 59 + Name.GetHashCode();
+				if (RedirectUri != null)
+					hashCode = hashCode * 59 + RedirectUri.GetHashCode();
+				if (VapidKey != null)
+					hashCode = hashCode * 59 + VapidKey.GetHashCode();
+				if (Website != null)
+					hashCode = hashCode * 59 + Website.GetHashCode();
+				return hashCode;
+			}
+		}
 
-        #region Operators
-        #pragma warning disable 1591
+		#region Operators
 
-        public static bool operator ==(Application left, Application right)
-        {
-            return Equals(left, right);
-        }
+#pragma warning disable 1591
 
-        public static bool operator !=(Application left, Application right)
-        {
-            return !Equals(left, right);
-        }
+		public static bool operator ==(Application left, Application right)
+		{
+			return Equals(left, right);
+		}
 
-        #pragma warning restore 1591
-        #endregion Operators
-    }
+		public static bool operator !=(Application left, Application right)
+		{
+			return !Equals(left, right);
+		}
+
+#pragma warning restore 1591
+
+		#endregion Operators
+	}
 }

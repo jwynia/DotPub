@@ -13,151 +13,153 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
-    /// <summary>
-    /// 
-    /// </summary>
-    [DataContract]
-    public partial class OauthToken : IEquatable<OauthToken>
-    { 
-        /// <summary>
-        /// Access token used for authorization.
-        /// </summary>
-        /// <value>Access token used for authorization.</value>
+{
+	/// <summary>
+	/// 
+	/// </summary>
+	[DataContract]
+	public partial class OauthToken : IEquatable<OauthToken>
+	{
+		/// <summary>
+		/// Access token used for authorization.
+		/// </summary>
+		/// <value>Access token used for authorization.</value>
 
-        [DataMember(Name="access_token")]
-        public string AccessToken { get; set; }
+		[DataMember(Name = "access_token")]
+		public string AccessToken { get; set; }
 
-        /// <summary>
-        /// When the OAuth token was generated (UNIX timestamp seconds).
-        /// </summary>
-        /// <value>When the OAuth token was generated (UNIX timestamp seconds).</value>
+		/// <summary>
+		/// When the OAuth token was generated (UNIX timestamp seconds).
+		/// </summary>
+		/// <value>When the OAuth token was generated (UNIX timestamp seconds).</value>
 
-        [DataMember(Name="created_at")]
-        public long? CreatedAt { get; set; }
+		[DataMember(Name = "created_at")]
+		public long? CreatedAt { get; set; }
 
-        /// <summary>
-        /// OAuth scopes granted by this token, space-separated.
-        /// </summary>
-        /// <value>OAuth scopes granted by this token, space-separated.</value>
+		/// <summary>
+		/// OAuth scopes granted by this token, space-separated.
+		/// </summary>
+		/// <value>OAuth scopes granted by this token, space-separated.</value>
 
-        [DataMember(Name="scope")]
-        public string Scope { get; set; }
+		[DataMember(Name = "scope")]
+		public string Scope { get; set; }
 
-        /// <summary>
-        /// OAuth token type. Will always be &#39;Bearer&#39;.
-        /// </summary>
-        /// <value>OAuth token type. Will always be &#39;Bearer&#39;.</value>
+		/// <summary>
+		/// OAuth token type. Will always be &#39;Bearer&#39;.
+		/// </summary>
+		/// <value>OAuth token type. Will always be &#39;Bearer&#39;.</value>
 
-        [DataMember(Name="token_type")]
-        public string TokenType { get; set; }
+		[DataMember(Name = "token_type")]
+		public string TokenType { get; set; }
 
-        /// <summary>
-        /// Returns the string presentation of the object
-        /// </summary>
-        /// <returns>String presentation of the object</returns>
-        public override string ToString()
-        {
-            var sb = new StringBuilder();
-            sb.Append("class OauthToken {\n");
-            sb.Append("  AccessToken: ").Append(AccessToken).Append("\n");
-            sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
-            sb.Append("  Scope: ").Append(Scope).Append("\n");
-            sb.Append("  TokenType: ").Append(TokenType).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
-        }
+		/// <summary>
+		/// Returns the string presentation of the object
+		/// </summary>
+		/// <returns>String presentation of the object</returns>
+		public override string ToString()
+		{
+			var sb = new StringBuilder();
+			sb.Append("class OauthToken {\n");
+			sb.Append("  AccessToken: ").Append(AccessToken).Append("\n");
+			sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
+			sb.Append("  Scope: ").Append(Scope).Append("\n");
+			sb.Append("  TokenType: ").Append(TokenType).Append("\n");
+			sb.Append("}\n");
+			return sb.ToString();
+		}
 
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonSerializer.Serialize(this, new JsonSerializerOptions() { WriteIndented = true });
-        }
+		/// <summary>
+		/// Returns the JSON string presentation of the object
+		/// </summary>
+		/// <returns>JSON string presentation of the object</returns>
+		public string ToJson()
+		{
+			return JsonSerializer.Serialize(this, new JsonSerializerOptions() { WriteIndented = true });
+		}
 
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="obj">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj)) return false;
-            if (ReferenceEquals(this, obj)) return true;
-            return obj.GetType() == GetType() && Equals((OauthToken)obj);
-        }
+		/// <summary>
+		/// Returns true if objects are equal
+		/// </summary>
+		/// <param name="obj">Object to be compared</param>
+		/// <returns>Boolean</returns>
+		public override bool Equals(object obj)
+		{
+			if (ReferenceEquals(null, obj)) return false;
+			if (ReferenceEquals(this, obj)) return true;
+			return obj.GetType() == GetType() && Equals((OauthToken)obj);
+		}
 
-        /// <summary>
-        /// Returns true if OauthToken instances are equal
-        /// </summary>
-        /// <param name="other">Instance of OauthToken to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(OauthToken other)
-        {
-            if (ReferenceEquals(null, other)) return false;
-            if (ReferenceEquals(this, other)) return true;
+		/// <summary>
+		/// Returns true if OauthToken instances are equal
+		/// </summary>
+		/// <param name="other">Instance of OauthToken to be compared</param>
+		/// <returns>Boolean</returns>
+		public bool Equals(OauthToken other)
+		{
+			if (ReferenceEquals(null, other)) return false;
+			if (ReferenceEquals(this, other)) return true;
 
-            return 
-                (
-                    AccessToken == other.AccessToken ||
-                    AccessToken != null &&
-                    AccessToken.Equals(other.AccessToken)
-                ) && 
-                (
-                    CreatedAt == other.CreatedAt ||
-                    CreatedAt != null &&
-                    CreatedAt.Equals(other.CreatedAt)
-                ) && 
-                (
-                    Scope == other.Scope ||
-                    Scope != null &&
-                    Scope.Equals(other.Scope)
-                ) && 
-                (
-                    TokenType == other.TokenType ||
-                    TokenType != null &&
-                    TokenType.Equals(other.TokenType)
-                );
-        }
+			return
+				(
+					AccessToken == other.AccessToken ||
+					AccessToken != null &&
+					AccessToken.Equals(other.AccessToken)
+				) &&
+				(
+					CreatedAt == other.CreatedAt ||
+					CreatedAt != null &&
+					CreatedAt.Equals(other.CreatedAt)
+				) &&
+				(
+					Scope == other.Scope ||
+					Scope != null &&
+					Scope.Equals(other.Scope)
+				) &&
+				(
+					TokenType == other.TokenType ||
+					TokenType != null &&
+					TokenType.Equals(other.TokenType)
+				);
+		}
 
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                var hashCode = 41;
-                // Suitable nullity checks etc, of course :)
-                    if (AccessToken != null)
-                    hashCode = hashCode * 59 + AccessToken.GetHashCode();
-                    if (CreatedAt != null)
-                    hashCode = hashCode * 59 + CreatedAt.GetHashCode();
-                    if (Scope != null)
-                    hashCode = hashCode * 59 + Scope.GetHashCode();
-                    if (TokenType != null)
-                    hashCode = hashCode * 59 + TokenType.GetHashCode();
-                return hashCode;
-            }
-        }
+		/// <summary>
+		/// Gets the hash code
+		/// </summary>
+		/// <returns>Hash code</returns>
+		public override int GetHashCode()
+		{
+			unchecked // Overflow is fine, just wrap
+			{
+				var hashCode = 41;
+				// Suitable nullity checks etc, of course :)
+				if (AccessToken != null)
+					hashCode = hashCode * 59 + AccessToken.GetHashCode();
+				if (CreatedAt != null)
+					hashCode = hashCode * 59 + CreatedAt.GetHashCode();
+				if (Scope != null)
+					hashCode = hashCode * 59 + Scope.GetHashCode();
+				if (TokenType != null)
+					hashCode = hashCode * 59 + TokenType.GetHashCode();
+				return hashCode;
+			}
+		}
 
-        #region Operators
-        #pragma warning disable 1591
+		#region Operators
 
-        public static bool operator ==(OauthToken left, OauthToken right)
-        {
-            return Equals(left, right);
-        }
+#pragma warning disable 1591
 
-        public static bool operator !=(OauthToken left, OauthToken right)
-        {
-            return !Equals(left, right);
-        }
+		public static bool operator ==(OauthToken left, OauthToken right)
+		{
+			return Equals(left, right);
+		}
 
-        #pragma warning restore 1591
-        #endregion Operators
-    }
+		public static bool operator !=(OauthToken left, OauthToken right)
+		{
+			return !Equals(left, right);
+		}
+
+#pragma warning restore 1591
+
+		#endregion Operators
+	}
 }

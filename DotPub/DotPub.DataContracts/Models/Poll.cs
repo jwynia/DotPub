@@ -13,247 +13,249 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
-    /// <summary>
-    /// 
-    /// </summary>
-    [DataContract]
-    public partial class Poll : IEquatable<Poll>
-    { 
-        /// <summary>
-        /// Custom emoji to be used for rendering poll options.
-        /// </summary>
-        /// <value>Custom emoji to be used for rendering poll options.</value>
+{
+	/// <summary>
+	/// 
+	/// </summary>
+	[DataContract]
+	public partial class Poll : IEquatable<Poll>
+	{
+		/// <summary>
+		/// Custom emoji to be used for rendering poll options.
+		/// </summary>
+		/// <value>Custom emoji to be used for rendering poll options.</value>
 
-        [DataMember(Name="emojis")]
-        public List<Emoji> Emojis { get; set; }
+		[DataMember(Name = "emojis")]
+		public List<Emoji> Emojis { get; set; }
 
-        /// <summary>
-        /// Is the poll currently expired?
-        /// </summary>
-        /// <value>Is the poll currently expired?</value>
+		/// <summary>
+		/// Is the poll currently expired?
+		/// </summary>
+		/// <value>Is the poll currently expired?</value>
 
-        [DataMember(Name="expired")]
-        public bool? Expired { get; set; }
+		[DataMember(Name = "expired")]
+		public bool? Expired { get; set; }
 
-        /// <summary>
-        /// When the poll ends. (ISO 8601 Datetime), or null if the poll does not end
-        /// </summary>
-        /// <value>When the poll ends. (ISO 8601 Datetime), or null if the poll does not end</value>
+		/// <summary>
+		/// When the poll ends. (ISO 8601 Datetime), or null if the poll does not end
+		/// </summary>
+		/// <value>When the poll ends. (ISO 8601 Datetime), or null if the poll does not end</value>
 
-        [DataMember(Name="expires_at")]
-        public string ExpiresAt { get; set; }
+		[DataMember(Name = "expires_at")]
+		public string ExpiresAt { get; set; }
 
-        /// <summary>
-        /// The ID of the poll in the database.
-        /// </summary>
-        /// <value>The ID of the poll in the database.</value>
+		/// <summary>
+		/// The ID of the poll in the database.
+		/// </summary>
+		/// <value>The ID of the poll in the database.</value>
 
-        [DataMember(Name="id")]
-        public string Id { get; set; }
+		[DataMember(Name = "id")]
+		public string Id { get; set; }
 
-        /// <summary>
-        /// Does the poll allow multiple-choice answers?
-        /// </summary>
-        /// <value>Does the poll allow multiple-choice answers?</value>
+		/// <summary>
+		/// Does the poll allow multiple-choice answers?
+		/// </summary>
+		/// <value>Does the poll allow multiple-choice answers?</value>
 
-        [DataMember(Name="multiple")]
-        public bool? Multiple { get; set; }
+		[DataMember(Name = "multiple")]
+		public bool? Multiple { get; set; }
 
-        /// <summary>
-        /// Possible answers for the poll.
-        /// </summary>
-        /// <value>Possible answers for the poll.</value>
+		/// <summary>
+		/// Possible answers for the poll.
+		/// </summary>
+		/// <value>Possible answers for the poll.</value>
 
-        [DataMember(Name="options")]
-        public List<PollOptions> Options { get; set; }
+		[DataMember(Name = "options")]
+		public List<PollOptions> Options { get; set; }
 
-        /// <summary>
-        /// When called with a user token, which options has the authorized user chosen? Contains an array of index values for options.
-        /// </summary>
-        /// <value>When called with a user token, which options has the authorized user chosen? Contains an array of index values for options.</value>
+		/// <summary>
+		/// When called with a user token, which options has the authorized user chosen? Contains an array of index values for options.
+		/// </summary>
+		/// <value>When called with a user token, which options has the authorized user chosen? Contains an array of index values for options.</value>
 
-        [DataMember(Name="own_votes")]
-        public List<long?> OwnVotes { get; set; }
+		[DataMember(Name = "own_votes")]
+		public List<long?> OwnVotes { get; set; }
 
-        /// <summary>
-        /// When called with a user token, has the authorized user voted?
-        /// </summary>
-        /// <value>When called with a user token, has the authorized user voted?</value>
+		/// <summary>
+		/// When called with a user token, has the authorized user voted?
+		/// </summary>
+		/// <value>When called with a user token, has the authorized user voted?</value>
 
-        [DataMember(Name="voted")]
-        public bool? Voted { get; set; }
+		[DataMember(Name = "voted")]
+		public bool? Voted { get; set; }
 
-        /// <summary>
-        /// How many unique accounts have voted on a multiple-choice poll. Null if multiple is false.
-        /// </summary>
-        /// <value>How many unique accounts have voted on a multiple-choice poll. Null if multiple is false.</value>
+		/// <summary>
+		/// How many unique accounts have voted on a multiple-choice poll. Null if multiple is false.
+		/// </summary>
+		/// <value>How many unique accounts have voted on a multiple-choice poll. Null if multiple is false.</value>
 
-        [DataMember(Name="voters_count")]
-        public long? VotersCount { get; set; }
+		[DataMember(Name = "voters_count")]
+		public long? VotersCount { get; set; }
 
-        /// <summary>
-        /// How many votes have been received.
-        /// </summary>
-        /// <value>How many votes have been received.</value>
+		/// <summary>
+		/// How many votes have been received.
+		/// </summary>
+		/// <value>How many votes have been received.</value>
 
-        [DataMember(Name="votes_count")]
-        public long? VotesCount { get; set; }
+		[DataMember(Name = "votes_count")]
+		public long? VotesCount { get; set; }
 
-        /// <summary>
-        /// Returns the string presentation of the object
-        /// </summary>
-        /// <returns>String presentation of the object</returns>
-        public override string ToString()
-        {
-            var sb = new StringBuilder();
-            sb.Append("class Poll {\n");
-            sb.Append("  Emojis: ").Append(Emojis).Append("\n");
-            sb.Append("  Expired: ").Append(Expired).Append("\n");
-            sb.Append("  ExpiresAt: ").Append(ExpiresAt).Append("\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Multiple: ").Append(Multiple).Append("\n");
-            sb.Append("  Options: ").Append(Options).Append("\n");
-            sb.Append("  OwnVotes: ").Append(OwnVotes).Append("\n");
-            sb.Append("  Voted: ").Append(Voted).Append("\n");
-            sb.Append("  VotersCount: ").Append(VotersCount).Append("\n");
-            sb.Append("  VotesCount: ").Append(VotesCount).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
-        }
+		/// <summary>
+		/// Returns the string presentation of the object
+		/// </summary>
+		/// <returns>String presentation of the object</returns>
+		public override string ToString()
+		{
+			var sb = new StringBuilder();
+			sb.Append("class Poll {\n");
+			sb.Append("  Emojis: ").Append(Emojis).Append("\n");
+			sb.Append("  Expired: ").Append(Expired).Append("\n");
+			sb.Append("  ExpiresAt: ").Append(ExpiresAt).Append("\n");
+			sb.Append("  Id: ").Append(Id).Append("\n");
+			sb.Append("  Multiple: ").Append(Multiple).Append("\n");
+			sb.Append("  Options: ").Append(Options).Append("\n");
+			sb.Append("  OwnVotes: ").Append(OwnVotes).Append("\n");
+			sb.Append("  Voted: ").Append(Voted).Append("\n");
+			sb.Append("  VotersCount: ").Append(VotersCount).Append("\n");
+			sb.Append("  VotesCount: ").Append(VotesCount).Append("\n");
+			sb.Append("}\n");
+			return sb.ToString();
+		}
 
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonSerializer.Serialize(this, new JsonSerializerOptions() { WriteIndented = true });
-        }
+		/// <summary>
+		/// Returns the JSON string presentation of the object
+		/// </summary>
+		/// <returns>JSON string presentation of the object</returns>
+		public string ToJson()
+		{
+			return JsonSerializer.Serialize(this, new JsonSerializerOptions() { WriteIndented = true });
+		}
 
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="obj">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj)) return false;
-            if (ReferenceEquals(this, obj)) return true;
-            return obj.GetType() == GetType() && Equals((Poll)obj);
-        }
+		/// <summary>
+		/// Returns true if objects are equal
+		/// </summary>
+		/// <param name="obj">Object to be compared</param>
+		/// <returns>Boolean</returns>
+		public override bool Equals(object obj)
+		{
+			if (ReferenceEquals(null, obj)) return false;
+			if (ReferenceEquals(this, obj)) return true;
+			return obj.GetType() == GetType() && Equals((Poll)obj);
+		}
 
-        /// <summary>
-        /// Returns true if Poll instances are equal
-        /// </summary>
-        /// <param name="other">Instance of Poll to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(Poll other)
-        {
-            if (ReferenceEquals(null, other)) return false;
-            if (ReferenceEquals(this, other)) return true;
+		/// <summary>
+		/// Returns true if Poll instances are equal
+		/// </summary>
+		/// <param name="other">Instance of Poll to be compared</param>
+		/// <returns>Boolean</returns>
+		public bool Equals(Poll other)
+		{
+			if (ReferenceEquals(null, other)) return false;
+			if (ReferenceEquals(this, other)) return true;
 
-            return 
-                (
-                    Emojis == other.Emojis ||
-                    Emojis != null &&
-                    Emojis.SequenceEqual(other.Emojis)
-                ) && 
-                (
-                    Expired == other.Expired ||
-                    Expired != null &&
-                    Expired.Equals(other.Expired)
-                ) && 
-                (
-                    ExpiresAt == other.ExpiresAt ||
-                    ExpiresAt != null &&
-                    ExpiresAt.Equals(other.ExpiresAt)
-                ) && 
-                (
-                    Id == other.Id ||
-                    Id != null &&
-                    Id.Equals(other.Id)
-                ) && 
-                (
-                    Multiple == other.Multiple ||
-                    Multiple != null &&
-                    Multiple.Equals(other.Multiple)
-                ) && 
-                (
-                    Options == other.Options ||
-                    Options != null &&
-                    Options.SequenceEqual(other.Options)
-                ) && 
-                (
-                    OwnVotes == other.OwnVotes ||
-                    OwnVotes != null &&
-                    OwnVotes.SequenceEqual(other.OwnVotes)
-                ) && 
-                (
-                    Voted == other.Voted ||
-                    Voted != null &&
-                    Voted.Equals(other.Voted)
-                ) && 
-                (
-                    VotersCount == other.VotersCount ||
-                    VotersCount != null &&
-                    VotersCount.Equals(other.VotersCount)
-                ) && 
-                (
-                    VotesCount == other.VotesCount ||
-                    VotesCount != null &&
-                    VotesCount.Equals(other.VotesCount)
-                );
-        }
+			return
+				(
+					Emojis == other.Emojis ||
+					Emojis != null &&
+					Emojis.SequenceEqual(other.Emojis)
+				) &&
+				(
+					Expired == other.Expired ||
+					Expired != null &&
+					Expired.Equals(other.Expired)
+				) &&
+				(
+					ExpiresAt == other.ExpiresAt ||
+					ExpiresAt != null &&
+					ExpiresAt.Equals(other.ExpiresAt)
+				) &&
+				(
+					Id == other.Id ||
+					Id != null &&
+					Id.Equals(other.Id)
+				) &&
+				(
+					Multiple == other.Multiple ||
+					Multiple != null &&
+					Multiple.Equals(other.Multiple)
+				) &&
+				(
+					Options == other.Options ||
+					Options != null &&
+					Options.SequenceEqual(other.Options)
+				) &&
+				(
+					OwnVotes == other.OwnVotes ||
+					OwnVotes != null &&
+					OwnVotes.SequenceEqual(other.OwnVotes)
+				) &&
+				(
+					Voted == other.Voted ||
+					Voted != null &&
+					Voted.Equals(other.Voted)
+				) &&
+				(
+					VotersCount == other.VotersCount ||
+					VotersCount != null &&
+					VotersCount.Equals(other.VotersCount)
+				) &&
+				(
+					VotesCount == other.VotesCount ||
+					VotesCount != null &&
+					VotesCount.Equals(other.VotesCount)
+				);
+		}
 
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                var hashCode = 41;
-                // Suitable nullity checks etc, of course :)
-                    if (Emojis != null)
-                    hashCode = hashCode * 59 + Emojis.GetHashCode();
-                    if (Expired != null)
-                    hashCode = hashCode * 59 + Expired.GetHashCode();
-                    if (ExpiresAt != null)
-                    hashCode = hashCode * 59 + ExpiresAt.GetHashCode();
-                    if (Id != null)
-                    hashCode = hashCode * 59 + Id.GetHashCode();
-                    if (Multiple != null)
-                    hashCode = hashCode * 59 + Multiple.GetHashCode();
-                    if (Options != null)
-                    hashCode = hashCode * 59 + Options.GetHashCode();
-                    if (OwnVotes != null)
-                    hashCode = hashCode * 59 + OwnVotes.GetHashCode();
-                    if (Voted != null)
-                    hashCode = hashCode * 59 + Voted.GetHashCode();
-                    if (VotersCount != null)
-                    hashCode = hashCode * 59 + VotersCount.GetHashCode();
-                    if (VotesCount != null)
-                    hashCode = hashCode * 59 + VotesCount.GetHashCode();
-                return hashCode;
-            }
-        }
+		/// <summary>
+		/// Gets the hash code
+		/// </summary>
+		/// <returns>Hash code</returns>
+		public override int GetHashCode()
+		{
+			unchecked // Overflow is fine, just wrap
+			{
+				var hashCode = 41;
+				// Suitable nullity checks etc, of course :)
+				if (Emojis != null)
+					hashCode = hashCode * 59 + Emojis.GetHashCode();
+				if (Expired != null)
+					hashCode = hashCode * 59 + Expired.GetHashCode();
+				if (ExpiresAt != null)
+					hashCode = hashCode * 59 + ExpiresAt.GetHashCode();
+				if (Id != null)
+					hashCode = hashCode * 59 + Id.GetHashCode();
+				if (Multiple != null)
+					hashCode = hashCode * 59 + Multiple.GetHashCode();
+				if (Options != null)
+					hashCode = hashCode * 59 + Options.GetHashCode();
+				if (OwnVotes != null)
+					hashCode = hashCode * 59 + OwnVotes.GetHashCode();
+				if (Voted != null)
+					hashCode = hashCode * 59 + Voted.GetHashCode();
+				if (VotersCount != null)
+					hashCode = hashCode * 59 + VotersCount.GetHashCode();
+				if (VotesCount != null)
+					hashCode = hashCode * 59 + VotesCount.GetHashCode();
+				return hashCode;
+			}
+		}
 
-        #region Operators
-        #pragma warning disable 1591
+		#region Operators
 
-        public static bool operator ==(Poll left, Poll right)
-        {
-            return Equals(left, right);
-        }
+#pragma warning disable 1591
 
-        public static bool operator !=(Poll left, Poll right)
-        {
-            return !Equals(left, right);
-        }
+		public static bool operator ==(Poll left, Poll right)
+		{
+			return Equals(left, right);
+		}
 
-        #pragma warning restore 1591
-        #endregion Operators
-    }
+		public static bool operator !=(Poll left, Poll right)
+		{
+			return !Equals(left, right);
+		}
+
+#pragma warning restore 1591
+
+		#endregion Operators
+	}
 }

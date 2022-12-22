@@ -13,103 +13,105 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
-    /// <summary>
-    /// 
-    /// </summary>
-    [DataContract]
-    public partial class InstanceConfigurationAccounts : IEquatable<InstanceConfigurationAccounts>
-    { 
-        /// <summary>
-        /// Whether or not accounts on this instance are allowed to upload custom CSS for profiles and statuses.
-        /// </summary>
-        /// <value>Whether or not accounts on this instance are allowed to upload custom CSS for profiles and statuses.</value>
+{
+	/// <summary>
+	/// 
+	/// </summary>
+	[DataContract]
+	public partial class InstanceConfigurationAccounts : IEquatable<InstanceConfigurationAccounts>
+	{
+		/// <summary>
+		/// Whether or not accounts on this instance are allowed to upload custom CSS for profiles and statuses.
+		/// </summary>
+		/// <value>Whether or not accounts on this instance are allowed to upload custom CSS for profiles and statuses.</value>
 
-        [DataMember(Name="allow_custom_css")]
-        public bool? AllowCustomCss { get; set; }
+		[DataMember(Name = "allow_custom_css")]
+		public bool? AllowCustomCss { get; set; }
 
-        /// <summary>
-        /// Returns the string presentation of the object
-        /// </summary>
-        /// <returns>String presentation of the object</returns>
-        public override string ToString()
-        {
-            var sb = new StringBuilder();
-            sb.Append("class InstanceConfigurationAccounts {\n");
-            sb.Append("  AllowCustomCss: ").Append(AllowCustomCss).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
-        }
+		/// <summary>
+		/// Returns the string presentation of the object
+		/// </summary>
+		/// <returns>String presentation of the object</returns>
+		public override string ToString()
+		{
+			var sb = new StringBuilder();
+			sb.Append("class InstanceConfigurationAccounts {\n");
+			sb.Append("  AllowCustomCss: ").Append(AllowCustomCss).Append("\n");
+			sb.Append("}\n");
+			return sb.ToString();
+		}
 
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonSerializer.Serialize(this, new JsonSerializerOptions() { WriteIndented = true });
-        }
+		/// <summary>
+		/// Returns the JSON string presentation of the object
+		/// </summary>
+		/// <returns>JSON string presentation of the object</returns>
+		public string ToJson()
+		{
+			return JsonSerializer.Serialize(this, new JsonSerializerOptions() { WriteIndented = true });
+		}
 
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="obj">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj)) return false;
-            if (ReferenceEquals(this, obj)) return true;
-            return obj.GetType() == GetType() && Equals((InstanceConfigurationAccounts)obj);
-        }
+		/// <summary>
+		/// Returns true if objects are equal
+		/// </summary>
+		/// <param name="obj">Object to be compared</param>
+		/// <returns>Boolean</returns>
+		public override bool Equals(object obj)
+		{
+			if (ReferenceEquals(null, obj)) return false;
+			if (ReferenceEquals(this, obj)) return true;
+			return obj.GetType() == GetType() && Equals((InstanceConfigurationAccounts)obj);
+		}
 
-        /// <summary>
-        /// Returns true if InstanceConfigurationAccounts instances are equal
-        /// </summary>
-        /// <param name="other">Instance of InstanceConfigurationAccounts to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(InstanceConfigurationAccounts other)
-        {
-            if (ReferenceEquals(null, other)) return false;
-            if (ReferenceEquals(this, other)) return true;
+		/// <summary>
+		/// Returns true if InstanceConfigurationAccounts instances are equal
+		/// </summary>
+		/// <param name="other">Instance of InstanceConfigurationAccounts to be compared</param>
+		/// <returns>Boolean</returns>
+		public bool Equals(InstanceConfigurationAccounts other)
+		{
+			if (ReferenceEquals(null, other)) return false;
+			if (ReferenceEquals(this, other)) return true;
 
-            return 
-                (
-                    AllowCustomCss == other.AllowCustomCss ||
-                    AllowCustomCss != null &&
-                    AllowCustomCss.Equals(other.AllowCustomCss)
-                );
-        }
+			return
+			(
+				AllowCustomCss == other.AllowCustomCss ||
+				AllowCustomCss != null &&
+				AllowCustomCss.Equals(other.AllowCustomCss)
+			);
+		}
 
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                var hashCode = 41;
-                // Suitable nullity checks etc, of course :)
-                    if (AllowCustomCss != null)
-                    hashCode = hashCode * 59 + AllowCustomCss.GetHashCode();
-                return hashCode;
-            }
-        }
+		/// <summary>
+		/// Gets the hash code
+		/// </summary>
+		/// <returns>Hash code</returns>
+		public override int GetHashCode()
+		{
+			unchecked // Overflow is fine, just wrap
+			{
+				var hashCode = 41;
+				// Suitable nullity checks etc, of course :)
+				if (AllowCustomCss != null)
+					hashCode = hashCode * 59 + AllowCustomCss.GetHashCode();
+				return hashCode;
+			}
+		}
 
-        #region Operators
-        #pragma warning disable 1591
+		#region Operators
 
-        public static bool operator ==(InstanceConfigurationAccounts left, InstanceConfigurationAccounts right)
-        {
-            return Equals(left, right);
-        }
+#pragma warning disable 1591
 
-        public static bool operator !=(InstanceConfigurationAccounts left, InstanceConfigurationAccounts right)
-        {
-            return !Equals(left, right);
-        }
+		public static bool operator ==(InstanceConfigurationAccounts left, InstanceConfigurationAccounts right)
+		{
+			return Equals(left, right);
+		}
 
-        #pragma warning restore 1591
-        #endregion Operators
-    }
+		public static bool operator !=(InstanceConfigurationAccounts left, InstanceConfigurationAccounts right)
+		{
+			return !Equals(left, right);
+		}
+
+#pragma warning restore 1591
+
+		#endregion Operators
+	}
 }

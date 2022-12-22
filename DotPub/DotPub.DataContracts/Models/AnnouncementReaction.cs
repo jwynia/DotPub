@@ -13,167 +13,169 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
-    /// <summary>
-    /// 
-    /// </summary>
-    [DataContract]
-    public partial class AnnouncementReaction : IEquatable<AnnouncementReaction>
-    { 
-        /// <summary>
-        /// The total number of users who have added this reaction.
-        /// </summary>
-        /// <value>The total number of users who have added this reaction.</value>
+{
+	/// <summary>
+	/// 
+	/// </summary>
+	[DataContract]
+	public partial class AnnouncementReaction : IEquatable<AnnouncementReaction>
+	{
+		/// <summary>
+		/// The total number of users who have added this reaction.
+		/// </summary>
+		/// <value>The total number of users who have added this reaction.</value>
 
-        [DataMember(Name="count")]
-        public long? Count { get; set; }
+		[DataMember(Name = "count")]
+		public long? Count { get; set; }
 
-        /// <summary>
-        /// This reaction belongs to the account viewing it.
-        /// </summary>
-        /// <value>This reaction belongs to the account viewing it.</value>
+		/// <summary>
+		/// This reaction belongs to the account viewing it.
+		/// </summary>
+		/// <value>This reaction belongs to the account viewing it.</value>
 
-        [DataMember(Name="me")]
-        public bool? Me { get; set; }
+		[DataMember(Name = "me")]
+		public bool? Me { get; set; }
 
-        /// <summary>
-        /// The emoji used for the reaction. Either a unicode emoji, or a custom emoji&#39;s shortcode.
-        /// </summary>
-        /// <value>The emoji used for the reaction. Either a unicode emoji, or a custom emoji&#39;s shortcode.</value>
+		/// <summary>
+		/// The emoji used for the reaction. Either a unicode emoji, or a custom emoji&#39;s shortcode.
+		/// </summary>
+		/// <value>The emoji used for the reaction. Either a unicode emoji, or a custom emoji&#39;s shortcode.</value>
 
-        [DataMember(Name="name")]
-        public string Name { get; set; }
+		[DataMember(Name = "name")]
+		public string Name { get; set; }
 
-        /// <summary>
-        /// Web link to a non-animated image of the custom emoji. Empty for unicode emojis.
-        /// </summary>
-        /// <value>Web link to a non-animated image of the custom emoji. Empty for unicode emojis.</value>
+		/// <summary>
+		/// Web link to a non-animated image of the custom emoji. Empty for unicode emojis.
+		/// </summary>
+		/// <value>Web link to a non-animated image of the custom emoji. Empty for unicode emojis.</value>
 
-        [DataMember(Name="static_url")]
-        public string StaticUrl { get; set; }
+		[DataMember(Name = "static_url")]
+		public string StaticUrl { get; set; }
 
-        /// <summary>
-        /// Web link to the image of the custom emoji. Empty for unicode emojis.
-        /// </summary>
-        /// <value>Web link to the image of the custom emoji. Empty for unicode emojis.</value>
+		/// <summary>
+		/// Web link to the image of the custom emoji. Empty for unicode emojis.
+		/// </summary>
+		/// <value>Web link to the image of the custom emoji. Empty for unicode emojis.</value>
 
-        [DataMember(Name="url")]
-        public string Url { get; set; }
+		[DataMember(Name = "url")]
+		public string Url { get; set; }
 
-        /// <summary>
-        /// Returns the string presentation of the object
-        /// </summary>
-        /// <returns>String presentation of the object</returns>
-        public override string ToString()
-        {
-            var sb = new StringBuilder();
-            sb.Append("class AnnouncementReaction {\n");
-            sb.Append("  Count: ").Append(Count).Append("\n");
-            sb.Append("  Me: ").Append(Me).Append("\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  StaticUrl: ").Append(StaticUrl).Append("\n");
-            sb.Append("  Url: ").Append(Url).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
-        }
+		/// <summary>
+		/// Returns the string presentation of the object
+		/// </summary>
+		/// <returns>String presentation of the object</returns>
+		public override string ToString()
+		{
+			var sb = new StringBuilder();
+			sb.Append("class AnnouncementReaction {\n");
+			sb.Append("  Count: ").Append(Count).Append("\n");
+			sb.Append("  Me: ").Append(Me).Append("\n");
+			sb.Append("  Name: ").Append(Name).Append("\n");
+			sb.Append("  StaticUrl: ").Append(StaticUrl).Append("\n");
+			sb.Append("  Url: ").Append(Url).Append("\n");
+			sb.Append("}\n");
+			return sb.ToString();
+		}
 
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonSerializer.Serialize(this,new JsonSerializerOptions(){WriteIndented = true});
-        }
+		/// <summary>
+		/// Returns the JSON string presentation of the object
+		/// </summary>
+		/// <returns>JSON string presentation of the object</returns>
+		public string ToJson()
+		{
+			return JsonSerializer.Serialize(this, new JsonSerializerOptions() { WriteIndented = true });
+		}
 
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="obj">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj)) return false;
-            if (ReferenceEquals(this, obj)) return true;
-            return obj.GetType() == GetType() && Equals((AnnouncementReaction)obj);
-        }
+		/// <summary>
+		/// Returns true if objects are equal
+		/// </summary>
+		/// <param name="obj">Object to be compared</param>
+		/// <returns>Boolean</returns>
+		public override bool Equals(object obj)
+		{
+			if (ReferenceEquals(null, obj)) return false;
+			if (ReferenceEquals(this, obj)) return true;
+			return obj.GetType() == GetType() && Equals((AnnouncementReaction)obj);
+		}
 
-        /// <summary>
-        /// Returns true if AnnouncementReaction instances are equal
-        /// </summary>
-        /// <param name="other">Instance of AnnouncementReaction to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(AnnouncementReaction other)
-        {
-            if (ReferenceEquals(null, other)) return false;
-            if (ReferenceEquals(this, other)) return true;
+		/// <summary>
+		/// Returns true if AnnouncementReaction instances are equal
+		/// </summary>
+		/// <param name="other">Instance of AnnouncementReaction to be compared</param>
+		/// <returns>Boolean</returns>
+		public bool Equals(AnnouncementReaction other)
+		{
+			if (ReferenceEquals(null, other)) return false;
+			if (ReferenceEquals(this, other)) return true;
 
-            return 
-                (
-                    Count == other.Count ||
-                    Count != null &&
-                    Count.Equals(other.Count)
-                ) && 
-                (
-                    Me == other.Me ||
-                    Me != null &&
-                    Me.Equals(other.Me)
-                ) && 
-                (
-                    Name == other.Name ||
-                    Name != null &&
-                    Name.Equals(other.Name)
-                ) && 
-                (
-                    StaticUrl == other.StaticUrl ||
-                    StaticUrl != null &&
-                    StaticUrl.Equals(other.StaticUrl)
-                ) && 
-                (
-                    Url == other.Url ||
-                    Url != null &&
-                    Url.Equals(other.Url)
-                );
-        }
+			return
+				(
+					Count == other.Count ||
+					Count != null &&
+					Count.Equals(other.Count)
+				) &&
+				(
+					Me == other.Me ||
+					Me != null &&
+					Me.Equals(other.Me)
+				) &&
+				(
+					Name == other.Name ||
+					Name != null &&
+					Name.Equals(other.Name)
+				) &&
+				(
+					StaticUrl == other.StaticUrl ||
+					StaticUrl != null &&
+					StaticUrl.Equals(other.StaticUrl)
+				) &&
+				(
+					Url == other.Url ||
+					Url != null &&
+					Url.Equals(other.Url)
+				);
+		}
 
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                var hashCode = 41;
-                // Suitable nullity checks etc, of course :)
-                    if (Count != null)
-                    hashCode = hashCode * 59 + Count.GetHashCode();
-                    if (Me != null)
-                    hashCode = hashCode * 59 + Me.GetHashCode();
-                    if (Name != null)
-                    hashCode = hashCode * 59 + Name.GetHashCode();
-                    if (StaticUrl != null)
-                    hashCode = hashCode * 59 + StaticUrl.GetHashCode();
-                    if (Url != null)
-                    hashCode = hashCode * 59 + Url.GetHashCode();
-                return hashCode;
-            }
-        }
+		/// <summary>
+		/// Gets the hash code
+		/// </summary>
+		/// <returns>Hash code</returns>
+		public override int GetHashCode()
+		{
+			unchecked // Overflow is fine, just wrap
+			{
+				var hashCode = 41;
+				// Suitable nullity checks etc, of course :)
+				if (Count != null)
+					hashCode = hashCode * 59 + Count.GetHashCode();
+				if (Me != null)
+					hashCode = hashCode * 59 + Me.GetHashCode();
+				if (Name != null)
+					hashCode = hashCode * 59 + Name.GetHashCode();
+				if (StaticUrl != null)
+					hashCode = hashCode * 59 + StaticUrl.GetHashCode();
+				if (Url != null)
+					hashCode = hashCode * 59 + Url.GetHashCode();
+				return hashCode;
+			}
+		}
 
-        #region Operators
-        #pragma warning disable 1591
+		#region Operators
 
-        public static bool operator ==(AnnouncementReaction left, AnnouncementReaction right)
-        {
-            return Equals(left, right);
-        }
+#pragma warning disable 1591
 
-        public static bool operator !=(AnnouncementReaction left, AnnouncementReaction right)
-        {
-            return !Equals(left, right);
-        }
+		public static bool operator ==(AnnouncementReaction left, AnnouncementReaction right)
+		{
+			return Equals(left, right);
+		}
 
-        #pragma warning restore 1591
-        #endregion Operators
-    }
+		public static bool operator !=(AnnouncementReaction left, AnnouncementReaction right)
+		{
+			return !Equals(left, right);
+		}
+
+#pragma warning restore 1591
+
+		#endregion Operators
+	}
 }

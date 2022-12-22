@@ -13,103 +13,105 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
-    /// <summary>
-    /// 
-    /// </summary>
-    [DataContract]
-    public partial class InstanceURLs : IEquatable<InstanceURLs>
-    { 
-        /// <summary>
-        /// Websockets address for status and notification streaming.
-        /// </summary>
-        /// <value>Websockets address for status and notification streaming.</value>
+{
+	/// <summary>
+	/// 
+	/// </summary>
+	[DataContract]
+	public partial class InstanceURLs : IEquatable<InstanceURLs>
+	{
+		/// <summary>
+		/// Websockets address for status and notification streaming.
+		/// </summary>
+		/// <value>Websockets address for status and notification streaming.</value>
 
-        [DataMember(Name="streaming_api")]
-        public string StreamingApi { get; set; }
+		[DataMember(Name = "streaming_api")]
+		public string StreamingApi { get; set; }
 
-        /// <summary>
-        /// Returns the string presentation of the object
-        /// </summary>
-        /// <returns>String presentation of the object</returns>
-        public override string ToString()
-        {
-            var sb = new StringBuilder();
-            sb.Append("class InstanceURLs {\n");
-            sb.Append("  StreamingApi: ").Append(StreamingApi).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
-        }
+		/// <summary>
+		/// Returns the string presentation of the object
+		/// </summary>
+		/// <returns>String presentation of the object</returns>
+		public override string ToString()
+		{
+			var sb = new StringBuilder();
+			sb.Append("class InstanceURLs {\n");
+			sb.Append("  StreamingApi: ").Append(StreamingApi).Append("\n");
+			sb.Append("}\n");
+			return sb.ToString();
+		}
 
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonSerializer.Serialize(this, new JsonSerializerOptions() { WriteIndented = true });
-        }
+		/// <summary>
+		/// Returns the JSON string presentation of the object
+		/// </summary>
+		/// <returns>JSON string presentation of the object</returns>
+		public string ToJson()
+		{
+			return JsonSerializer.Serialize(this, new JsonSerializerOptions() { WriteIndented = true });
+		}
 
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="obj">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj)) return false;
-            if (ReferenceEquals(this, obj)) return true;
-            return obj.GetType() == GetType() && Equals((InstanceURLs)obj);
-        }
+		/// <summary>
+		/// Returns true if objects are equal
+		/// </summary>
+		/// <param name="obj">Object to be compared</param>
+		/// <returns>Boolean</returns>
+		public override bool Equals(object obj)
+		{
+			if (ReferenceEquals(null, obj)) return false;
+			if (ReferenceEquals(this, obj)) return true;
+			return obj.GetType() == GetType() && Equals((InstanceURLs)obj);
+		}
 
-        /// <summary>
-        /// Returns true if InstanceURLs instances are equal
-        /// </summary>
-        /// <param name="other">Instance of InstanceURLs to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(InstanceURLs other)
-        {
-            if (ReferenceEquals(null, other)) return false;
-            if (ReferenceEquals(this, other)) return true;
+		/// <summary>
+		/// Returns true if InstanceURLs instances are equal
+		/// </summary>
+		/// <param name="other">Instance of InstanceURLs to be compared</param>
+		/// <returns>Boolean</returns>
+		public bool Equals(InstanceURLs other)
+		{
+			if (ReferenceEquals(null, other)) return false;
+			if (ReferenceEquals(this, other)) return true;
 
-            return 
-                (
-                    StreamingApi == other.StreamingApi ||
-                    StreamingApi != null &&
-                    StreamingApi.Equals(other.StreamingApi)
-                );
-        }
+			return
+			(
+				StreamingApi == other.StreamingApi ||
+				StreamingApi != null &&
+				StreamingApi.Equals(other.StreamingApi)
+			);
+		}
 
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                var hashCode = 41;
-                // Suitable nullity checks etc, of course :)
-                    if (StreamingApi != null)
-                    hashCode = hashCode * 59 + StreamingApi.GetHashCode();
-                return hashCode;
-            }
-        }
+		/// <summary>
+		/// Gets the hash code
+		/// </summary>
+		/// <returns>Hash code</returns>
+		public override int GetHashCode()
+		{
+			unchecked // Overflow is fine, just wrap
+			{
+				var hashCode = 41;
+				// Suitable nullity checks etc, of course :)
+				if (StreamingApi != null)
+					hashCode = hashCode * 59 + StreamingApi.GetHashCode();
+				return hashCode;
+			}
+		}
 
-        #region Operators
-        #pragma warning disable 1591
+		#region Operators
 
-        public static bool operator ==(InstanceURLs left, InstanceURLs right)
-        {
-            return Equals(left, right);
-        }
+#pragma warning disable 1591
 
-        public static bool operator !=(InstanceURLs left, InstanceURLs right)
-        {
-            return !Equals(left, right);
-        }
+		public static bool operator ==(InstanceURLs left, InstanceURLs right)
+		{
+			return Equals(left, right);
+		}
 
-        #pragma warning restore 1591
-        #endregion Operators
-    }
+		public static bool operator !=(InstanceURLs left, InstanceURLs right)
+		{
+			return !Equals(left, right);
+		}
+
+#pragma warning restore 1591
+
+		#endregion Operators
+	}
 }

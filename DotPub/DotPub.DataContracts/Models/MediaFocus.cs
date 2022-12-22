@@ -13,119 +13,121 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
-    /// <summary>
-    /// 
-    /// </summary>
-    [DataContract]
-    public partial class MediaFocus : IEquatable<MediaFocus>
-    { 
-        /// <summary>
-        /// x position of the focus should be between -1 and 1
-        /// </summary>
-        /// <value>x position of the focus should be between -1 and 1</value>
+{
+	/// <summary>
+	/// 
+	/// </summary>
+	[DataContract]
+	public partial class MediaFocus : IEquatable<MediaFocus>
+	{
+		/// <summary>
+		/// x position of the focus should be between -1 and 1
+		/// </summary>
+		/// <value>x position of the focus should be between -1 and 1</value>
 
-        [DataMember(Name="x")]
-        public float? X { get; set; }
+		[DataMember(Name = "x")]
+		public float? X { get; set; }
 
-        /// <summary>
-        /// y position of the focus should be between -1 and 1
-        /// </summary>
-        /// <value>y position of the focus should be between -1 and 1</value>
+		/// <summary>
+		/// y position of the focus should be between -1 and 1
+		/// </summary>
+		/// <value>y position of the focus should be between -1 and 1</value>
 
-        [DataMember(Name="y")]
-        public float? Y { get; set; }
+		[DataMember(Name = "y")]
+		public float? Y { get; set; }
 
-        /// <summary>
-        /// Returns the string presentation of the object
-        /// </summary>
-        /// <returns>String presentation of the object</returns>
-        public override string ToString()
-        {
-            var sb = new StringBuilder();
-            sb.Append("class MediaFocus {\n");
-            sb.Append("  X: ").Append(X).Append("\n");
-            sb.Append("  Y: ").Append(Y).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
-        }
+		/// <summary>
+		/// Returns the string presentation of the object
+		/// </summary>
+		/// <returns>String presentation of the object</returns>
+		public override string ToString()
+		{
+			var sb = new StringBuilder();
+			sb.Append("class MediaFocus {\n");
+			sb.Append("  X: ").Append(X).Append("\n");
+			sb.Append("  Y: ").Append(Y).Append("\n");
+			sb.Append("}\n");
+			return sb.ToString();
+		}
 
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonSerializer.Serialize(this, new JsonSerializerOptions() { WriteIndented = true });
-        }
+		/// <summary>
+		/// Returns the JSON string presentation of the object
+		/// </summary>
+		/// <returns>JSON string presentation of the object</returns>
+		public string ToJson()
+		{
+			return JsonSerializer.Serialize(this, new JsonSerializerOptions() { WriteIndented = true });
+		}
 
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="obj">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj)) return false;
-            if (ReferenceEquals(this, obj)) return true;
-            return obj.GetType() == GetType() && Equals((MediaFocus)obj);
-        }
+		/// <summary>
+		/// Returns true if objects are equal
+		/// </summary>
+		/// <param name="obj">Object to be compared</param>
+		/// <returns>Boolean</returns>
+		public override bool Equals(object obj)
+		{
+			if (ReferenceEquals(null, obj)) return false;
+			if (ReferenceEquals(this, obj)) return true;
+			return obj.GetType() == GetType() && Equals((MediaFocus)obj);
+		}
 
-        /// <summary>
-        /// Returns true if MediaFocus instances are equal
-        /// </summary>
-        /// <param name="other">Instance of MediaFocus to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(MediaFocus other)
-        {
-            if (ReferenceEquals(null, other)) return false;
-            if (ReferenceEquals(this, other)) return true;
+		/// <summary>
+		/// Returns true if MediaFocus instances are equal
+		/// </summary>
+		/// <param name="other">Instance of MediaFocus to be compared</param>
+		/// <returns>Boolean</returns>
+		public bool Equals(MediaFocus other)
+		{
+			if (ReferenceEquals(null, other)) return false;
+			if (ReferenceEquals(this, other)) return true;
 
-            return 
-                (
-                    X == other.X ||
-                    X != null &&
-                    X.Equals(other.X)
-                ) && 
-                (
-                    Y == other.Y ||
-                    Y != null &&
-                    Y.Equals(other.Y)
-                );
-        }
+			return
+				(
+					X == other.X ||
+					X != null &&
+					X.Equals(other.X)
+				) &&
+				(
+					Y == other.Y ||
+					Y != null &&
+					Y.Equals(other.Y)
+				);
+		}
 
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                var hashCode = 41;
-                // Suitable nullity checks etc, of course :)
-                    if (X != null)
-                    hashCode = hashCode * 59 + X.GetHashCode();
-                    if (Y != null)
-                    hashCode = hashCode * 59 + Y.GetHashCode();
-                return hashCode;
-            }
-        }
+		/// <summary>
+		/// Gets the hash code
+		/// </summary>
+		/// <returns>Hash code</returns>
+		public override int GetHashCode()
+		{
+			unchecked // Overflow is fine, just wrap
+			{
+				var hashCode = 41;
+				// Suitable nullity checks etc, of course :)
+				if (X != null)
+					hashCode = hashCode * 59 + X.GetHashCode();
+				if (Y != null)
+					hashCode = hashCode * 59 + Y.GetHashCode();
+				return hashCode;
+			}
+		}
 
-        #region Operators
-        #pragma warning disable 1591
+		#region Operators
 
-        public static bool operator ==(MediaFocus left, MediaFocus right)
-        {
-            return Equals(left, right);
-        }
+#pragma warning disable 1591
 
-        public static bool operator !=(MediaFocus left, MediaFocus right)
-        {
-            return !Equals(left, right);
-        }
+		public static bool operator ==(MediaFocus left, MediaFocus right)
+		{
+			return Equals(left, right);
+		}
 
-        #pragma warning restore 1591
-        #endregion Operators
-    }
+		public static bool operator !=(MediaFocus left, MediaFocus right)
+		{
+			return !Equals(left, right);
+		}
+
+#pragma warning restore 1591
+
+		#endregion Operators
+	}
 }

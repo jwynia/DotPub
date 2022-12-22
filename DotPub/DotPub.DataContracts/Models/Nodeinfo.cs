@@ -13,196 +13,198 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
-    /// <summary>
-    /// See: https://nodeinfo.diaspora.software/schema.html
-    /// </summary>
-    [DataContract]
-    public partial class Nodeinfo : IEquatable<Nodeinfo>
-    { 
-        /// <summary>
-        /// Free form key value pairs for software specific values. Clients should not rely on any specific key present.
-        /// </summary>
-        /// <value>Free form key value pairs for software specific values. Clients should not rely on any specific key present.</value>
+{
+	/// <summary>
+	/// See: https://nodeinfo.diaspora.software/schema.html
+	/// </summary>
+	[DataContract]
+	public partial class Nodeinfo : IEquatable<Nodeinfo>
+	{
+		/// <summary>
+		/// Free form key value pairs for software specific values. Clients should not rely on any specific key present.
+		/// </summary>
+		/// <value>Free form key value pairs for software specific values. Clients should not rely on any specific key present.</value>
 
-        [DataMember(Name="metadata")]
-        public Dictionary<string, Object> Metadata { get; set; }
+		[DataMember(Name = "metadata")]
+		public Dictionary<string, Object> Metadata { get; set; }
 
-        /// <summary>
-        /// Whether this server allows open self-registration.
-        /// </summary>
-        /// <value>Whether this server allows open self-registration.</value>
+		/// <summary>
+		/// Whether this server allows open self-registration.
+		/// </summary>
+		/// <value>Whether this server allows open self-registration.</value>
 
-        [DataMember(Name="openRegistrations")]
-        public bool? OpenRegistrations { get; set; }
+		[DataMember(Name = "openRegistrations")]
+		public bool? OpenRegistrations { get; set; }
 
-        /// <summary>
-        /// The protocols supported on this server.
-        /// </summary>
-        /// <value>The protocols supported on this server.</value>
+		/// <summary>
+		/// The protocols supported on this server.
+		/// </summary>
+		/// <value>The protocols supported on this server.</value>
 
-        [DataMember(Name="protocols")]
-        public List<string> Protocols { get; set; }
+		[DataMember(Name = "protocols")]
+		public List<string> Protocols { get; set; }
 
-        /// <summary>
-        /// Gets or Sets Services
-        /// </summary>
+		/// <summary>
+		/// Gets or Sets Services
+		/// </summary>
 
-        [DataMember(Name="services")]
-        public NodeInfoServices Services { get; set; }
+		[DataMember(Name = "services")]
+		public NodeInfoServices Services { get; set; }
 
-        /// <summary>
-        /// Gets or Sets Software
-        /// </summary>
+		/// <summary>
+		/// Gets or Sets Software
+		/// </summary>
 
-        [DataMember(Name="software")]
-        public NodeInfoSoftware Software { get; set; }
+		[DataMember(Name = "software")]
+		public NodeInfoSoftware Software { get; set; }
 
-        /// <summary>
-        /// Gets or Sets Usage
-        /// </summary>
+		/// <summary>
+		/// Gets or Sets Usage
+		/// </summary>
 
-        [DataMember(Name="usage")]
-        public NodeInfoUsage Usage { get; set; }
+		[DataMember(Name = "usage")]
+		public NodeInfoUsage Usage { get; set; }
 
-        /// <summary>
-        /// The schema version
-        /// </summary>
-        /// <value>The schema version</value>
+		/// <summary>
+		/// The schema version
+		/// </summary>
+		/// <value>The schema version</value>
 
-        [DataMember(Name="version")]
-        public string Version { get; set; }
+		[DataMember(Name = "version")]
+		public string Version { get; set; }
 
-        /// <summary>
-        /// Returns the string presentation of the object
-        /// </summary>
-        /// <returns>String presentation of the object</returns>
-        public override string ToString()
-        {
-            var sb = new StringBuilder();
-            sb.Append("class Nodeinfo {\n");
-            sb.Append("  Metadata: ").Append(Metadata).Append("\n");
-            sb.Append("  OpenRegistrations: ").Append(OpenRegistrations).Append("\n");
-            sb.Append("  Protocols: ").Append(Protocols).Append("\n");
-            sb.Append("  Services: ").Append(Services).Append("\n");
-            sb.Append("  Software: ").Append(Software).Append("\n");
-            sb.Append("  Usage: ").Append(Usage).Append("\n");
-            sb.Append("  Version: ").Append(Version).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
-        }
+		/// <summary>
+		/// Returns the string presentation of the object
+		/// </summary>
+		/// <returns>String presentation of the object</returns>
+		public override string ToString()
+		{
+			var sb = new StringBuilder();
+			sb.Append("class Nodeinfo {\n");
+			sb.Append("  Metadata: ").Append(Metadata).Append("\n");
+			sb.Append("  OpenRegistrations: ").Append(OpenRegistrations).Append("\n");
+			sb.Append("  Protocols: ").Append(Protocols).Append("\n");
+			sb.Append("  Services: ").Append(Services).Append("\n");
+			sb.Append("  Software: ").Append(Software).Append("\n");
+			sb.Append("  Usage: ").Append(Usage).Append("\n");
+			sb.Append("  Version: ").Append(Version).Append("\n");
+			sb.Append("}\n");
+			return sb.ToString();
+		}
 
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonSerializer.Serialize(this, new JsonSerializerOptions() { WriteIndented = true });
-        }
+		/// <summary>
+		/// Returns the JSON string presentation of the object
+		/// </summary>
+		/// <returns>JSON string presentation of the object</returns>
+		public string ToJson()
+		{
+			return JsonSerializer.Serialize(this, new JsonSerializerOptions() { WriteIndented = true });
+		}
 
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="obj">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj)) return false;
-            if (ReferenceEquals(this, obj)) return true;
-            return obj.GetType() == GetType() && Equals((Nodeinfo)obj);
-        }
+		/// <summary>
+		/// Returns true if objects are equal
+		/// </summary>
+		/// <param name="obj">Object to be compared</param>
+		/// <returns>Boolean</returns>
+		public override bool Equals(object obj)
+		{
+			if (ReferenceEquals(null, obj)) return false;
+			if (ReferenceEquals(this, obj)) return true;
+			return obj.GetType() == GetType() && Equals((Nodeinfo)obj);
+		}
 
-        /// <summary>
-        /// Returns true if Nodeinfo instances are equal
-        /// </summary>
-        /// <param name="other">Instance of Nodeinfo to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(Nodeinfo other)
-        {
-            if (ReferenceEquals(null, other)) return false;
-            if (ReferenceEquals(this, other)) return true;
+		/// <summary>
+		/// Returns true if Nodeinfo instances are equal
+		/// </summary>
+		/// <param name="other">Instance of Nodeinfo to be compared</param>
+		/// <returns>Boolean</returns>
+		public bool Equals(Nodeinfo other)
+		{
+			if (ReferenceEquals(null, other)) return false;
+			if (ReferenceEquals(this, other)) return true;
 
-            return 
-                (
-                    Metadata == other.Metadata ||
-                    Metadata != null &&
-                    Metadata.SequenceEqual(other.Metadata)
-                ) && 
-                (
-                    OpenRegistrations == other.OpenRegistrations ||
-                    OpenRegistrations != null &&
-                    OpenRegistrations.Equals(other.OpenRegistrations)
-                ) && 
-                (
-                    Protocols == other.Protocols ||
-                    Protocols != null &&
-                    Protocols.SequenceEqual(other.Protocols)
-                ) && 
-                (
-                    Services == other.Services ||
-                    Services != null &&
-                    Services.Equals(other.Services)
-                ) && 
-                (
-                    Software == other.Software ||
-                    Software != null &&
-                    Software.Equals(other.Software)
-                ) && 
-                (
-                    Usage == other.Usage ||
-                    Usage != null &&
-                    Usage.Equals(other.Usage)
-                ) && 
-                (
-                    Version == other.Version ||
-                    Version != null &&
-                    Version.Equals(other.Version)
-                );
-        }
+			return
+				(
+					Metadata == other.Metadata ||
+					Metadata != null &&
+					Metadata.SequenceEqual(other.Metadata)
+				) &&
+				(
+					OpenRegistrations == other.OpenRegistrations ||
+					OpenRegistrations != null &&
+					OpenRegistrations.Equals(other.OpenRegistrations)
+				) &&
+				(
+					Protocols == other.Protocols ||
+					Protocols != null &&
+					Protocols.SequenceEqual(other.Protocols)
+				) &&
+				(
+					Services == other.Services ||
+					Services != null &&
+					Services.Equals(other.Services)
+				) &&
+				(
+					Software == other.Software ||
+					Software != null &&
+					Software.Equals(other.Software)
+				) &&
+				(
+					Usage == other.Usage ||
+					Usage != null &&
+					Usage.Equals(other.Usage)
+				) &&
+				(
+					Version == other.Version ||
+					Version != null &&
+					Version.Equals(other.Version)
+				);
+		}
 
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                var hashCode = 41;
-                // Suitable nullity checks etc, of course :)
-                    if (Metadata != null)
-                    hashCode = hashCode * 59 + Metadata.GetHashCode();
-                    if (OpenRegistrations != null)
-                    hashCode = hashCode * 59 + OpenRegistrations.GetHashCode();
-                    if (Protocols != null)
-                    hashCode = hashCode * 59 + Protocols.GetHashCode();
-                    if (Services != null)
-                    hashCode = hashCode * 59 + Services.GetHashCode();
-                    if (Software != null)
-                    hashCode = hashCode * 59 + Software.GetHashCode();
-                    if (Usage != null)
-                    hashCode = hashCode * 59 + Usage.GetHashCode();
-                    if (Version != null)
-                    hashCode = hashCode * 59 + Version.GetHashCode();
-                return hashCode;
-            }
-        }
+		/// <summary>
+		/// Gets the hash code
+		/// </summary>
+		/// <returns>Hash code</returns>
+		public override int GetHashCode()
+		{
+			unchecked // Overflow is fine, just wrap
+			{
+				var hashCode = 41;
+				// Suitable nullity checks etc, of course :)
+				if (Metadata != null)
+					hashCode = hashCode * 59 + Metadata.GetHashCode();
+				if (OpenRegistrations != null)
+					hashCode = hashCode * 59 + OpenRegistrations.GetHashCode();
+				if (Protocols != null)
+					hashCode = hashCode * 59 + Protocols.GetHashCode();
+				if (Services != null)
+					hashCode = hashCode * 59 + Services.GetHashCode();
+				if (Software != null)
+					hashCode = hashCode * 59 + Software.GetHashCode();
+				if (Usage != null)
+					hashCode = hashCode * 59 + Usage.GetHashCode();
+				if (Version != null)
+					hashCode = hashCode * 59 + Version.GetHashCode();
+				return hashCode;
+			}
+		}
 
-        #region Operators
-        #pragma warning disable 1591
+		#region Operators
 
-        public static bool operator ==(Nodeinfo left, Nodeinfo right)
-        {
-            return Equals(left, right);
-        }
+#pragma warning disable 1591
 
-        public static bool operator !=(Nodeinfo left, Nodeinfo right)
-        {
-            return !Equals(left, right);
-        }
+		public static bool operator ==(Nodeinfo left, Nodeinfo right)
+		{
+			return Equals(left, right);
+		}
 
-        #pragma warning restore 1591
-        #endregion Operators
-    }
+		public static bool operator !=(Nodeinfo left, Nodeinfo right)
+		{
+			return !Equals(left, right);
+		}
+
+#pragma warning restore 1591
+
+		#endregion Operators
+	}
 }

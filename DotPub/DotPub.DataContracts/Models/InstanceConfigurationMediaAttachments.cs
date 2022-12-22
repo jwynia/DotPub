@@ -13,183 +13,187 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
-    /// <summary>
-    /// 
-    /// </summary>
-    [DataContract]
-    public partial class InstanceConfigurationMediaAttachments : IEquatable<InstanceConfigurationMediaAttachments>
-    { 
-        /// <summary>
-        /// Max allowed image size in pixels as height*width.  GtS doesn&#39;t set a limit on this, but for compatibility we give Mastodon&#39;s 4096x4096px value here.
-        /// </summary>
-        /// <value>Max allowed image size in pixels as height*width.  GtS doesn&#39;t set a limit on this, but for compatibility we give Mastodon&#39;s 4096x4096px value here.</value>
+{
+	/// <summary>
+	/// 
+	/// </summary>
+	[DataContract]
+	public partial class InstanceConfigurationMediaAttachments : IEquatable<InstanceConfigurationMediaAttachments>
+	{
+		/// <summary>
+		/// Max allowed image size in pixels as height*width.  GtS doesn&#39;t set a limit on this, but for compatibility we give Mastodon&#39;s 4096x4096px value here.
+		/// </summary>
+		/// <value>Max allowed image size in pixels as height*width.  GtS doesn&#39;t set a limit on this, but for compatibility we give Mastodon&#39;s 4096x4096px value here.</value>
 
-        [DataMember(Name="image_matrix_limit")]
-        public long? ImageMatrixLimit { get; set; }
+		[DataMember(Name = "image_matrix_limit")]
+		public long? ImageMatrixLimit { get; set; }
 
-        /// <summary>
-        /// Max allowed image size in bytes
-        /// </summary>
-        /// <value>Max allowed image size in bytes</value>
+		/// <summary>
+		/// Max allowed image size in bytes
+		/// </summary>
+		/// <value>Max allowed image size in bytes</value>
 
-        [DataMember(Name="image_size_limit")]
-        public long? ImageSizeLimit { get; set; }
+		[DataMember(Name = "image_size_limit")]
+		public long? ImageSizeLimit { get; set; }
 
-        /// <summary>
-        /// List of mime types that it&#39;s possible to upload to this instance.
-        /// </summary>
-        /// <value>List of mime types that it&#39;s possible to upload to this instance.</value>
+		/// <summary>
+		/// List of mime types that it&#39;s possible to upload to this instance.
+		/// </summary>
+		/// <value>List of mime types that it&#39;s possible to upload to this instance.</value>
 
-        [DataMember(Name="supported_mime_types")]
-        public List<string> SupportedMimeTypes { get; set; }
+		[DataMember(Name = "supported_mime_types")]
+		public List<string> SupportedMimeTypes { get; set; }
 
-        /// <summary>
-        /// Max allowed video frame rate.
-        /// </summary>
-        /// <value>Max allowed video frame rate.</value>
+		/// <summary>
+		/// Max allowed video frame rate.
+		/// </summary>
+		/// <value>Max allowed video frame rate.</value>
 
-        [DataMember(Name="video_frame_rate_limit")]
-        public long? VideoFrameRateLimit { get; set; }
+		[DataMember(Name = "video_frame_rate_limit")]
+		public long? VideoFrameRateLimit { get; set; }
 
-        /// <summary>
-        /// Max allowed video size in pixels as height*width.  GtS doesn&#39;t set a limit on this, but for compatibility we give Mastodon&#39;s 4096x4096px value here.
-        /// </summary>
-        /// <value>Max allowed video size in pixels as height*width.  GtS doesn&#39;t set a limit on this, but for compatibility we give Mastodon&#39;s 4096x4096px value here.</value>
+		/// <summary>
+		/// Max allowed video size in pixels as height*width.  GtS doesn&#39;t set a limit on this, but for compatibility we give Mastodon&#39;s 4096x4096px value here.
+		/// </summary>
+		/// <value>Max allowed video size in pixels as height*width.  GtS doesn&#39;t set a limit on this, but for compatibility we give Mastodon&#39;s 4096x4096px value here.</value>
 
-        [DataMember(Name="video_matrix_limit")]
-        public long? VideoMatrixLimit { get; set; }
+		[DataMember(Name = "video_matrix_limit")]
+		public long? VideoMatrixLimit { get; set; }
 
-        /// <summary>
-        /// Max allowed video size in bytes
-        /// </summary>
-        /// <value>Max allowed video size in bytes</value>
+		/// <summary>
+		/// Max allowed video size in bytes
+		/// </summary>
+		/// <value>Max allowed video size in bytes</value>
 
-        [DataMember(Name="video_size_limit")]
-        public long? VideoSizeLimit { get; set; }
+		[DataMember(Name = "video_size_limit")]
+		public long? VideoSizeLimit { get; set; }
 
-        /// <summary>
-        /// Returns the string presentation of the object
-        /// </summary>
-        /// <returns>String presentation of the object</returns>
-        public override string ToString()
-        {
-            var sb = new StringBuilder();
-            sb.Append("class InstanceConfigurationMediaAttachments {\n");
-            sb.Append("  ImageMatrixLimit: ").Append(ImageMatrixLimit).Append("\n");
-            sb.Append("  ImageSizeLimit: ").Append(ImageSizeLimit).Append("\n");
-            sb.Append("  SupportedMimeTypes: ").Append(SupportedMimeTypes).Append("\n");
-            sb.Append("  VideoFrameRateLimit: ").Append(VideoFrameRateLimit).Append("\n");
-            sb.Append("  VideoMatrixLimit: ").Append(VideoMatrixLimit).Append("\n");
-            sb.Append("  VideoSizeLimit: ").Append(VideoSizeLimit).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
-        }
+		/// <summary>
+		/// Returns the string presentation of the object
+		/// </summary>
+		/// <returns>String presentation of the object</returns>
+		public override string ToString()
+		{
+			var sb = new StringBuilder();
+			sb.Append("class InstanceConfigurationMediaAttachments {\n");
+			sb.Append("  ImageMatrixLimit: ").Append(ImageMatrixLimit).Append("\n");
+			sb.Append("  ImageSizeLimit: ").Append(ImageSizeLimit).Append("\n");
+			sb.Append("  SupportedMimeTypes: ").Append(SupportedMimeTypes).Append("\n");
+			sb.Append("  VideoFrameRateLimit: ").Append(VideoFrameRateLimit).Append("\n");
+			sb.Append("  VideoMatrixLimit: ").Append(VideoMatrixLimit).Append("\n");
+			sb.Append("  VideoSizeLimit: ").Append(VideoSizeLimit).Append("\n");
+			sb.Append("}\n");
+			return sb.ToString();
+		}
 
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonSerializer.Serialize(this, new JsonSerializerOptions() { WriteIndented = true });
-        }
+		/// <summary>
+		/// Returns the JSON string presentation of the object
+		/// </summary>
+		/// <returns>JSON string presentation of the object</returns>
+		public string ToJson()
+		{
+			return JsonSerializer.Serialize(this, new JsonSerializerOptions() { WriteIndented = true });
+		}
 
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="obj">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj)) return false;
-            if (ReferenceEquals(this, obj)) return true;
-            return obj.GetType() == GetType() && Equals((InstanceConfigurationMediaAttachments)obj);
-        }
+		/// <summary>
+		/// Returns true if objects are equal
+		/// </summary>
+		/// <param name="obj">Object to be compared</param>
+		/// <returns>Boolean</returns>
+		public override bool Equals(object obj)
+		{
+			if (ReferenceEquals(null, obj)) return false;
+			if (ReferenceEquals(this, obj)) return true;
+			return obj.GetType() == GetType() && Equals((InstanceConfigurationMediaAttachments)obj);
+		}
 
-        /// <summary>
-        /// Returns true if InstanceConfigurationMediaAttachments instances are equal
-        /// </summary>
-        /// <param name="other">Instance of InstanceConfigurationMediaAttachments to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(InstanceConfigurationMediaAttachments other)
-        {
-            if (ReferenceEquals(null, other)) return false;
-            if (ReferenceEquals(this, other)) return true;
+		/// <summary>
+		/// Returns true if InstanceConfigurationMediaAttachments instances are equal
+		/// </summary>
+		/// <param name="other">Instance of InstanceConfigurationMediaAttachments to be compared</param>
+		/// <returns>Boolean</returns>
+		public bool Equals(InstanceConfigurationMediaAttachments other)
+		{
+			if (ReferenceEquals(null, other)) return false;
+			if (ReferenceEquals(this, other)) return true;
 
-            return 
-                (
-                    ImageMatrixLimit == other.ImageMatrixLimit ||
-                    ImageMatrixLimit != null &&
-                    ImageMatrixLimit.Equals(other.ImageMatrixLimit)
-                ) && 
-                (
-                    ImageSizeLimit == other.ImageSizeLimit ||
-                    ImageSizeLimit != null &&
-                    ImageSizeLimit.Equals(other.ImageSizeLimit)
-                ) && 
-                (
-                    SupportedMimeTypes == other.SupportedMimeTypes ||
-                    SupportedMimeTypes != null &&
-                    SupportedMimeTypes.SequenceEqual(other.SupportedMimeTypes)
-                ) && 
-                (
-                    VideoFrameRateLimit == other.VideoFrameRateLimit ||
-                    VideoFrameRateLimit != null &&
-                    VideoFrameRateLimit.Equals(other.VideoFrameRateLimit)
-                ) && 
-                (
-                    VideoMatrixLimit == other.VideoMatrixLimit ||
-                    VideoMatrixLimit != null &&
-                    VideoMatrixLimit.Equals(other.VideoMatrixLimit)
-                ) && 
-                (
-                    VideoSizeLimit == other.VideoSizeLimit ||
-                    VideoSizeLimit != null &&
-                    VideoSizeLimit.Equals(other.VideoSizeLimit)
-                );
-        }
+			return
+				(
+					ImageMatrixLimit == other.ImageMatrixLimit ||
+					ImageMatrixLimit != null &&
+					ImageMatrixLimit.Equals(other.ImageMatrixLimit)
+				) &&
+				(
+					ImageSizeLimit == other.ImageSizeLimit ||
+					ImageSizeLimit != null &&
+					ImageSizeLimit.Equals(other.ImageSizeLimit)
+				) &&
+				(
+					SupportedMimeTypes == other.SupportedMimeTypes ||
+					SupportedMimeTypes != null &&
+					SupportedMimeTypes.SequenceEqual(other.SupportedMimeTypes)
+				) &&
+				(
+					VideoFrameRateLimit == other.VideoFrameRateLimit ||
+					VideoFrameRateLimit != null &&
+					VideoFrameRateLimit.Equals(other.VideoFrameRateLimit)
+				) &&
+				(
+					VideoMatrixLimit == other.VideoMatrixLimit ||
+					VideoMatrixLimit != null &&
+					VideoMatrixLimit.Equals(other.VideoMatrixLimit)
+				) &&
+				(
+					VideoSizeLimit == other.VideoSizeLimit ||
+					VideoSizeLimit != null &&
+					VideoSizeLimit.Equals(other.VideoSizeLimit)
+				);
+		}
 
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                var hashCode = 41;
-                // Suitable nullity checks etc, of course :)
-                    if (ImageMatrixLimit != null)
-                    hashCode = hashCode * 59 + ImageMatrixLimit.GetHashCode();
-                    if (ImageSizeLimit != null)
-                    hashCode = hashCode * 59 + ImageSizeLimit.GetHashCode();
-                    if (SupportedMimeTypes != null)
-                    hashCode = hashCode * 59 + SupportedMimeTypes.GetHashCode();
-                    if (VideoFrameRateLimit != null)
-                    hashCode = hashCode * 59 + VideoFrameRateLimit.GetHashCode();
-                    if (VideoMatrixLimit != null)
-                    hashCode = hashCode * 59 + VideoMatrixLimit.GetHashCode();
-                    if (VideoSizeLimit != null)
-                    hashCode = hashCode * 59 + VideoSizeLimit.GetHashCode();
-                return hashCode;
-            }
-        }
+		/// <summary>
+		/// Gets the hash code
+		/// </summary>
+		/// <returns>Hash code</returns>
+		public override int GetHashCode()
+		{
+			unchecked // Overflow is fine, just wrap
+			{
+				var hashCode = 41;
+				// Suitable nullity checks etc, of course :)
+				if (ImageMatrixLimit != null)
+					hashCode = hashCode * 59 + ImageMatrixLimit.GetHashCode();
+				if (ImageSizeLimit != null)
+					hashCode = hashCode * 59 + ImageSizeLimit.GetHashCode();
+				if (SupportedMimeTypes != null)
+					hashCode = hashCode * 59 + SupportedMimeTypes.GetHashCode();
+				if (VideoFrameRateLimit != null)
+					hashCode = hashCode * 59 + VideoFrameRateLimit.GetHashCode();
+				if (VideoMatrixLimit != null)
+					hashCode = hashCode * 59 + VideoMatrixLimit.GetHashCode();
+				if (VideoSizeLimit != null)
+					hashCode = hashCode * 59 + VideoSizeLimit.GetHashCode();
+				return hashCode;
+			}
+		}
 
-        #region Operators
-        #pragma warning disable 1591
+		#region Operators
 
-        public static bool operator ==(InstanceConfigurationMediaAttachments left, InstanceConfigurationMediaAttachments right)
-        {
-            return Equals(left, right);
-        }
+#pragma warning disable 1591
 
-        public static bool operator !=(InstanceConfigurationMediaAttachments left, InstanceConfigurationMediaAttachments right)
-        {
-            return !Equals(left, right);
-        }
+		public static bool operator ==(InstanceConfigurationMediaAttachments left,
+			InstanceConfigurationMediaAttachments right)
+		{
+			return Equals(left, right);
+		}
 
-        #pragma warning restore 1591
-        #endregion Operators
-    }
+		public static bool operator !=(InstanceConfigurationMediaAttachments left,
+			InstanceConfigurationMediaAttachments right)
+		{
+			return !Equals(left, right);
+		}
+
+#pragma warning restore 1591
+
+		#endregion Operators
+	}
 }

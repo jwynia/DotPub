@@ -15,267 +15,249 @@ using System.Text.Json.Serialization;
 using System.Xml;
 
 namespace DotPub.DataContracts.Models
-{ 
-    /// <summary>
-    /// 
-    /// </summary>
-    [DataContract]
-    public partial class InlineResponse101 : IEquatable<InlineResponse101>
-    { 
-        /// <summary>
-        /// The type of event being received.  `update`: a new status has been received. `notification`: a new notification has been received. `delete`: a status has been deleted. `filters_changed`: not implemented.
-        /// </summary>
-        /// <value>The type of event being received.  `update`: a new status has been received. `notification`: a new notification has been received. `delete`: a status has been deleted. `filters_changed`: not implemented.</value>
-        [JsonConverter(typeof(JsonStringEnumConverter))]
-        public enum EventEnum
-        {
-            
-            /// <summary>
-            /// Enum UpdateEnum for update
-            /// </summary>
-            [EnumMember(Value = "update")]
-            UpdateEnum = 1,
-            
-            /// <summary>
-            /// Enum NotificationEnum for notification
-            /// </summary>
-            [EnumMember(Value = "notification")]
-            NotificationEnum = 2,
-            
-            /// <summary>
-            /// Enum DeleteEnum for delete
-            /// </summary>
-            [EnumMember(Value = "delete")]
-            DeleteEnum = 3,
-            
-            /// <summary>
-            /// Enum FiltersChangedEnum for filters_changed
-            /// </summary>
-            [EnumMember(Value = "filters_changed")]
-            FiltersChangedEnum = 4
-        }
+{
+	/// <summary>
+	/// 
+	/// </summary>
+	[DataContract]
+	public partial class InlineResponse101 : IEquatable<InlineResponse101>
+	{
+		/// <summary>
+		/// The type of event being received.  `update`: a new status has been received. `notification`: a new notification has been received. `delete`: a status has been deleted. `filters_changed`: not implemented.
+		/// </summary>
+		/// <value>The type of event being received.  `update`: a new status has been received. `notification`: a new notification has been received. `delete`: a status has been deleted. `filters_changed`: not implemented.</value>
+		[JsonConverter(typeof(JsonStringEnumConverter))]
+		public enum EventEnum
+		{
+			/// <summary>
+			/// Enum UpdateEnum for update
+			/// </summary>
+			[EnumMember(Value = "update")] UpdateEnum = 1,
 
-        /// <summary>
-        /// The type of event being received.  &#x60;update&#x60;: a new status has been received. &#x60;notification&#x60;: a new notification has been received. &#x60;delete&#x60;: a status has been deleted. &#x60;filters_changed&#x60;: not implemented.
-        /// </summary>
-        /// <value>The type of event being received.  &#x60;update&#x60;: a new status has been received. &#x60;notification&#x60;: a new notification has been received. &#x60;delete&#x60;: a status has been deleted. &#x60;filters_changed&#x60;: not implemented.</value>
+			/// <summary>
+			/// Enum NotificationEnum for notification
+			/// </summary>
+			[EnumMember(Value = "notification")] NotificationEnum = 2,
 
-        [DataMember(Name="event")]
-        public EventEnum? Event { get; set; }
+			/// <summary>
+			/// Enum DeleteEnum for delete
+			/// </summary>
+			[EnumMember(Value = "delete")] DeleteEnum = 3,
 
-        /// <summary>
-        /// The payload of the streamed message. Different depending on the &#x60;event&#x60; type.  If present, it should be parsed as a string.  If &#x60;event&#x60; &#x3D; &#x60;update&#x60;, then the payload will be a JSON string of a status. If &#x60;event&#x60; &#x3D; &#x60;notification&#x60;, then the payload will be a JSON string of a notification. If &#x60;event&#x60; &#x3D; &#x60;delete&#x60;, then the payload will be a status ID.
-        /// </summary>
-        /// <value>The payload of the streamed message. Different depending on the &#x60;event&#x60; type.  If present, it should be parsed as a string.  If &#x60;event&#x60; &#x3D; &#x60;update&#x60;, then the payload will be a JSON string of a status. If &#x60;event&#x60; &#x3D; &#x60;notification&#x60;, then the payload will be a JSON string of a notification. If &#x60;event&#x60; &#x3D; &#x60;delete&#x60;, then the payload will be a status ID.</value>
+			/// <summary>
+			/// Enum FiltersChangedEnum for filters_changed
+			/// </summary>
+			[EnumMember(Value = "filters_changed")]
+			FiltersChangedEnum = 4
+		}
 
-        [DataMember(Name="payload")]
-        public string Payload { get; set; }
+		/// <summary>
+		/// The type of event being received.  &#x60;update&#x60;: a new status has been received. &#x60;notification&#x60;: a new notification has been received. &#x60;delete&#x60;: a status has been deleted. &#x60;filters_changed&#x60;: not implemented.
+		/// </summary>
+		/// <value>The type of event being received.  &#x60;update&#x60;: a new status has been received. &#x60;notification&#x60;: a new notification has been received. &#x60;delete&#x60;: a status has been deleted. &#x60;filters_changed&#x60;: not implemented.</value>
 
-        /// <summary>
-        /// Gets or Sets Stream
-        /// </summary>
-        [JsonConverter(typeof(JsonStringEnumConverter))]
-        public enum ListStreamEnum
-        {
-            
-            /// <summary>
-            /// Enum UserEnum for user
-            /// </summary>
-            [EnumMember(Value = "user")]
-            UserEnum = 1,
-            
-            /// <summary>
-            /// Enum PublicEnum for public
-            /// </summary>
-            [EnumMember(Value = "public")]
-            PublicEnum = 2,
-            
-            /// <summary>
-            /// Enum PubliclocalEnum for public:local
-            /// </summary>
-            [EnumMember(Value = "public:local")]
-            PubliclocalEnum = 3,
-            
-            /// <summary>
-            /// Enum HashtagEnum for hashtag
-            /// </summary>
-            [EnumMember(Value = "hashtag")]
-            HashtagEnum = 4,
-            
-            /// <summary>
-            /// Enum HashtaglocalEnum for hashtag:local
-            /// </summary>
-            [EnumMember(Value = "hashtag:local")]
-            HashtaglocalEnum = 5,
-            
-            /// <summary>
-            /// Enum ListEnum for list
-            /// </summary>
-            [EnumMember(Value = "list")]
-            ListEnum = 6,
-            
-            /// <summary>
-            /// Enum DirectEnum for direct
-            /// </summary>
-            [EnumMember(Value = "direct")]
-            DirectEnum = 7
-        }
+		[DataMember(Name = "event")]
+		public EventEnum? Event { get; set; }
 
-        /// <summary>
-        /// Gets or Sets Stream
-        /// </summary>
-        [JsonConverter(typeof(JsonStringEnumConverter))]
-        public enum StreamEnum
-        {
-            
-            /// <summary>
-            /// Enum UserEnum for user
-            /// </summary>
-            [EnumMember(Value = "user")]
-            UserEnum = 1,
-            
-            /// <summary>
-            /// Enum PublicEnum for public
-            /// </summary>
-            [EnumMember(Value = "public")]
-            PublicEnum = 2,
-            
-            /// <summary>
-            /// Enum PubliclocalEnum for public:local
-            /// </summary>
-            [EnumMember(Value = "public:local")]
-            PubliclocalEnum = 3,
-            
-            /// <summary>
-            /// Enum HashtagEnum for hashtag
-            /// </summary>
-            [EnumMember(Value = "hashtag")]
-            HashtagEnum = 4,
-            
-            /// <summary>
-            /// Enum HashtaglocalEnum for hashtag:local
-            /// </summary>
-            [EnumMember(Value = "hashtag:local")]
-            HashtaglocalEnum = 5,
-            
-            /// <summary>
-            /// Enum ListEnum for list
-            /// </summary>
-            [EnumMember(Value = "list")]
-            ListEnum = 6,
-            
-            /// <summary>
-            /// Enum DirectEnum for direct
-            /// </summary>
-            [EnumMember(Value = "direct")]
-            DirectEnum = 7
-        }
+		/// <summary>
+		/// The payload of the streamed message. Different depending on the &#x60;event&#x60; type.  If present, it should be parsed as a string.  If &#x60;event&#x60; &#x3D; &#x60;update&#x60;, then the payload will be a JSON string of a status. If &#x60;event&#x60; &#x3D; &#x60;notification&#x60;, then the payload will be a JSON string of a notification. If &#x60;event&#x60; &#x3D; &#x60;delete&#x60;, then the payload will be a status ID.
+		/// </summary>
+		/// <value>The payload of the streamed message. Different depending on the &#x60;event&#x60; type.  If present, it should be parsed as a string.  If &#x60;event&#x60; &#x3D; &#x60;update&#x60;, then the payload will be a JSON string of a status. If &#x60;event&#x60; &#x3D; &#x60;notification&#x60;, then the payload will be a JSON string of a notification. If &#x60;event&#x60; &#x3D; &#x60;delete&#x60;, then the payload will be a status ID.</value>
 
-        /// <summary>
-        /// Gets or Sets Stream
-        /// </summary>
+		[DataMember(Name = "payload")]
+		public string Payload { get; set; }
 
-        [DataMember(Name="stream")]
-        public List<StreamEnum> Stream { get; set; }
+		/// <summary>
+		/// Gets or Sets Stream
+		/// </summary>
+		[JsonConverter(typeof(JsonStringEnumConverter))]
+		public enum ListStreamEnum
+		{
+			/// <summary>
+			/// Enum UserEnum for user
+			/// </summary>
+			[EnumMember(Value = "user")] UserEnum = 1,
 
-        /// <summary>
-        /// Returns the string presentation of the object
-        /// </summary>
-        /// <returns>String presentation of the object</returns>
-        public override string ToString()
-        {
-            var sb = new StringBuilder();
-            sb.Append("class InlineResponse101 {\n");
-            sb.Append("  Event: ").Append(Event).Append("\n");
-            sb.Append("  Payload: ").Append(Payload).Append("\n");
-            sb.Append("  Stream: ").Append(Stream).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
-        }
+			/// <summary>
+			/// Enum PublicEnum for public
+			/// </summary>
+			[EnumMember(Value = "public")] PublicEnum = 2,
 
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonSerializer.Serialize(this, new JsonSerializerOptions() { WriteIndented = true });
-        }
+			/// <summary>
+			/// Enum PubliclocalEnum for public:local
+			/// </summary>
+			[EnumMember(Value = "public:local")] PubliclocalEnum = 3,
 
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="obj">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj)) return false;
-            if (ReferenceEquals(this, obj)) return true;
-            return obj.GetType() == GetType() && Equals((InlineResponse101)obj);
-        }
+			/// <summary>
+			/// Enum HashtagEnum for hashtag
+			/// </summary>
+			[EnumMember(Value = "hashtag")] HashtagEnum = 4,
 
-        /// <summary>
-        /// Returns true if InlineResponse101 instances are equal
-        /// </summary>
-        /// <param name="other">Instance of InlineResponse101 to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(InlineResponse101 other)
-        {
-            if (ReferenceEquals(null, other)) return false;
-            if (ReferenceEquals(this, other)) return true;
+			/// <summary>
+			/// Enum HashtaglocalEnum for hashtag:local
+			/// </summary>
+			[EnumMember(Value = "hashtag:local")] HashtaglocalEnum = 5,
 
-            return 
-                (
-                    Event == other.Event ||
-                    Event != null &&
-                    Event.Equals(other.Event)
-                ) && 
-                (
-                    Payload == other.Payload ||
-                    Payload != null &&
-                    Payload.Equals(other.Payload)
-                ) && 
-                (
-                    Stream == other.Stream ||
-                    Stream != null &&
-                    Stream.SequenceEqual(other.Stream)
-                );
-        }
+			/// <summary>
+			/// Enum ListEnum for list
+			/// </summary>
+			[EnumMember(Value = "list")] ListEnum = 6,
 
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                var hashCode = 41;
-                // Suitable nullity checks etc, of course :)
-                    if (Event != null)
-                    hashCode = hashCode * 59 + Event.GetHashCode();
-                    if (Payload != null)
-                    hashCode = hashCode * 59 + Payload.GetHashCode();
-                    if (Stream != null)
-                    hashCode = hashCode * 59 + Stream.GetHashCode();
-                return hashCode;
-            }
-        }
+			/// <summary>
+			/// Enum DirectEnum for direct
+			/// </summary>
+			[EnumMember(Value = "direct")] DirectEnum = 7
+		}
 
-        #region Operators
-        #pragma warning disable 1591
+		/// <summary>
+		/// Gets or Sets Stream
+		/// </summary>
+		[JsonConverter(typeof(JsonStringEnumConverter))]
+		public enum StreamEnum
+		{
+			/// <summary>
+			/// Enum UserEnum for user
+			/// </summary>
+			[EnumMember(Value = "user")] UserEnum = 1,
 
-        public static bool operator ==(InlineResponse101 left, InlineResponse101 right)
-        {
-            return Equals(left, right);
-        }
+			/// <summary>
+			/// Enum PublicEnum for public
+			/// </summary>
+			[EnumMember(Value = "public")] PublicEnum = 2,
 
-        public static bool operator !=(InlineResponse101 left, InlineResponse101 right)
-        {
-            return !Equals(left, right);
-        }
+			/// <summary>
+			/// Enum PubliclocalEnum for public:local
+			/// </summary>
+			[EnumMember(Value = "public:local")] PubliclocalEnum = 3,
 
-        #pragma warning restore 1591
-        #endregion Operators
-    }
+			/// <summary>
+			/// Enum HashtagEnum for hashtag
+			/// </summary>
+			[EnumMember(Value = "hashtag")] HashtagEnum = 4,
+
+			/// <summary>
+			/// Enum HashtaglocalEnum for hashtag:local
+			/// </summary>
+			[EnumMember(Value = "hashtag:local")] HashtaglocalEnum = 5,
+
+			/// <summary>
+			/// Enum ListEnum for list
+			/// </summary>
+			[EnumMember(Value = "list")] ListEnum = 6,
+
+			/// <summary>
+			/// Enum DirectEnum for direct
+			/// </summary>
+			[EnumMember(Value = "direct")] DirectEnum = 7
+		}
+
+		/// <summary>
+		/// Gets or Sets Stream
+		/// </summary>
+
+		[DataMember(Name = "stream")]
+		public List<StreamEnum> Stream { get; set; }
+
+		/// <summary>
+		/// Returns the string presentation of the object
+		/// </summary>
+		/// <returns>String presentation of the object</returns>
+		public override string ToString()
+		{
+			var sb = new StringBuilder();
+			sb.Append("class InlineResponse101 {\n");
+			sb.Append("  Event: ").Append(Event).Append("\n");
+			sb.Append("  Payload: ").Append(Payload).Append("\n");
+			sb.Append("  Stream: ").Append(Stream).Append("\n");
+			sb.Append("}\n");
+			return sb.ToString();
+		}
+
+		/// <summary>
+		/// Returns the JSON string presentation of the object
+		/// </summary>
+		/// <returns>JSON string presentation of the object</returns>
+		public string ToJson()
+		{
+			return JsonSerializer.Serialize(this, new JsonSerializerOptions() { WriteIndented = true });
+		}
+
+		/// <summary>
+		/// Returns true if objects are equal
+		/// </summary>
+		/// <param name="obj">Object to be compared</param>
+		/// <returns>Boolean</returns>
+		public override bool Equals(object obj)
+		{
+			if (ReferenceEquals(null, obj)) return false;
+			if (ReferenceEquals(this, obj)) return true;
+			return obj.GetType() == GetType() && Equals((InlineResponse101)obj);
+		}
+
+		/// <summary>
+		/// Returns true if InlineResponse101 instances are equal
+		/// </summary>
+		/// <param name="other">Instance of InlineResponse101 to be compared</param>
+		/// <returns>Boolean</returns>
+		public bool Equals(InlineResponse101 other)
+		{
+			if (ReferenceEquals(null, other)) return false;
+			if (ReferenceEquals(this, other)) return true;
+
+			return
+				(
+					Event == other.Event ||
+					Event != null &&
+					Event.Equals(other.Event)
+				) &&
+				(
+					Payload == other.Payload ||
+					Payload != null &&
+					Payload.Equals(other.Payload)
+				) &&
+				(
+					Stream == other.Stream ||
+					Stream != null &&
+					Stream.SequenceEqual(other.Stream)
+				);
+		}
+
+		/// <summary>
+		/// Gets the hash code
+		/// </summary>
+		/// <returns>Hash code</returns>
+		public override int GetHashCode()
+		{
+			unchecked // Overflow is fine, just wrap
+			{
+				var hashCode = 41;
+				// Suitable nullity checks etc, of course :)
+				if (Event != null)
+					hashCode = hashCode * 59 + Event.GetHashCode();
+				if (Payload != null)
+					hashCode = hashCode * 59 + Payload.GetHashCode();
+				if (Stream != null)
+					hashCode = hashCode * 59 + Stream.GetHashCode();
+				return hashCode;
+			}
+		}
+
+		#region Operators
+
+#pragma warning disable 1591
+
+		public static bool operator ==(InlineResponse101 left, InlineResponse101 right)
+		{
+			return Equals(left, right);
+		}
+
+		public static bool operator !=(InlineResponse101 left, InlineResponse101 right)
+		{
+			return !Equals(left, right);
+		}
+
+#pragma warning restore 1591
+
+		#endregion Operators
+	}
 }

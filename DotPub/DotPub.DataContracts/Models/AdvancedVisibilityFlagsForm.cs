@@ -13,151 +13,153 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
-    /// <summary>
-    /// AdvancedVisibilityFlagsForm allows a few more advanced flags to be set on new statuses, in addition to the standard mastodon-compatible ones.
-    /// </summary>
-    [DataContract]
-    public partial class AdvancedVisibilityFlagsForm : IEquatable<AdvancedVisibilityFlagsForm>
-    { 
-        /// <summary>
-        /// This status can be boosted/reblogged.
-        /// </summary>
-        /// <value>This status can be boosted/reblogged.</value>
+{
+	/// <summary>
+	/// AdvancedVisibilityFlagsForm allows a few more advanced flags to be set on new statuses, in addition to the standard mastodon-compatible ones.
+	/// </summary>
+	[DataContract]
+	public partial class AdvancedVisibilityFlagsForm : IEquatable<AdvancedVisibilityFlagsForm>
+	{
+		/// <summary>
+		/// This status can be boosted/reblogged.
+		/// </summary>
+		/// <value>This status can be boosted/reblogged.</value>
 
-        [DataMember(Name="boostable")]
-        public bool? Boostable { get; set; }
+		[DataMember(Name = "boostable")]
+		public bool? Boostable { get; set; }
 
-        /// <summary>
-        /// This status will be federated beyond the local timeline(s).
-        /// </summary>
-        /// <value>This status will be federated beyond the local timeline(s).</value>
+		/// <summary>
+		/// This status will be federated beyond the local timeline(s).
+		/// </summary>
+		/// <value>This status will be federated beyond the local timeline(s).</value>
 
-        [DataMember(Name="federated")]
-        public bool? Federated { get; set; }
+		[DataMember(Name = "federated")]
+		public bool? Federated { get; set; }
 
-        /// <summary>
-        /// This status can be liked/faved.
-        /// </summary>
-        /// <value>This status can be liked/faved.</value>
+		/// <summary>
+		/// This status can be liked/faved.
+		/// </summary>
+		/// <value>This status can be liked/faved.</value>
 
-        [DataMember(Name="likeable")]
-        public bool? Likeable { get; set; }
+		[DataMember(Name = "likeable")]
+		public bool? Likeable { get; set; }
 
-        /// <summary>
-        /// This status can be replied to.
-        /// </summary>
-        /// <value>This status can be replied to.</value>
+		/// <summary>
+		/// This status can be replied to.
+		/// </summary>
+		/// <value>This status can be replied to.</value>
 
-        [DataMember(Name="replyable")]
-        public bool? Replyable { get; set; }
+		[DataMember(Name = "replyable")]
+		public bool? Replyable { get; set; }
 
-        /// <summary>
-        /// Returns the string presentation of the object
-        /// </summary>
-        /// <returns>String presentation of the object</returns>
-        public override string ToString()
-        {
-            var sb = new StringBuilder();
-            sb.Append("class AdvancedVisibilityFlagsForm {\n");
-            sb.Append("  Boostable: ").Append(Boostable).Append("\n");
-            sb.Append("  Federated: ").Append(Federated).Append("\n");
-            sb.Append("  Likeable: ").Append(Likeable).Append("\n");
-            sb.Append("  Replyable: ").Append(Replyable).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
-        }
+		/// <summary>
+		/// Returns the string presentation of the object
+		/// </summary>
+		/// <returns>String presentation of the object</returns>
+		public override string ToString()
+		{
+			var sb = new StringBuilder();
+			sb.Append("class AdvancedVisibilityFlagsForm {\n");
+			sb.Append("  Boostable: ").Append(Boostable).Append("\n");
+			sb.Append("  Federated: ").Append(Federated).Append("\n");
+			sb.Append("  Likeable: ").Append(Likeable).Append("\n");
+			sb.Append("  Replyable: ").Append(Replyable).Append("\n");
+			sb.Append("}\n");
+			return sb.ToString();
+		}
 
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonSerializer.Serialize(this,new JsonSerializerOptions(){WriteIndented = true});
-        }
+		/// <summary>
+		/// Returns the JSON string presentation of the object
+		/// </summary>
+		/// <returns>JSON string presentation of the object</returns>
+		public string ToJson()
+		{
+			return JsonSerializer.Serialize(this, new JsonSerializerOptions() { WriteIndented = true });
+		}
 
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="obj">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj)) return false;
-            if (ReferenceEquals(this, obj)) return true;
-            return obj.GetType() == GetType() && Equals((AdvancedVisibilityFlagsForm)obj);
-        }
+		/// <summary>
+		/// Returns true if objects are equal
+		/// </summary>
+		/// <param name="obj">Object to be compared</param>
+		/// <returns>Boolean</returns>
+		public override bool Equals(object obj)
+		{
+			if (ReferenceEquals(null, obj)) return false;
+			if (ReferenceEquals(this, obj)) return true;
+			return obj.GetType() == GetType() && Equals((AdvancedVisibilityFlagsForm)obj);
+		}
 
-        /// <summary>
-        /// Returns true if AdvancedVisibilityFlagsForm instances are equal
-        /// </summary>
-        /// <param name="other">Instance of AdvancedVisibilityFlagsForm to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(AdvancedVisibilityFlagsForm other)
-        {
-            if (ReferenceEquals(null, other)) return false;
-            if (ReferenceEquals(this, other)) return true;
+		/// <summary>
+		/// Returns true if AdvancedVisibilityFlagsForm instances are equal
+		/// </summary>
+		/// <param name="other">Instance of AdvancedVisibilityFlagsForm to be compared</param>
+		/// <returns>Boolean</returns>
+		public bool Equals(AdvancedVisibilityFlagsForm other)
+		{
+			if (ReferenceEquals(null, other)) return false;
+			if (ReferenceEquals(this, other)) return true;
 
-            return 
-                (
-                    Boostable == other.Boostable ||
-                    Boostable != null &&
-                    Boostable.Equals(other.Boostable)
-                ) && 
-                (
-                    Federated == other.Federated ||
-                    Federated != null &&
-                    Federated.Equals(other.Federated)
-                ) && 
-                (
-                    Likeable == other.Likeable ||
-                    Likeable != null &&
-                    Likeable.Equals(other.Likeable)
-                ) && 
-                (
-                    Replyable == other.Replyable ||
-                    Replyable != null &&
-                    Replyable.Equals(other.Replyable)
-                );
-        }
+			return
+				(
+					Boostable == other.Boostable ||
+					Boostable != null &&
+					Boostable.Equals(other.Boostable)
+				) &&
+				(
+					Federated == other.Federated ||
+					Federated != null &&
+					Federated.Equals(other.Federated)
+				) &&
+				(
+					Likeable == other.Likeable ||
+					Likeable != null &&
+					Likeable.Equals(other.Likeable)
+				) &&
+				(
+					Replyable == other.Replyable ||
+					Replyable != null &&
+					Replyable.Equals(other.Replyable)
+				);
+		}
 
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                var hashCode = 41;
-                // Suitable nullity checks etc, of course :)
-                    if (Boostable != null)
-                    hashCode = hashCode * 59 + Boostable.GetHashCode();
-                    if (Federated != null)
-                    hashCode = hashCode * 59 + Federated.GetHashCode();
-                    if (Likeable != null)
-                    hashCode = hashCode * 59 + Likeable.GetHashCode();
-                    if (Replyable != null)
-                    hashCode = hashCode * 59 + Replyable.GetHashCode();
-                return hashCode;
-            }
-        }
+		/// <summary>
+		/// Gets the hash code
+		/// </summary>
+		/// <returns>Hash code</returns>
+		public override int GetHashCode()
+		{
+			unchecked // Overflow is fine, just wrap
+			{
+				var hashCode = 41;
+				// Suitable nullity checks etc, of course :)
+				if (Boostable != null)
+					hashCode = hashCode * 59 + Boostable.GetHashCode();
+				if (Federated != null)
+					hashCode = hashCode * 59 + Federated.GetHashCode();
+				if (Likeable != null)
+					hashCode = hashCode * 59 + Likeable.GetHashCode();
+				if (Replyable != null)
+					hashCode = hashCode * 59 + Replyable.GetHashCode();
+				return hashCode;
+			}
+		}
 
-        #region Operators
-        #pragma warning disable 1591
+		#region Operators
 
-        public static bool operator ==(AdvancedVisibilityFlagsForm left, AdvancedVisibilityFlagsForm right)
-        {
-            return Equals(left, right);
-        }
+#pragma warning disable 1591
 
-        public static bool operator !=(AdvancedVisibilityFlagsForm left, AdvancedVisibilityFlagsForm right)
-        {
-            return !Equals(left, right);
-        }
+		public static bool operator ==(AdvancedVisibilityFlagsForm left, AdvancedVisibilityFlagsForm right)
+		{
+			return Equals(left, right);
+		}
 
-        #pragma warning restore 1591
-        #endregion Operators
-    }
+		public static bool operator !=(AdvancedVisibilityFlagsForm left, AdvancedVisibilityFlagsForm right)
+		{
+			return !Equals(left, right);
+		}
+
+#pragma warning restore 1591
+
+		#endregion Operators
+	}
 }

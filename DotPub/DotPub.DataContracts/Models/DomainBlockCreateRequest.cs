@@ -13,167 +13,169 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
-    /// <summary>
-    /// 
-    /// </summary>
-    [DataContract]
-    public partial class DomainBlockCreateRequest : IEquatable<DomainBlockCreateRequest>
-    { 
-        /// <summary>
-        /// hostname/domain to block
-        /// </summary>
-        /// <value>hostname/domain to block</value>
+{
+	/// <summary>
+	/// 
+	/// </summary>
+	[DataContract]
+	public partial class DomainBlockCreateRequest : IEquatable<DomainBlockCreateRequest>
+	{
+		/// <summary>
+		/// hostname/domain to block
+		/// </summary>
+		/// <value>hostname/domain to block</value>
 
-        [DataMember(Name="domain")]
-        public string Domain { get; set; }
+		[DataMember(Name = "domain")]
+		public string Domain { get; set; }
 
-        /// <summary>
-        /// A list of domains to block. Only used if import&#x3D;true is specified.
-        /// </summary>
-        /// <value>A list of domains to block. Only used if import&#x3D;true is specified.</value>
+		/// <summary>
+		/// A list of domains to block. Only used if import&#x3D;true is specified.
+		/// </summary>
+		/// <value>A list of domains to block. Only used if import&#x3D;true is specified.</value>
 
-        [DataMember(Name="domains")]
-        public Object Domains { get; set; }
+		[DataMember(Name = "domains")]
+		public Object Domains { get; set; }
 
-        /// <summary>
-        /// whether the domain should be obfuscated when being displayed publicly
-        /// </summary>
-        /// <value>whether the domain should be obfuscated when being displayed publicly</value>
+		/// <summary>
+		/// whether the domain should be obfuscated when being displayed publicly
+		/// </summary>
+		/// <value>whether the domain should be obfuscated when being displayed publicly</value>
 
-        [DataMember(Name="obfuscate")]
-        public bool? Obfuscate { get; set; }
+		[DataMember(Name = "obfuscate")]
+		public bool? Obfuscate { get; set; }
 
-        /// <summary>
-        /// private comment for other admins on why the domain was blocked
-        /// </summary>
-        /// <value>private comment for other admins on why the domain was blocked</value>
+		/// <summary>
+		/// private comment for other admins on why the domain was blocked
+		/// </summary>
+		/// <value>private comment for other admins on why the domain was blocked</value>
 
-        [DataMember(Name="private_comment")]
-        public string PrivateComment { get; set; }
+		[DataMember(Name = "private_comment")]
+		public string PrivateComment { get; set; }
 
-        /// <summary>
-        /// public comment on the reason for the domain block
-        /// </summary>
-        /// <value>public comment on the reason for the domain block</value>
+		/// <summary>
+		/// public comment on the reason for the domain block
+		/// </summary>
+		/// <value>public comment on the reason for the domain block</value>
 
-        [DataMember(Name="public_comment")]
-        public string PublicComment { get; set; }
+		[DataMember(Name = "public_comment")]
+		public string PublicComment { get; set; }
 
-        /// <summary>
-        /// Returns the string presentation of the object
-        /// </summary>
-        /// <returns>String presentation of the object</returns>
-        public override string ToString()
-        {
-            var sb = new StringBuilder();
-            sb.Append("class DomainBlockCreateRequest {\n");
-            sb.Append("  Domain: ").Append(Domain).Append("\n");
-            sb.Append("  Domains: ").Append(Domains).Append("\n");
-            sb.Append("  Obfuscate: ").Append(Obfuscate).Append("\n");
-            sb.Append("  PrivateComment: ").Append(PrivateComment).Append("\n");
-            sb.Append("  PublicComment: ").Append(PublicComment).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
-        }
+		/// <summary>
+		/// Returns the string presentation of the object
+		/// </summary>
+		/// <returns>String presentation of the object</returns>
+		public override string ToString()
+		{
+			var sb = new StringBuilder();
+			sb.Append("class DomainBlockCreateRequest {\n");
+			sb.Append("  Domain: ").Append(Domain).Append("\n");
+			sb.Append("  Domains: ").Append(Domains).Append("\n");
+			sb.Append("  Obfuscate: ").Append(Obfuscate).Append("\n");
+			sb.Append("  PrivateComment: ").Append(PrivateComment).Append("\n");
+			sb.Append("  PublicComment: ").Append(PublicComment).Append("\n");
+			sb.Append("}\n");
+			return sb.ToString();
+		}
 
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonSerializer.Serialize(this,new JsonSerializerOptions(){WriteIndented = true});
-        }
+		/// <summary>
+		/// Returns the JSON string presentation of the object
+		/// </summary>
+		/// <returns>JSON string presentation of the object</returns>
+		public string ToJson()
+		{
+			return JsonSerializer.Serialize(this, new JsonSerializerOptions() { WriteIndented = true });
+		}
 
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="obj">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj)) return false;
-            if (ReferenceEquals(this, obj)) return true;
-            return obj.GetType() == GetType() && Equals((DomainBlockCreateRequest)obj);
-        }
+		/// <summary>
+		/// Returns true if objects are equal
+		/// </summary>
+		/// <param name="obj">Object to be compared</param>
+		/// <returns>Boolean</returns>
+		public override bool Equals(object obj)
+		{
+			if (ReferenceEquals(null, obj)) return false;
+			if (ReferenceEquals(this, obj)) return true;
+			return obj.GetType() == GetType() && Equals((DomainBlockCreateRequest)obj);
+		}
 
-        /// <summary>
-        /// Returns true if DomainBlockCreateRequest instances are equal
-        /// </summary>
-        /// <param name="other">Instance of DomainBlockCreateRequest to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(DomainBlockCreateRequest other)
-        {
-            if (ReferenceEquals(null, other)) return false;
-            if (ReferenceEquals(this, other)) return true;
+		/// <summary>
+		/// Returns true if DomainBlockCreateRequest instances are equal
+		/// </summary>
+		/// <param name="other">Instance of DomainBlockCreateRequest to be compared</param>
+		/// <returns>Boolean</returns>
+		public bool Equals(DomainBlockCreateRequest other)
+		{
+			if (ReferenceEquals(null, other)) return false;
+			if (ReferenceEquals(this, other)) return true;
 
-            return 
-                (
-                    Domain == other.Domain ||
-                    Domain != null &&
-                    Domain.Equals(other.Domain)
-                ) && 
-                (
-                    Domains == other.Domains ||
-                    Domains != null &&
-                    Domains.Equals(other.Domains)
-                ) && 
-                (
-                    Obfuscate == other.Obfuscate ||
-                    Obfuscate != null &&
-                    Obfuscate.Equals(other.Obfuscate)
-                ) && 
-                (
-                    PrivateComment == other.PrivateComment ||
-                    PrivateComment != null &&
-                    PrivateComment.Equals(other.PrivateComment)
-                ) && 
-                (
-                    PublicComment == other.PublicComment ||
-                    PublicComment != null &&
-                    PublicComment.Equals(other.PublicComment)
-                );
-        }
+			return
+				(
+					Domain == other.Domain ||
+					Domain != null &&
+					Domain.Equals(other.Domain)
+				) &&
+				(
+					Domains == other.Domains ||
+					Domains != null &&
+					Domains.Equals(other.Domains)
+				) &&
+				(
+					Obfuscate == other.Obfuscate ||
+					Obfuscate != null &&
+					Obfuscate.Equals(other.Obfuscate)
+				) &&
+				(
+					PrivateComment == other.PrivateComment ||
+					PrivateComment != null &&
+					PrivateComment.Equals(other.PrivateComment)
+				) &&
+				(
+					PublicComment == other.PublicComment ||
+					PublicComment != null &&
+					PublicComment.Equals(other.PublicComment)
+				);
+		}
 
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                var hashCode = 41;
-                // Suitable nullity checks etc, of course :)
-                    if (Domain != null)
-                    hashCode = hashCode * 59 + Domain.GetHashCode();
-                    if (Domains != null)
-                    hashCode = hashCode * 59 + Domains.GetHashCode();
-                    if (Obfuscate != null)
-                    hashCode = hashCode * 59 + Obfuscate.GetHashCode();
-                    if (PrivateComment != null)
-                    hashCode = hashCode * 59 + PrivateComment.GetHashCode();
-                    if (PublicComment != null)
-                    hashCode = hashCode * 59 + PublicComment.GetHashCode();
-                return hashCode;
-            }
-        }
+		/// <summary>
+		/// Gets the hash code
+		/// </summary>
+		/// <returns>Hash code</returns>
+		public override int GetHashCode()
+		{
+			unchecked // Overflow is fine, just wrap
+			{
+				var hashCode = 41;
+				// Suitable nullity checks etc, of course :)
+				if (Domain != null)
+					hashCode = hashCode * 59 + Domain.GetHashCode();
+				if (Domains != null)
+					hashCode = hashCode * 59 + Domains.GetHashCode();
+				if (Obfuscate != null)
+					hashCode = hashCode * 59 + Obfuscate.GetHashCode();
+				if (PrivateComment != null)
+					hashCode = hashCode * 59 + PrivateComment.GetHashCode();
+				if (PublicComment != null)
+					hashCode = hashCode * 59 + PublicComment.GetHashCode();
+				return hashCode;
+			}
+		}
 
-        #region Operators
-        #pragma warning disable 1591
+		#region Operators
 
-        public static bool operator ==(DomainBlockCreateRequest left, DomainBlockCreateRequest right)
-        {
-            return Equals(left, right);
-        }
+#pragma warning disable 1591
 
-        public static bool operator !=(DomainBlockCreateRequest left, DomainBlockCreateRequest right)
-        {
-            return !Equals(left, right);
-        }
+		public static bool operator ==(DomainBlockCreateRequest left, DomainBlockCreateRequest right)
+		{
+			return Equals(left, right);
+		}
 
-        #pragma warning restore 1591
-        #endregion Operators
-    }
+		public static bool operator !=(DomainBlockCreateRequest left, DomainBlockCreateRequest right)
+		{
+			return !Equals(left, right);
+		}
+
+#pragma warning restore 1591
+
+		#endregion Operators
+	}
 }

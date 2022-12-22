@@ -13,162 +13,164 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
-    /// <summary>
-    /// 
-    /// </summary>
-    [DataContract]
-    public partial class InstanceConfiguration : IEquatable<InstanceConfiguration>
-    { 
-        /// <summary>
-        /// Gets or Sets Accounts
-        /// </summary>
+{
+	/// <summary>
+	/// 
+	/// </summary>
+	[DataContract]
+	public partial class InstanceConfiguration : IEquatable<InstanceConfiguration>
+	{
+		/// <summary>
+		/// Gets or Sets Accounts
+		/// </summary>
 
-        [DataMember(Name="accounts")]
-        public InstanceConfigurationAccounts Accounts { get; set; }
+		[DataMember(Name = "accounts")]
+		public InstanceConfigurationAccounts Accounts { get; set; }
 
-        /// <summary>
-        /// Gets or Sets Emojis
-        /// </summary>
+		/// <summary>
+		/// Gets or Sets Emojis
+		/// </summary>
 
-        [DataMember(Name="emojis")]
-        public InstanceConfigurationEmojis Emojis { get; set; }
+		[DataMember(Name = "emojis")]
+		public InstanceConfigurationEmojis Emojis { get; set; }
 
-        /// <summary>
-        /// Gets or Sets MediaAttachments
-        /// </summary>
+		/// <summary>
+		/// Gets or Sets MediaAttachments
+		/// </summary>
 
-        [DataMember(Name="media_attachments")]
-        public InstanceConfigurationMediaAttachments MediaAttachments { get; set; }
+		[DataMember(Name = "media_attachments")]
+		public InstanceConfigurationMediaAttachments MediaAttachments { get; set; }
 
-        /// <summary>
-        /// Gets or Sets Polls
-        /// </summary>
+		/// <summary>
+		/// Gets or Sets Polls
+		/// </summary>
 
-        [DataMember(Name="polls")]
-        public InstanceConfigurationPolls Polls { get; set; }
+		[DataMember(Name = "polls")]
+		public InstanceConfigurationPolls Polls { get; set; }
 
-        /// <summary>
-        /// Gets or Sets Statuses
-        /// </summary>
+		/// <summary>
+		/// Gets or Sets Statuses
+		/// </summary>
 
-        [DataMember(Name="statuses")]
-        public InstanceConfigurationStatuses Statuses { get; set; }
+		[DataMember(Name = "statuses")]
+		public InstanceConfigurationStatuses Statuses { get; set; }
 
-        /// <summary>
-        /// Returns the string presentation of the object
-        /// </summary>
-        /// <returns>String presentation of the object</returns>
-        public override string ToString()
-        {
-            var sb = new StringBuilder();
-            sb.Append("class InstanceConfiguration {\n");
-            sb.Append("  Accounts: ").Append(Accounts).Append("\n");
-            sb.Append("  Emojis: ").Append(Emojis).Append("\n");
-            sb.Append("  MediaAttachments: ").Append(MediaAttachments).Append("\n");
-            sb.Append("  Polls: ").Append(Polls).Append("\n");
-            sb.Append("  Statuses: ").Append(Statuses).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
-        }
+		/// <summary>
+		/// Returns the string presentation of the object
+		/// </summary>
+		/// <returns>String presentation of the object</returns>
+		public override string ToString()
+		{
+			var sb = new StringBuilder();
+			sb.Append("class InstanceConfiguration {\n");
+			sb.Append("  Accounts: ").Append(Accounts).Append("\n");
+			sb.Append("  Emojis: ").Append(Emojis).Append("\n");
+			sb.Append("  MediaAttachments: ").Append(MediaAttachments).Append("\n");
+			sb.Append("  Polls: ").Append(Polls).Append("\n");
+			sb.Append("  Statuses: ").Append(Statuses).Append("\n");
+			sb.Append("}\n");
+			return sb.ToString();
+		}
 
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonSerializer.Serialize(this, new JsonSerializerOptions() { WriteIndented = true });
-        }
+		/// <summary>
+		/// Returns the JSON string presentation of the object
+		/// </summary>
+		/// <returns>JSON string presentation of the object</returns>
+		public string ToJson()
+		{
+			return JsonSerializer.Serialize(this, new JsonSerializerOptions() { WriteIndented = true });
+		}
 
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="obj">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj)) return false;
-            if (ReferenceEquals(this, obj)) return true;
-            return obj.GetType() == GetType() && Equals((InstanceConfiguration)obj);
-        }
+		/// <summary>
+		/// Returns true if objects are equal
+		/// </summary>
+		/// <param name="obj">Object to be compared</param>
+		/// <returns>Boolean</returns>
+		public override bool Equals(object obj)
+		{
+			if (ReferenceEquals(null, obj)) return false;
+			if (ReferenceEquals(this, obj)) return true;
+			return obj.GetType() == GetType() && Equals((InstanceConfiguration)obj);
+		}
 
-        /// <summary>
-        /// Returns true if InstanceConfiguration instances are equal
-        /// </summary>
-        /// <param name="other">Instance of InstanceConfiguration to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(InstanceConfiguration other)
-        {
-            if (ReferenceEquals(null, other)) return false;
-            if (ReferenceEquals(this, other)) return true;
+		/// <summary>
+		/// Returns true if InstanceConfiguration instances are equal
+		/// </summary>
+		/// <param name="other">Instance of InstanceConfiguration to be compared</param>
+		/// <returns>Boolean</returns>
+		public bool Equals(InstanceConfiguration other)
+		{
+			if (ReferenceEquals(null, other)) return false;
+			if (ReferenceEquals(this, other)) return true;
 
-            return 
-                (
-                    Accounts == other.Accounts ||
-                    Accounts != null &&
-                    Accounts.Equals(other.Accounts)
-                ) && 
-                (
-                    Emojis == other.Emojis ||
-                    Emojis != null &&
-                    Emojis.Equals(other.Emojis)
-                ) && 
-                (
-                    MediaAttachments == other.MediaAttachments ||
-                    MediaAttachments != null &&
-                    MediaAttachments.Equals(other.MediaAttachments)
-                ) && 
-                (
-                    Polls == other.Polls ||
-                    Polls != null &&
-                    Polls.Equals(other.Polls)
-                ) && 
-                (
-                    Statuses == other.Statuses ||
-                    Statuses != null &&
-                    Statuses.Equals(other.Statuses)
-                );
-        }
+			return
+				(
+					Accounts == other.Accounts ||
+					Accounts != null &&
+					Accounts.Equals(other.Accounts)
+				) &&
+				(
+					Emojis == other.Emojis ||
+					Emojis != null &&
+					Emojis.Equals(other.Emojis)
+				) &&
+				(
+					MediaAttachments == other.MediaAttachments ||
+					MediaAttachments != null &&
+					MediaAttachments.Equals(other.MediaAttachments)
+				) &&
+				(
+					Polls == other.Polls ||
+					Polls != null &&
+					Polls.Equals(other.Polls)
+				) &&
+				(
+					Statuses == other.Statuses ||
+					Statuses != null &&
+					Statuses.Equals(other.Statuses)
+				);
+		}
 
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            unchecked // Overflow is fine, just wrap
-            {
-                var hashCode = 41;
-                // Suitable nullity checks etc, of course :)
-                    if (Accounts != null)
-                    hashCode = hashCode * 59 + Accounts.GetHashCode();
-                    if (Emojis != null)
-                    hashCode = hashCode * 59 + Emojis.GetHashCode();
-                    if (MediaAttachments != null)
-                    hashCode = hashCode * 59 + MediaAttachments.GetHashCode();
-                    if (Polls != null)
-                    hashCode = hashCode * 59 + Polls.GetHashCode();
-                    if (Statuses != null)
-                    hashCode = hashCode * 59 + Statuses.GetHashCode();
-                return hashCode;
-            }
-        }
+		/// <summary>
+		/// Gets the hash code
+		/// </summary>
+		/// <returns>Hash code</returns>
+		public override int GetHashCode()
+		{
+			unchecked // Overflow is fine, just wrap
+			{
+				var hashCode = 41;
+				// Suitable nullity checks etc, of course :)
+				if (Accounts != null)
+					hashCode = hashCode * 59 + Accounts.GetHashCode();
+				if (Emojis != null)
+					hashCode = hashCode * 59 + Emojis.GetHashCode();
+				if (MediaAttachments != null)
+					hashCode = hashCode * 59 + MediaAttachments.GetHashCode();
+				if (Polls != null)
+					hashCode = hashCode * 59 + Polls.GetHashCode();
+				if (Statuses != null)
+					hashCode = hashCode * 59 + Statuses.GetHashCode();
+				return hashCode;
+			}
+		}
 
-        #region Operators
-        #pragma warning disable 1591
+		#region Operators
 
-        public static bool operator ==(InstanceConfiguration left, InstanceConfiguration right)
-        {
-            return Equals(left, right);
-        }
+#pragma warning disable 1591
 
-        public static bool operator !=(InstanceConfiguration left, InstanceConfiguration right)
-        {
-            return !Equals(left, right);
-        }
+		public static bool operator ==(InstanceConfiguration left, InstanceConfiguration right)
+		{
+			return Equals(left, right);
+		}
 
-        #pragma warning restore 1591
-        #endregion Operators
-    }
+		public static bool operator !=(InstanceConfiguration left, InstanceConfiguration right)
+		{
+			return !Equals(left, right);
+		}
+
+#pragma warning restore 1591
+
+		#endregion Operators
+	}
 }
