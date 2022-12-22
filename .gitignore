@@ -36,3 +36,4 @@ msbuild.wrn
 # Visual Studio 2015
 .vs/
 
+DotPub/DotPub.WebApi/appsettings.Development.json
