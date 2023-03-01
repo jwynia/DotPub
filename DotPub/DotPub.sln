@@ -1,8 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotPub.WebApi", "DotPub.WebApi\DotPub.WebApi.csproj", "{8C0A9697-B6BA-4046-A4EB-E871EECA9E45}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotPub.ArchivedWebApi", "DotPub.ArchivedWebApi\DotPub.ArchivedWebApi.csproj", "{8C0A9697-B6BA-4046-A4EB-E871EECA9E45}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotPub.DataContracts", "DotPub.DataContracts\DotPub.DataContracts.csproj", "{4ED3D49D-38E7-4E0F-979C-0271D11A0987}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotPub.ArchivedDataContracts", "DotPub.ArchivedDataContracts\DotPub.ArchivedDataContracts.csproj", "{4ED3D49D-38E7-4E0F-979C-0271D11A0987}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{21E98DCD-B1E5-4ECF-A954-B993908F188F}"
+	ProjectSection(SolutionItems) = preProject
+		..\README.md = ..\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ArchiveReference", "ArchiveReference", "{3B5EAF27-0379-4773-81B7-79FD020E3A03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotPub.WebApi", "DotPub.WebApi\DotPub.WebApi.csproj", "{C570A983-61FC-40FC-822A-A55CF75D5B13}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +27,13 @@ Global
 		{4ED3D49D-38E7-4E0F-979C-0271D11A0987}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4ED3D49D-38E7-4E0F-979C-0271D11A0987}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4ED3D49D-38E7-4E0F-979C-0271D11A0987}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C570A983-61FC-40FC-822A-A55CF75D5B13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C570A983-61FC-40FC-822A-A55CF75D5B13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C570A983-61FC-40FC-822A-A55CF75D5B13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C570A983-61FC-40FC-822A-A55CF75D5B13}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4ED3D49D-38E7-4E0F-979C-0271D11A0987} = {3B5EAF27-0379-4773-81B7-79FD020E3A03}
+		{8C0A9697-B6BA-4046-A4EB-E871EECA9E45} = {3B5EAF27-0379-4773-81B7-79FD020E3A03}
 	EndGlobalSection
 EndGlobal

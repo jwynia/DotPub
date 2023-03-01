@@ -1,14 +1,16 @@
 using System.Text.Json;
+using DotPub.ArchivedWebApi.Attributes;
 using DotPub.DataContracts.Models;
-using DotPub.WebApi.Attributes;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
-namespace DotPub.WebApi.Controllers
+namespace DotPub.ArchivedWebApi.Controllers
 { 
     /// <summary>
     /// 
     /// </summary>
+    [Authorize]
     [ApiController]
     public class BookmarksApiController : ControllerBase
     { 

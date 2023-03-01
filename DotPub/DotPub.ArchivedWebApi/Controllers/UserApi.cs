@@ -1,13 +1,15 @@
 using System.ComponentModel.DataAnnotations;
-using DotPub.WebApi.Attributes;
+using DotPub.ArchivedWebApi.Attributes;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
-namespace DotPub.WebApi.Controllers
+namespace DotPub.ArchivedWebApi.Controllers
 { 
     /// <summary>
     /// 
     /// </summary>
+    [Authorize]
     [ApiController]
     public class UserApiController : ControllerBase
     { 
