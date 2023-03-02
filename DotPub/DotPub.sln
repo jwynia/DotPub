@@ -13,6 +13,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ArchiveReference", "Archive
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotPub.WebApi", "DotPub.WebApi\DotPub.WebApi.csproj", "{C570A983-61FC-40FC-822A-A55CF75D5B13}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotPub.DataContracts", "DotPub.DataContracts\DotPub.DataContracts.csproj", "{94783F52-26AC-42B3-B55B-9BCF474C33C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotPub.DemoData", "DotPub.DemoData\DotPub.DemoData.csproj", "{0F598B04-759D-43F9-8BB2-CE1B4FF5A979}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +35,14 @@ Global
 		{C570A983-61FC-40FC-822A-A55CF75D5B13}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C570A983-61FC-40FC-822A-A55CF75D5B13}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C570A983-61FC-40FC-822A-A55CF75D5B13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94783F52-26AC-42B3-B55B-9BCF474C33C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94783F52-26AC-42B3-B55B-9BCF474C33C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94783F52-26AC-42B3-B55B-9BCF474C33C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94783F52-26AC-42B3-B55B-9BCF474C33C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F598B04-759D-43F9-8BB2-CE1B4FF5A979}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F598B04-759D-43F9-8BB2-CE1B4FF5A979}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F598B04-759D-43F9-8BB2-CE1B4FF5A979}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F598B04-759D-43F9-8BB2-CE1B4FF5A979}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{4ED3D49D-38E7-4E0F-979C-0271D11A0987} = {3B5EAF27-0379-4773-81B7-79FD020E3A03}
