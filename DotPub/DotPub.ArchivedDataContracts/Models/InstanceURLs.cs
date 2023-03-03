@@ -13,19 +13,19 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class InstanceURLs : IEquatable<InstanceURLs>
-    { 
+    {
         /// <summary>
         /// Websockets address for status and notification streaming.
         /// </summary>
         /// <value>Websockets address for status and notification streaming.</value>
 
-        [DataMember(Name="streaming_api")]
+        [DataMember(Name = "streaming_api")]
         public string StreamingApi { get; set; }
 
         /// <summary>
@@ -72,12 +72,12 @@ namespace DotPub.DataContracts.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
-                (
-                    StreamingApi == other.StreamingApi ||
-                    StreamingApi != null &&
-                    StreamingApi.Equals(other.StreamingApi)
-                );
+            return
+            (
+                StreamingApi == other.StreamingApi ||
+                StreamingApi != null &&
+                StreamingApi.Equals(other.StreamingApi)
+            );
         }
 
         /// <summary>
@@ -90,14 +90,15 @@ namespace DotPub.DataContracts.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (StreamingApi != null)
+                if (StreamingApi != null)
                     hashCode = hashCode * 59 + StreamingApi.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+
+#pragma warning disable 1591
 
         public static bool operator ==(InstanceURLs left, InstanceURLs right)
         {
@@ -109,7 +110,8 @@ namespace DotPub.DataContracts.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
+
         #endregion Operators
     }
 }

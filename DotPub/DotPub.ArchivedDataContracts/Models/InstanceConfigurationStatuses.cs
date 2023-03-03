@@ -13,19 +13,19 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class InstanceConfigurationStatuses : IEquatable<InstanceConfigurationStatuses>
-    { 
+    {
         /// <summary>
         /// Amount of characters clients should assume a url takes up.
         /// </summary>
         /// <value>Amount of characters clients should assume a url takes up.</value>
 
-        [DataMember(Name="characters_reserved_per_url")]
+        [DataMember(Name = "characters_reserved_per_url")]
         public long? CharactersReservedPerUrl { get; set; }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Maximum allowed length of a post on this instance, in characters.</value>
 
-        [DataMember(Name="max_characters")]
+        [DataMember(Name = "max_characters")]
         public long? MaxCharacters { get; set; }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Max number of attachments allowed on a status.</value>
 
-        [DataMember(Name="max_media_attachments")]
+        [DataMember(Name = "max_media_attachments")]
         public long? MaxMediaAttachments { get; set; }
 
         /// <summary>
@@ -90,17 +90,17 @@ namespace DotPub.DataContracts.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     CharactersReservedPerUrl == other.CharactersReservedPerUrl ||
                     CharactersReservedPerUrl != null &&
                     CharactersReservedPerUrl.Equals(other.CharactersReservedPerUrl)
-                ) && 
+                ) &&
                 (
                     MaxCharacters == other.MaxCharacters ||
                     MaxCharacters != null &&
                     MaxCharacters.Equals(other.MaxCharacters)
-                ) && 
+                ) &&
                 (
                     MaxMediaAttachments == other.MaxMediaAttachments ||
                     MaxMediaAttachments != null &&
@@ -118,18 +118,19 @@ namespace DotPub.DataContracts.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (CharactersReservedPerUrl != null)
+                if (CharactersReservedPerUrl != null)
                     hashCode = hashCode * 59 + CharactersReservedPerUrl.GetHashCode();
-                    if (MaxCharacters != null)
+                if (MaxCharacters != null)
                     hashCode = hashCode * 59 + MaxCharacters.GetHashCode();
-                    if (MaxMediaAttachments != null)
+                if (MaxMediaAttachments != null)
                     hashCode = hashCode * 59 + MaxMediaAttachments.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+
+#pragma warning disable 1591
 
         public static bool operator ==(InstanceConfigurationStatuses left, InstanceConfigurationStatuses right)
         {
@@ -141,7 +142,8 @@ namespace DotPub.DataContracts.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
+
         #endregion Operators
     }
 }

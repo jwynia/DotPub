@@ -13,32 +13,32 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
+{
     /// <summary>
     /// See https://webfinger.net/
     /// </summary>
     [DataContract]
     public partial class WellKnownResponse : IEquatable<WellKnownResponse>
-    { 
+    {
         /// <summary>
         /// Gets or Sets Aliases
         /// </summary>
 
-        [DataMember(Name="aliases")]
+        [DataMember(Name = "aliases")]
         public List<string> Aliases { get; set; }
 
         /// <summary>
         /// Gets or Sets Links
         /// </summary>
 
-        [DataMember(Name="links")]
+        [DataMember(Name = "links")]
         public List<Link> Links { get; set; }
 
         /// <summary>
         /// Gets or Sets Subject
         /// </summary>
 
-        [DataMember(Name="subject")]
+        [DataMember(Name = "subject")]
         public string Subject { get; set; }
 
         /// <summary>
@@ -87,17 +87,17 @@ namespace DotPub.DataContracts.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Aliases == other.Aliases ||
                     Aliases != null &&
                     Aliases.SequenceEqual(other.Aliases)
-                ) && 
+                ) &&
                 (
                     Links == other.Links ||
                     Links != null &&
                     Links.SequenceEqual(other.Links)
-                ) && 
+                ) &&
                 (
                     Subject == other.Subject ||
                     Subject != null &&
@@ -115,18 +115,19 @@ namespace DotPub.DataContracts.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Aliases != null)
+                if (Aliases != null)
                     hashCode = hashCode * 59 + Aliases.GetHashCode();
-                    if (Links != null)
+                if (Links != null)
                     hashCode = hashCode * 59 + Links.GetHashCode();
-                    if (Subject != null)
+                if (Subject != null)
                     hashCode = hashCode * 59 + Subject.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+
+#pragma warning disable 1591
 
         public static bool operator ==(WellKnownResponse left, WellKnownResponse right)
         {
@@ -138,7 +139,8 @@ namespace DotPub.DataContracts.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
+
         #endregion Operators
     }
 }

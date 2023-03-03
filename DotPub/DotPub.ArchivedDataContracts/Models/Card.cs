@@ -13,19 +13,19 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class Card : IEquatable<Card>
-    { 
+    {
         /// <summary>
         /// The author of the original resource.
         /// </summary>
         /// <value>The author of the original resource.</value>
 
-        [DataMember(Name="author_name")]
+        [DataMember(Name = "author_name")]
         public string AuthorName { get; set; }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>A link to the author of the original resource.</value>
 
-        [DataMember(Name="author_url")]
+        [DataMember(Name = "author_url")]
         public string AuthorUrl { get; set; }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>A hash computed by the BlurHash algorithm, for generating colorful preview thumbnails when media has not been downloaded yet.</value>
 
-        [DataMember(Name="blurhash")]
+        [DataMember(Name = "blurhash")]
         public string Blurhash { get; set; }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Description of preview.</value>
 
-        [DataMember(Name="description")]
+        [DataMember(Name = "description")]
         public string Description { get; set; }
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Used for photo embeds, instead of custom html.</value>
 
-        [DataMember(Name="embed_url")]
+        [DataMember(Name = "embed_url")]
         public string EmbedUrl { get; set; }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Height of preview, in pixels.</value>
 
-        [DataMember(Name="height")]
+        [DataMember(Name = "height")]
         public long? Height { get; set; }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>HTML to be used for generating the preview card.</value>
 
-        [DataMember(Name="html")]
+        [DataMember(Name = "html")]
         public string Html { get; set; }
 
         /// <summary>
@@ -81,7 +81,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Preview thumbnail.</value>
 
-        [DataMember(Name="image")]
+        [DataMember(Name = "image")]
         public string Image { get; set; }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>The provider of the original resource.</value>
 
-        [DataMember(Name="provider_name")]
+        [DataMember(Name = "provider_name")]
         public string ProviderName { get; set; }
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>A link to the provider of the original resource.</value>
 
-        [DataMember(Name="provider_url")]
+        [DataMember(Name = "provider_url")]
         public string ProviderUrl { get; set; }
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Title of linked resource.</value>
 
-        [DataMember(Name="title")]
+        [DataMember(Name = "title")]
         public string Title { get; set; }
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>The type of the preview card.</value>
 
-        [DataMember(Name="type")]
+        [DataMember(Name = "type")]
         public string Type { get; set; }
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Location of linked resource.</value>
 
-        [DataMember(Name="url")]
+        [DataMember(Name = "url")]
         public string Url { get; set; }
 
         /// <summary>
@@ -129,7 +129,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Width of preview, in pixels.</value>
 
-        [DataMember(Name="width")]
+        [DataMember(Name = "width")]
         public long? Width { get; set; }
 
         /// <summary>
@@ -164,7 +164,7 @@ namespace DotPub.DataContracts.Models
         /// <returns>JSON string presentation of the object</returns>
         public string ToJson()
         {
-            return JsonSerializer.Serialize(this,new JsonSerializerOptions(){WriteIndented = true});
+            return JsonSerializer.Serialize(this, new JsonSerializerOptions() { WriteIndented = true });
         }
 
         /// <summary>
@@ -189,72 +189,72 @@ namespace DotPub.DataContracts.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     AuthorName == other.AuthorName ||
                     AuthorName != null &&
                     AuthorName.Equals(other.AuthorName)
-                ) && 
+                ) &&
                 (
                     AuthorUrl == other.AuthorUrl ||
                     AuthorUrl != null &&
                     AuthorUrl.Equals(other.AuthorUrl)
-                ) && 
+                ) &&
                 (
                     Blurhash == other.Blurhash ||
                     Blurhash != null &&
                     Blurhash.Equals(other.Blurhash)
-                ) && 
+                ) &&
                 (
                     Description == other.Description ||
                     Description != null &&
                     Description.Equals(other.Description)
-                ) && 
+                ) &&
                 (
                     EmbedUrl == other.EmbedUrl ||
                     EmbedUrl != null &&
                     EmbedUrl.Equals(other.EmbedUrl)
-                ) && 
+                ) &&
                 (
                     Height == other.Height ||
                     Height != null &&
                     Height.Equals(other.Height)
-                ) && 
+                ) &&
                 (
                     Html == other.Html ||
                     Html != null &&
                     Html.Equals(other.Html)
-                ) && 
+                ) &&
                 (
                     Image == other.Image ||
                     Image != null &&
                     Image.Equals(other.Image)
-                ) && 
+                ) &&
                 (
                     ProviderName == other.ProviderName ||
                     ProviderName != null &&
                     ProviderName.Equals(other.ProviderName)
-                ) && 
+                ) &&
                 (
                     ProviderUrl == other.ProviderUrl ||
                     ProviderUrl != null &&
                     ProviderUrl.Equals(other.ProviderUrl)
-                ) && 
+                ) &&
                 (
                     Title == other.Title ||
                     Title != null &&
                     Title.Equals(other.Title)
-                ) && 
+                ) &&
                 (
                     Type == other.Type ||
                     Type != null &&
                     Type.Equals(other.Type)
-                ) && 
+                ) &&
                 (
                     Url == other.Url ||
                     Url != null &&
                     Url.Equals(other.Url)
-                ) && 
+                ) &&
                 (
                     Width == other.Width ||
                     Width != null &&
@@ -272,40 +272,41 @@ namespace DotPub.DataContracts.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (AuthorName != null)
+                if (AuthorName != null)
                     hashCode = hashCode * 59 + AuthorName.GetHashCode();
-                    if (AuthorUrl != null)
+                if (AuthorUrl != null)
                     hashCode = hashCode * 59 + AuthorUrl.GetHashCode();
-                    if (Blurhash != null)
+                if (Blurhash != null)
                     hashCode = hashCode * 59 + Blurhash.GetHashCode();
-                    if (Description != null)
+                if (Description != null)
                     hashCode = hashCode * 59 + Description.GetHashCode();
-                    if (EmbedUrl != null)
+                if (EmbedUrl != null)
                     hashCode = hashCode * 59 + EmbedUrl.GetHashCode();
-                    if (Height != null)
+                if (Height != null)
                     hashCode = hashCode * 59 + Height.GetHashCode();
-                    if (Html != null)
+                if (Html != null)
                     hashCode = hashCode * 59 + Html.GetHashCode();
-                    if (Image != null)
+                if (Image != null)
                     hashCode = hashCode * 59 + Image.GetHashCode();
-                    if (ProviderName != null)
+                if (ProviderName != null)
                     hashCode = hashCode * 59 + ProviderName.GetHashCode();
-                    if (ProviderUrl != null)
+                if (ProviderUrl != null)
                     hashCode = hashCode * 59 + ProviderUrl.GetHashCode();
-                    if (Title != null)
+                if (Title != null)
                     hashCode = hashCode * 59 + Title.GetHashCode();
-                    if (Type != null)
+                if (Type != null)
                     hashCode = hashCode * 59 + Type.GetHashCode();
-                    if (Url != null)
+                if (Url != null)
                     hashCode = hashCode * 59 + Url.GetHashCode();
-                    if (Width != null)
+                if (Width != null)
                     hashCode = hashCode * 59 + Width.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+
+#pragma warning disable 1591
 
         public static bool operator ==(Card left, Card right)
         {
@@ -317,7 +318,8 @@ namespace DotPub.DataContracts.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
+
         #endregion Operators
     }
 }

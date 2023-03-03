@@ -7,14 +7,14 @@ using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
 namespace DotPub.ArchivedWebApi.Controllers
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [Authorize]
     [ApiController]
     public class FollowRequestsApiController : ControllerBase
-    { 
+    {
         /// <summary>
         /// Accept/authorize follow request from the given account ID.
         /// </summary>
@@ -30,9 +30,10 @@ namespace DotPub.ArchivedWebApi.Controllers
         [Route("//api/v1/follow_requests/{account_id}/authorize")]
         [ValidateModelState]
         [SwaggerOperation("AuthorizeFollowRequest")]
-        [SwaggerResponse(statusCode: 200, type: typeof(AccountRelationship), description: "Your relationship to this account.")]
-        public virtual IActionResult AuthorizeFollowRequest([FromRoute][Required]string accountId)
-        { 
+        [SwaggerResponse(statusCode: 200, type: typeof(AccountRelationship),
+            description: "Your relationship to this account.")]
+        public virtual IActionResult AuthorizeFollowRequest([FromRoute] [Required] string accountId)
+        {
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(AccountRelationship));
 
@@ -53,10 +54,10 @@ namespace DotPub.ArchivedWebApi.Controllers
 
             string exampleJson = null;
             exampleJson = "{\"empty\": false}";
-            
+
             var example = exampleJson != null
-            ? JsonSerializer.Deserialize<AccountRelationship>(exampleJson)
-            : default(AccountRelationship);
+                ? JsonSerializer.Deserialize<AccountRelationship>(exampleJson)
+                : default(AccountRelationship);
             //TODO: Change the data returned
             return new ObjectResult(example);
         }
@@ -77,8 +78,8 @@ namespace DotPub.ArchivedWebApi.Controllers
         [ValidateModelState]
         [SwaggerOperation("GetFollowRequests")]
         [SwaggerResponse(statusCode: 200, type: typeof(List<Account>), description: "")]
-        public virtual IActionResult GetFollowRequests([FromQuery]int? limit)
-        { 
+        public virtual IActionResult GetFollowRequests([FromQuery] int? limit)
+        {
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(List<Account>));
 
@@ -99,10 +100,10 @@ namespace DotPub.ArchivedWebApi.Controllers
 
             string exampleJson = null;
             exampleJson = "{}";
-            
+
             var example = exampleJson != null
-            ? JsonSerializer.Deserialize<List<Account>>(exampleJson)
-            : default(List<Account>);
+                ? JsonSerializer.Deserialize<List<Account>>(exampleJson)
+                : default(List<Account>);
             //TODO: Change the data returned
             return new ObjectResult(example);
         }
@@ -110,7 +111,6 @@ namespace DotPub.ArchivedWebApi.Controllers
         /// <summary>
         /// Reject/deny follow request from the given account ID.
         /// </summary>
-        
         /// <param name="accountId">ID of the account requesting to follow you.</param>
         /// <response code="200">Your relationship to this account.</response>
         /// <response code="400">bad request</response>
@@ -122,9 +122,10 @@ namespace DotPub.ArchivedWebApi.Controllers
         [Route("//api/v1/follow_requests/{account_id}/reject")]
         [ValidateModelState]
         [SwaggerOperation("RejectFollowRequest")]
-        [SwaggerResponse(statusCode: 200, type: typeof(AccountRelationship), description: "Your relationship to this account.")]
-        public virtual IActionResult RejectFollowRequest([FromRoute][Required]string accountId)
-        { 
+        [SwaggerResponse(statusCode: 200, type: typeof(AccountRelationship),
+            description: "Your relationship to this account.")]
+        public virtual IActionResult RejectFollowRequest([FromRoute] [Required] string accountId)
+        {
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(AccountRelationship));
 
@@ -145,10 +146,10 @@ namespace DotPub.ArchivedWebApi.Controllers
 
             string exampleJson = null;
             exampleJson = "{\"empty\": false}";
-            
+
             var example = exampleJson != null
-            ? JsonSerializer.Deserialize<AccountRelationship>(exampleJson)
-            : default(AccountRelationship);
+                ? JsonSerializer.Deserialize<AccountRelationship>(exampleJson)
+                : default(AccountRelationship);
             //TODO: Change the data returned
             return new ObjectResult(example);
         }

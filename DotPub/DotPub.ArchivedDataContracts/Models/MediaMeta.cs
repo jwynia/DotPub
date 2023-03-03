@@ -13,40 +13,40 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
+{
     /// <summary>
     /// This can be metadata about an image, an audio file, video, etc.
     /// </summary>
     [DataContract]
     public partial class MediaMeta : IEquatable<MediaMeta>
-    { 
+    {
         /// <summary>
         /// Aspect ratio of the media. Equal to width / height.
         /// </summary>
         /// <value>Aspect ratio of the media. Equal to width / height.</value>
 
-        [DataMember(Name="aspect")]
+        [DataMember(Name = "aspect")]
         public float? Aspect { get; set; }
 
         /// <summary>
         /// Gets or Sets AudioBitrate
         /// </summary>
 
-        [DataMember(Name="audio_bitrate")]
+        [DataMember(Name = "audio_bitrate")]
         public string AudioBitrate { get; set; }
 
         /// <summary>
         /// Gets or Sets AudioChannels
         /// </summary>
 
-        [DataMember(Name="audio_channels")]
+        [DataMember(Name = "audio_channels")]
         public string AudioChannels { get; set; }
 
         /// <summary>
         /// Gets or Sets AudioEncode
         /// </summary>
 
-        [DataMember(Name="audio_encode")]
+        [DataMember(Name = "audio_encode")]
         public string AudioEncode { get; set; }
 
         /// <summary>
@@ -54,14 +54,14 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Duration of the media in seconds. Only set for video and audio.</value>
 
-        [DataMember(Name="duration")]
+        [DataMember(Name = "duration")]
         public float? Duration { get; set; }
 
         /// <summary>
         /// Gets or Sets Focus
         /// </summary>
 
-        [DataMember(Name="focus")]
+        [DataMember(Name = "focus")]
         public MediaFocus Focus { get; set; }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Framerate of the media. Only set for video and gifs.</value>
 
-        [DataMember(Name="fps")]
+        [DataMember(Name = "fps")]
         public int? Fps { get; set; }
 
         /// <summary>
@@ -77,21 +77,21 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Height of the media in pixels. Not set for audio.</value>
 
-        [DataMember(Name="height")]
+        [DataMember(Name = "height")]
         public long? Height { get; set; }
 
         /// <summary>
         /// Gets or Sets Length
         /// </summary>
 
-        [DataMember(Name="length")]
+        [DataMember(Name = "length")]
         public string Length { get; set; }
 
         /// <summary>
         /// Gets or Sets Original
         /// </summary>
 
-        [DataMember(Name="original")]
+        [DataMember(Name = "original")]
         public MediaDimensions Original { get; set; }
 
         /// <summary>
@@ -99,14 +99,14 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Size of the media, in the format &#x60;[width]x[height]&#x60;. Not set for audio.</value>
 
-        [DataMember(Name="size")]
+        [DataMember(Name = "size")]
         public string Size { get; set; }
 
         /// <summary>
         /// Gets or Sets Small
         /// </summary>
 
-        [DataMember(Name="small")]
+        [DataMember(Name = "small")]
         public MediaDimensions Small { get; set; }
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Width of the media in pixels. Not set for audio.</value>
 
-        [DataMember(Name="width")]
+        [DataMember(Name = "width")]
         public long? Width { get; set; }
 
         /// <summary>
@@ -173,67 +173,67 @@ namespace DotPub.DataContracts.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Aspect == other.Aspect ||
                     Aspect != null &&
                     Aspect.Equals(other.Aspect)
-                ) && 
+                ) &&
                 (
                     AudioBitrate == other.AudioBitrate ||
                     AudioBitrate != null &&
                     AudioBitrate.Equals(other.AudioBitrate)
-                ) && 
+                ) &&
                 (
                     AudioChannels == other.AudioChannels ||
                     AudioChannels != null &&
                     AudioChannels.Equals(other.AudioChannels)
-                ) && 
+                ) &&
                 (
                     AudioEncode == other.AudioEncode ||
                     AudioEncode != null &&
                     AudioEncode.Equals(other.AudioEncode)
-                ) && 
+                ) &&
                 (
                     Duration == other.Duration ||
                     Duration != null &&
                     Duration.Equals(other.Duration)
-                ) && 
+                ) &&
                 (
                     Focus == other.Focus ||
                     Focus != null &&
                     Focus.Equals(other.Focus)
-                ) && 
+                ) &&
                 (
                     Fps == other.Fps ||
                     Fps != null &&
                     Fps.Equals(other.Fps)
-                ) && 
+                ) &&
                 (
                     Height == other.Height ||
                     Height != null &&
                     Height.Equals(other.Height)
-                ) && 
+                ) &&
                 (
                     Length == other.Length ||
                     Length != null &&
                     Length.Equals(other.Length)
-                ) && 
+                ) &&
                 (
                     Original == other.Original ||
                     Original != null &&
                     Original.Equals(other.Original)
-                ) && 
+                ) &&
                 (
                     Size == other.Size ||
                     Size != null &&
                     Size.Equals(other.Size)
-                ) && 
+                ) &&
                 (
                     Small == other.Small ||
                     Small != null &&
                     Small.Equals(other.Small)
-                ) && 
+                ) &&
                 (
                     Width == other.Width ||
                     Width != null &&
@@ -251,38 +251,39 @@ namespace DotPub.DataContracts.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Aspect != null)
+                if (Aspect != null)
                     hashCode = hashCode * 59 + Aspect.GetHashCode();
-                    if (AudioBitrate != null)
+                if (AudioBitrate != null)
                     hashCode = hashCode * 59 + AudioBitrate.GetHashCode();
-                    if (AudioChannels != null)
+                if (AudioChannels != null)
                     hashCode = hashCode * 59 + AudioChannels.GetHashCode();
-                    if (AudioEncode != null)
+                if (AudioEncode != null)
                     hashCode = hashCode * 59 + AudioEncode.GetHashCode();
-                    if (Duration != null)
+                if (Duration != null)
                     hashCode = hashCode * 59 + Duration.GetHashCode();
-                    if (Focus != null)
+                if (Focus != null)
                     hashCode = hashCode * 59 + Focus.GetHashCode();
-                    if (Fps != null)
+                if (Fps != null)
                     hashCode = hashCode * 59 + Fps.GetHashCode();
-                    if (Height != null)
+                if (Height != null)
                     hashCode = hashCode * 59 + Height.GetHashCode();
-                    if (Length != null)
+                if (Length != null)
                     hashCode = hashCode * 59 + Length.GetHashCode();
-                    if (Original != null)
+                if (Original != null)
                     hashCode = hashCode * 59 + Original.GetHashCode();
-                    if (Size != null)
+                if (Size != null)
                     hashCode = hashCode * 59 + Size.GetHashCode();
-                    if (Small != null)
+                if (Small != null)
                     hashCode = hashCode * 59 + Small.GetHashCode();
-                    if (Width != null)
+                if (Width != null)
                     hashCode = hashCode * 59 + Width.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+
+#pragma warning disable 1591
 
         public static bool operator ==(MediaMeta left, MediaMeta right)
         {
@@ -294,7 +295,8 @@ namespace DotPub.DataContracts.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
+
         #endregion Operators
     }
 }

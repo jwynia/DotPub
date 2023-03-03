@@ -7,14 +7,14 @@ using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
 namespace DotPub.ArchivedWebApi.Controllers
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [Authorize]
     [ApiController]
     public class SearchApiController : ControllerBase
-    { 
+    {
         /// <summary>
         /// Search for statuses, accounts, or hashtags, on this instance or elsewhere.
         /// </summary>
@@ -40,8 +40,11 @@ namespace DotPub.ArchivedWebApi.Controllers
         [ValidateModelState]
         [SwaggerOperation("SearchGet")]
         [SwaggerResponse(statusCode: 200, type: typeof(List<SearchResult>), description: "Results of the search.")]
-        public virtual IActionResult SearchGet([FromQuery][Required()]string type, [FromQuery][Required()]string q, [FromQuery]string accountId, [FromQuery]string maxId, [FromQuery]string minId, [FromQuery]bool? excludeUnreviewed, [FromQuery]bool? resolve, [FromQuery][Range(1, 40)]long? limit, [FromQuery]long? offset, [FromQuery]bool? following)
-        { 
+        public virtual IActionResult SearchGet([FromQuery] [Required()] string type, [FromQuery] [Required()] string q,
+            [FromQuery] string accountId, [FromQuery] string maxId, [FromQuery] string minId,
+            [FromQuery] bool? excludeUnreviewed, [FromQuery] bool? resolve, [FromQuery] [Range(1, 40)] long? limit,
+            [FromQuery] long? offset, [FromQuery] bool? following)
+        {
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(List<SearchResult>));
 
@@ -62,10 +65,10 @@ namespace DotPub.ArchivedWebApi.Controllers
 
             string exampleJson = null;
             exampleJson = "{}";
-            
+
             var example = exampleJson != null
-            ? JsonSerializer.Deserialize<List<SearchResult>>(exampleJson)
-            : default(List<SearchResult>);
+                ? JsonSerializer.Deserialize<List<SearchResult>>(exampleJson)
+                : default(List<SearchResult>);
             //TODO: Change the data returned
             return new ObjectResult(example);
         }

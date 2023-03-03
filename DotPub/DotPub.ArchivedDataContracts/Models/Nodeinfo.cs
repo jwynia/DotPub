@@ -13,19 +13,19 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
+{
     /// <summary>
     /// See: https://nodeinfo.diaspora.software/schema.html
     /// </summary>
     [DataContract]
     public partial class Nodeinfo : IEquatable<Nodeinfo>
-    { 
+    {
         /// <summary>
         /// Free form key value pairs for software specific values. Clients should not rely on any specific key present.
         /// </summary>
         /// <value>Free form key value pairs for software specific values. Clients should not rely on any specific key present.</value>
 
-        [DataMember(Name="metadata")]
+        [DataMember(Name = "metadata")]
         public Dictionary<string, Object> Metadata { get; set; }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Whether this server allows open self-registration.</value>
 
-        [DataMember(Name="openRegistrations")]
+        [DataMember(Name = "openRegistrations")]
         public bool? OpenRegistrations { get; set; }
 
         /// <summary>
@@ -41,28 +41,28 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>The protocols supported on this server.</value>
 
-        [DataMember(Name="protocols")]
+        [DataMember(Name = "protocols")]
         public List<string> Protocols { get; set; }
 
         /// <summary>
         /// Gets or Sets Services
         /// </summary>
 
-        [DataMember(Name="services")]
+        [DataMember(Name = "services")]
         public NodeInfoServices Services { get; set; }
 
         /// <summary>
         /// Gets or Sets Software
         /// </summary>
 
-        [DataMember(Name="software")]
+        [DataMember(Name = "software")]
         public NodeInfoSoftware Software { get; set; }
 
         /// <summary>
         /// Gets or Sets Usage
         /// </summary>
 
-        [DataMember(Name="usage")]
+        [DataMember(Name = "usage")]
         public NodeInfoUsage Usage { get; set; }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>The schema version</value>
 
-        [DataMember(Name="version")]
+        [DataMember(Name = "version")]
         public string Version { get; set; }
 
         /// <summary>
@@ -123,37 +123,37 @@ namespace DotPub.DataContracts.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Metadata == other.Metadata ||
                     Metadata != null &&
                     Metadata.SequenceEqual(other.Metadata)
-                ) && 
+                ) &&
                 (
                     OpenRegistrations == other.OpenRegistrations ||
                     OpenRegistrations != null &&
                     OpenRegistrations.Equals(other.OpenRegistrations)
-                ) && 
+                ) &&
                 (
                     Protocols == other.Protocols ||
                     Protocols != null &&
                     Protocols.SequenceEqual(other.Protocols)
-                ) && 
+                ) &&
                 (
                     Services == other.Services ||
                     Services != null &&
                     Services.Equals(other.Services)
-                ) && 
+                ) &&
                 (
                     Software == other.Software ||
                     Software != null &&
                     Software.Equals(other.Software)
-                ) && 
+                ) &&
                 (
                     Usage == other.Usage ||
                     Usage != null &&
                     Usage.Equals(other.Usage)
-                ) && 
+                ) &&
                 (
                     Version == other.Version ||
                     Version != null &&
@@ -171,26 +171,27 @@ namespace DotPub.DataContracts.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Metadata != null)
+                if (Metadata != null)
                     hashCode = hashCode * 59 + Metadata.GetHashCode();
-                    if (OpenRegistrations != null)
+                if (OpenRegistrations != null)
                     hashCode = hashCode * 59 + OpenRegistrations.GetHashCode();
-                    if (Protocols != null)
+                if (Protocols != null)
                     hashCode = hashCode * 59 + Protocols.GetHashCode();
-                    if (Services != null)
+                if (Services != null)
                     hashCode = hashCode * 59 + Services.GetHashCode();
-                    if (Software != null)
+                if (Software != null)
                     hashCode = hashCode * 59 + Software.GetHashCode();
-                    if (Usage != null)
+                if (Usage != null)
                     hashCode = hashCode * 59 + Usage.GetHashCode();
-                    if (Version != null)
+                if (Version != null)
                     hashCode = hashCode * 59 + Version.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+
+#pragma warning disable 1591
 
         public static bool operator ==(Nodeinfo left, Nodeinfo right)
         {
@@ -202,7 +203,8 @@ namespace DotPub.DataContracts.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
+
         #endregion Operators
     }
 }

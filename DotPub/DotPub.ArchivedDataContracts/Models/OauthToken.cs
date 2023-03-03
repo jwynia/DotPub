@@ -13,19 +13,19 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class OauthToken : IEquatable<OauthToken>
-    { 
+    {
         /// <summary>
         /// Access token used for authorization.
         /// </summary>
         /// <value>Access token used for authorization.</value>
 
-        [DataMember(Name="access_token")]
+        [DataMember(Name = "access_token")]
         public string AccessToken { get; set; }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>When the OAuth token was generated (UNIX timestamp seconds).</value>
 
-        [DataMember(Name="created_at")]
+        [DataMember(Name = "created_at")]
         public long? CreatedAt { get; set; }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>OAuth scopes granted by this token, space-separated.</value>
 
-        [DataMember(Name="scope")]
+        [DataMember(Name = "scope")]
         public string Scope { get; set; }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>OAuth token type. Will always be &#39;Bearer&#39;.</value>
 
-        [DataMember(Name="token_type")]
+        [DataMember(Name = "token_type")]
         public string TokenType { get; set; }
 
         /// <summary>
@@ -99,22 +99,22 @@ namespace DotPub.DataContracts.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     AccessToken == other.AccessToken ||
                     AccessToken != null &&
                     AccessToken.Equals(other.AccessToken)
-                ) && 
+                ) &&
                 (
                     CreatedAt == other.CreatedAt ||
                     CreatedAt != null &&
                     CreatedAt.Equals(other.CreatedAt)
-                ) && 
+                ) &&
                 (
                     Scope == other.Scope ||
                     Scope != null &&
                     Scope.Equals(other.Scope)
-                ) && 
+                ) &&
                 (
                     TokenType == other.TokenType ||
                     TokenType != null &&
@@ -132,20 +132,21 @@ namespace DotPub.DataContracts.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (AccessToken != null)
+                if (AccessToken != null)
                     hashCode = hashCode * 59 + AccessToken.GetHashCode();
-                    if (CreatedAt != null)
+                if (CreatedAt != null)
                     hashCode = hashCode * 59 + CreatedAt.GetHashCode();
-                    if (Scope != null)
+                if (Scope != null)
                     hashCode = hashCode * 59 + Scope.GetHashCode();
-                    if (TokenType != null)
+                if (TokenType != null)
                     hashCode = hashCode * 59 + TokenType.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+
+#pragma warning disable 1591
 
         public static bool operator ==(OauthToken left, OauthToken right)
         {
@@ -157,7 +158,8 @@ namespace DotPub.DataContracts.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
+
         #endregion Operators
     }
 }

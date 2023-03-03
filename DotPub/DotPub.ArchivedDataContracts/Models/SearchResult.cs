@@ -13,32 +13,32 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class SearchResult : IEquatable<SearchResult>
-    { 
+    {
         /// <summary>
         /// Gets or Sets Accounts
         /// </summary>
 
-        [DataMember(Name="accounts")]
+        [DataMember(Name = "accounts")]
         public List<Account> Accounts { get; set; }
 
         /// <summary>
         /// Gets or Sets Hashtags
         /// </summary>
 
-        [DataMember(Name="hashtags")]
+        [DataMember(Name = "hashtags")]
         public List<Tag> Hashtags { get; set; }
 
         /// <summary>
         /// Gets or Sets Statuses
         /// </summary>
 
-        [DataMember(Name="statuses")]
+        [DataMember(Name = "statuses")]
         public List<Status> Statuses { get; set; }
 
         /// <summary>
@@ -87,17 +87,17 @@ namespace DotPub.DataContracts.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Accounts == other.Accounts ||
                     Accounts != null &&
                     Accounts.SequenceEqual(other.Accounts)
-                ) && 
+                ) &&
                 (
                     Hashtags == other.Hashtags ||
                     Hashtags != null &&
                     Hashtags.SequenceEqual(other.Hashtags)
-                ) && 
+                ) &&
                 (
                     Statuses == other.Statuses ||
                     Statuses != null &&
@@ -115,18 +115,19 @@ namespace DotPub.DataContracts.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Accounts != null)
+                if (Accounts != null)
                     hashCode = hashCode * 59 + Accounts.GetHashCode();
-                    if (Hashtags != null)
+                if (Hashtags != null)
                     hashCode = hashCode * 59 + Hashtags.GetHashCode();
-                    if (Statuses != null)
+                if (Statuses != null)
                     hashCode = hashCode * 59 + Statuses.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+
+#pragma warning disable 1591
 
         public static bool operator ==(SearchResult left, SearchResult right)
         {
@@ -138,7 +139,8 @@ namespace DotPub.DataContracts.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
+
         #endregion Operators
     }
 }

@@ -13,18 +13,18 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class NodeInfoUsage : IEquatable<NodeInfoUsage>
-    { 
+    {
         /// <summary>
         /// Gets or Sets Users
         /// </summary>
 
-        [DataMember(Name="users")]
+        [DataMember(Name = "users")]
         public NodeInfoUsers Users { get; set; }
 
         /// <summary>
@@ -71,12 +71,12 @@ namespace DotPub.DataContracts.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
-                (
-                    Users == other.Users ||
-                    Users != null &&
-                    Users.Equals(other.Users)
-                );
+            return
+            (
+                Users == other.Users ||
+                Users != null &&
+                Users.Equals(other.Users)
+            );
         }
 
         /// <summary>
@@ -89,14 +89,15 @@ namespace DotPub.DataContracts.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Users != null)
+                if (Users != null)
                     hashCode = hashCode * 59 + Users.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+
+#pragma warning disable 1591
 
         public static bool operator ==(NodeInfoUsage left, NodeInfoUsage right)
         {
@@ -108,7 +109,8 @@ namespace DotPub.DataContracts.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
+
         #endregion Operators
     }
 }

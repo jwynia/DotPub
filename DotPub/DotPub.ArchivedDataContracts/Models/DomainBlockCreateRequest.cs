@@ -13,19 +13,19 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class DomainBlockCreateRequest : IEquatable<DomainBlockCreateRequest>
-    { 
+    {
         /// <summary>
         /// hostname/domain to block
         /// </summary>
         /// <value>hostname/domain to block</value>
 
-        [DataMember(Name="domain")]
+        [DataMember(Name = "domain")]
         public string Domain { get; set; }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>A list of domains to block. Only used if import&#x3D;true is specified.</value>
 
-        [DataMember(Name="domains")]
+        [DataMember(Name = "domains")]
         public Object Domains { get; set; }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>whether the domain should be obfuscated when being displayed publicly</value>
 
-        [DataMember(Name="obfuscate")]
+        [DataMember(Name = "obfuscate")]
         public bool? Obfuscate { get; set; }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>private comment for other admins on why the domain was blocked</value>
 
-        [DataMember(Name="private_comment")]
+        [DataMember(Name = "private_comment")]
         public string PrivateComment { get; set; }
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>public comment on the reason for the domain block</value>
 
-        [DataMember(Name="public_comment")]
+        [DataMember(Name = "public_comment")]
         public string PublicComment { get; set; }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace DotPub.DataContracts.Models
         /// <returns>JSON string presentation of the object</returns>
         public string ToJson()
         {
-            return JsonSerializer.Serialize(this,new JsonSerializerOptions(){WriteIndented = true});
+            return JsonSerializer.Serialize(this, new JsonSerializerOptions() { WriteIndented = true });
         }
 
         /// <summary>
@@ -108,27 +108,27 @@ namespace DotPub.DataContracts.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Domain == other.Domain ||
                     Domain != null &&
                     Domain.Equals(other.Domain)
-                ) && 
+                ) &&
                 (
                     Domains == other.Domains ||
                     Domains != null &&
                     Domains.Equals(other.Domains)
-                ) && 
+                ) &&
                 (
                     Obfuscate == other.Obfuscate ||
                     Obfuscate != null &&
                     Obfuscate.Equals(other.Obfuscate)
-                ) && 
+                ) &&
                 (
                     PrivateComment == other.PrivateComment ||
                     PrivateComment != null &&
                     PrivateComment.Equals(other.PrivateComment)
-                ) && 
+                ) &&
                 (
                     PublicComment == other.PublicComment ||
                     PublicComment != null &&
@@ -146,22 +146,23 @@ namespace DotPub.DataContracts.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Domain != null)
+                if (Domain != null)
                     hashCode = hashCode * 59 + Domain.GetHashCode();
-                    if (Domains != null)
+                if (Domains != null)
                     hashCode = hashCode * 59 + Domains.GetHashCode();
-                    if (Obfuscate != null)
+                if (Obfuscate != null)
                     hashCode = hashCode * 59 + Obfuscate.GetHashCode();
-                    if (PrivateComment != null)
+                if (PrivateComment != null)
                     hashCode = hashCode * 59 + PrivateComment.GetHashCode();
-                    if (PublicComment != null)
+                if (PublicComment != null)
                     hashCode = hashCode * 59 + PublicComment.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+
+#pragma warning disable 1591
 
         public static bool operator ==(DomainBlockCreateRequest left, DomainBlockCreateRequest right)
         {
@@ -173,7 +174,8 @@ namespace DotPub.DataContracts.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
+
         #endregion Operators
     }
 }

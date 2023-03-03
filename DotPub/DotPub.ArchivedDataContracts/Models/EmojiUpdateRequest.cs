@@ -13,19 +13,19 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class EmojiUpdateRequest : IEquatable<EmojiUpdateRequest>
-    { 
+    {
         /// <summary>
         /// Category in which to place the emoji.
         /// </summary>
         /// <value>Category in which to place the emoji.</value>
 
-        [DataMember(Name="CategoryName")]
+        [DataMember(Name = "CategoryName")]
         public string CategoryName { get; set; }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Image file to use for the emoji. Must be png or gif and no larger than 50kb.</value>
 
-        [DataMember(Name="Image")]
+        [DataMember(Name = "Image")]
         public Object Image { get; set; }
 
         /// <summary>
@@ -41,14 +41,14 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Desired shortcode for the emoji, without surrounding colons. This must be unique for the domain.</value>
 
-        [DataMember(Name="Shortcode")]
+        [DataMember(Name = "Shortcode")]
         public string Shortcode { get; set; }
 
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
 
-        [DataMember(Name="type")]
+        [DataMember(Name = "type")]
         public EmojiUpdateType Type { get; set; }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace DotPub.DataContracts.Models
         /// <returns>JSON string presentation of the object</returns>
         public string ToJson()
         {
-            return JsonSerializer.Serialize(this,new JsonSerializerOptions(){WriteIndented = true});
+            return JsonSerializer.Serialize(this, new JsonSerializerOptions() { WriteIndented = true });
         }
 
         /// <summary>
@@ -98,22 +98,22 @@ namespace DotPub.DataContracts.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     CategoryName == other.CategoryName ||
                     CategoryName != null &&
                     CategoryName.Equals(other.CategoryName)
-                ) && 
+                ) &&
                 (
                     Image == other.Image ||
                     Image != null &&
                     Image.Equals(other.Image)
-                ) && 
+                ) &&
                 (
                     Shortcode == other.Shortcode ||
                     Shortcode != null &&
                     Shortcode.Equals(other.Shortcode)
-                ) && 
+                ) &&
                 (
                     Type == other.Type ||
                     Type != null &&
@@ -131,20 +131,21 @@ namespace DotPub.DataContracts.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (CategoryName != null)
+                if (CategoryName != null)
                     hashCode = hashCode * 59 + CategoryName.GetHashCode();
-                    if (Image != null)
+                if (Image != null)
                     hashCode = hashCode * 59 + Image.GetHashCode();
-                    if (Shortcode != null)
+                if (Shortcode != null)
                     hashCode = hashCode * 59 + Shortcode.GetHashCode();
-                    if (Type != null)
+                if (Type != null)
                     hashCode = hashCode * 59 + Type.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+
+#pragma warning disable 1591
 
         public static bool operator ==(EmojiUpdateRequest left, EmojiUpdateRequest right)
         {
@@ -156,7 +157,8 @@ namespace DotPub.DataContracts.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
+
         #endregion Operators
     }
 }

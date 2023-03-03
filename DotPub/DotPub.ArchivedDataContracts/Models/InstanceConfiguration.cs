@@ -13,46 +13,46 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class InstanceConfiguration : IEquatable<InstanceConfiguration>
-    { 
+    {
         /// <summary>
         /// Gets or Sets Accounts
         /// </summary>
 
-        [DataMember(Name="accounts")]
+        [DataMember(Name = "accounts")]
         public InstanceConfigurationAccounts Accounts { get; set; }
 
         /// <summary>
         /// Gets or Sets Emojis
         /// </summary>
 
-        [DataMember(Name="emojis")]
+        [DataMember(Name = "emojis")]
         public InstanceConfigurationEmojis Emojis { get; set; }
 
         /// <summary>
         /// Gets or Sets MediaAttachments
         /// </summary>
 
-        [DataMember(Name="media_attachments")]
+        [DataMember(Name = "media_attachments")]
         public InstanceConfigurationMediaAttachments MediaAttachments { get; set; }
 
         /// <summary>
         /// Gets or Sets Polls
         /// </summary>
 
-        [DataMember(Name="polls")]
+        [DataMember(Name = "polls")]
         public InstanceConfigurationPolls Polls { get; set; }
 
         /// <summary>
         /// Gets or Sets Statuses
         /// </summary>
 
-        [DataMember(Name="statuses")]
+        [DataMember(Name = "statuses")]
         public InstanceConfigurationStatuses Statuses { get; set; }
 
         /// <summary>
@@ -103,27 +103,27 @@ namespace DotPub.DataContracts.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Accounts == other.Accounts ||
                     Accounts != null &&
                     Accounts.Equals(other.Accounts)
-                ) && 
+                ) &&
                 (
                     Emojis == other.Emojis ||
                     Emojis != null &&
                     Emojis.Equals(other.Emojis)
-                ) && 
+                ) &&
                 (
                     MediaAttachments == other.MediaAttachments ||
                     MediaAttachments != null &&
                     MediaAttachments.Equals(other.MediaAttachments)
-                ) && 
+                ) &&
                 (
                     Polls == other.Polls ||
                     Polls != null &&
                     Polls.Equals(other.Polls)
-                ) && 
+                ) &&
                 (
                     Statuses == other.Statuses ||
                     Statuses != null &&
@@ -141,22 +141,23 @@ namespace DotPub.DataContracts.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Accounts != null)
+                if (Accounts != null)
                     hashCode = hashCode * 59 + Accounts.GetHashCode();
-                    if (Emojis != null)
+                if (Emojis != null)
                     hashCode = hashCode * 59 + Emojis.GetHashCode();
-                    if (MediaAttachments != null)
+                if (MediaAttachments != null)
                     hashCode = hashCode * 59 + MediaAttachments.GetHashCode();
-                    if (Polls != null)
+                if (Polls != null)
                     hashCode = hashCode * 59 + Polls.GetHashCode();
-                    if (Statuses != null)
+                if (Statuses != null)
                     hashCode = hashCode * 59 + Statuses.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+
+#pragma warning disable 1591
 
         public static bool operator ==(InstanceConfiguration left, InstanceConfiguration right)
         {
@@ -168,7 +169,8 @@ namespace DotPub.DataContracts.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
+
         #endregion Operators
     }
 }

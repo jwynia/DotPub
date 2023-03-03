@@ -15,13 +15,13 @@ using System.Text.Json.Serialization;
 using System.Xml;
 
 namespace DotPub.DataContracts.Models
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class InlineResponse101 : IEquatable<InlineResponse101>
-    { 
+    {
         /// <summary>
         /// The type of event being received.  `update`: a new status has been received. `notification`: a new notification has been received. `delete`: a status has been deleted. `filters_changed`: not implemented.
         /// </summary>
@@ -29,25 +29,21 @@ namespace DotPub.DataContracts.Models
         [JsonConverter(typeof(JsonStringEnumConverter))]
         public enum EventEnum
         {
-            
             /// <summary>
             /// Enum UpdateEnum for update
             /// </summary>
-            [EnumMember(Value = "update")]
-            UpdateEnum = 1,
-            
+            [EnumMember(Value = "update")] UpdateEnum = 1,
+
             /// <summary>
             /// Enum NotificationEnum for notification
             /// </summary>
-            [EnumMember(Value = "notification")]
-            NotificationEnum = 2,
-            
+            [EnumMember(Value = "notification")] NotificationEnum = 2,
+
             /// <summary>
             /// Enum DeleteEnum for delete
             /// </summary>
-            [EnumMember(Value = "delete")]
-            DeleteEnum = 3,
-            
+            [EnumMember(Value = "delete")] DeleteEnum = 3,
+
             /// <summary>
             /// Enum FiltersChangedEnum for filters_changed
             /// </summary>
@@ -60,7 +56,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>The type of event being received.  &#x60;update&#x60;: a new status has been received. &#x60;notification&#x60;: a new notification has been received. &#x60;delete&#x60;: a status has been deleted. &#x60;filters_changed&#x60;: not implemented.</value>
 
-        [DataMember(Name="event")]
+        [DataMember(Name = "event")]
         public EventEnum? Event { get; set; }
 
         /// <summary>
@@ -68,7 +64,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>The payload of the streamed message. Different depending on the &#x60;event&#x60; type.  If present, it should be parsed as a string.  If &#x60;event&#x60; &#x3D; &#x60;update&#x60;, then the payload will be a JSON string of a status. If &#x60;event&#x60; &#x3D; &#x60;notification&#x60;, then the payload will be a JSON string of a notification. If &#x60;event&#x60; &#x3D; &#x60;delete&#x60;, then the payload will be a status ID.</value>
 
-        [DataMember(Name="payload")]
+        [DataMember(Name = "payload")]
         public string Payload { get; set; }
 
         /// <summary>
@@ -77,48 +73,40 @@ namespace DotPub.DataContracts.Models
         [JsonConverter(typeof(JsonStringEnumConverter))]
         public enum ListStreamEnum
         {
-            
             /// <summary>
             /// Enum UserEnum for user
             /// </summary>
-            [EnumMember(Value = "user")]
-            UserEnum = 1,
-            
+            [EnumMember(Value = "user")] UserEnum = 1,
+
             /// <summary>
             /// Enum PublicEnum for public
             /// </summary>
-            [EnumMember(Value = "public")]
-            PublicEnum = 2,
-            
+            [EnumMember(Value = "public")] PublicEnum = 2,
+
             /// <summary>
             /// Enum PubliclocalEnum for public:local
             /// </summary>
-            [EnumMember(Value = "public:local")]
-            PubliclocalEnum = 3,
-            
+            [EnumMember(Value = "public:local")] PubliclocalEnum = 3,
+
             /// <summary>
             /// Enum HashtagEnum for hashtag
             /// </summary>
-            [EnumMember(Value = "hashtag")]
-            HashtagEnum = 4,
-            
+            [EnumMember(Value = "hashtag")] HashtagEnum = 4,
+
             /// <summary>
             /// Enum HashtaglocalEnum for hashtag:local
             /// </summary>
-            [EnumMember(Value = "hashtag:local")]
-            HashtaglocalEnum = 5,
-            
+            [EnumMember(Value = "hashtag:local")] HashtaglocalEnum = 5,
+
             /// <summary>
             /// Enum ListEnum for list
             /// </summary>
-            [EnumMember(Value = "list")]
-            ListEnum = 6,
-            
+            [EnumMember(Value = "list")] ListEnum = 6,
+
             /// <summary>
             /// Enum DirectEnum for direct
             /// </summary>
-            [EnumMember(Value = "direct")]
-            DirectEnum = 7
+            [EnumMember(Value = "direct")] DirectEnum = 7
         }
 
         /// <summary>
@@ -127,55 +115,47 @@ namespace DotPub.DataContracts.Models
         [JsonConverter(typeof(JsonStringEnumConverter))]
         public enum StreamEnum
         {
-            
             /// <summary>
             /// Enum UserEnum for user
             /// </summary>
-            [EnumMember(Value = "user")]
-            UserEnum = 1,
-            
+            [EnumMember(Value = "user")] UserEnum = 1,
+
             /// <summary>
             /// Enum PublicEnum for public
             /// </summary>
-            [EnumMember(Value = "public")]
-            PublicEnum = 2,
-            
+            [EnumMember(Value = "public")] PublicEnum = 2,
+
             /// <summary>
             /// Enum PubliclocalEnum for public:local
             /// </summary>
-            [EnumMember(Value = "public:local")]
-            PubliclocalEnum = 3,
-            
+            [EnumMember(Value = "public:local")] PubliclocalEnum = 3,
+
             /// <summary>
             /// Enum HashtagEnum for hashtag
             /// </summary>
-            [EnumMember(Value = "hashtag")]
-            HashtagEnum = 4,
-            
+            [EnumMember(Value = "hashtag")] HashtagEnum = 4,
+
             /// <summary>
             /// Enum HashtaglocalEnum for hashtag:local
             /// </summary>
-            [EnumMember(Value = "hashtag:local")]
-            HashtaglocalEnum = 5,
-            
+            [EnumMember(Value = "hashtag:local")] HashtaglocalEnum = 5,
+
             /// <summary>
             /// Enum ListEnum for list
             /// </summary>
-            [EnumMember(Value = "list")]
-            ListEnum = 6,
-            
+            [EnumMember(Value = "list")] ListEnum = 6,
+
             /// <summary>
             /// Enum DirectEnum for direct
             /// </summary>
-            [EnumMember(Value = "direct")]
-            DirectEnum = 7
+            [EnumMember(Value = "direct")] DirectEnum = 7
         }
 
         /// <summary>
         /// Gets or Sets Stream
         /// </summary>
 
-        [DataMember(Name="stream")]
+        [DataMember(Name = "stream")]
         public List<StreamEnum> Stream { get; set; }
 
         /// <summary>
@@ -224,17 +204,17 @@ namespace DotPub.DataContracts.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Event == other.Event ||
                     Event != null &&
                     Event.Equals(other.Event)
-                ) && 
+                ) &&
                 (
                     Payload == other.Payload ||
                     Payload != null &&
                     Payload.Equals(other.Payload)
-                ) && 
+                ) &&
                 (
                     Stream == other.Stream ||
                     Stream != null &&
@@ -252,18 +232,19 @@ namespace DotPub.DataContracts.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Event != null)
+                if (Event != null)
                     hashCode = hashCode * 59 + Event.GetHashCode();
-                    if (Payload != null)
+                if (Payload != null)
                     hashCode = hashCode * 59 + Payload.GetHashCode();
-                    if (Stream != null)
+                if (Stream != null)
                     hashCode = hashCode * 59 + Stream.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+
+#pragma warning disable 1591
 
         public static bool operator ==(InlineResponse101 left, InlineResponse101 right)
         {
@@ -275,7 +256,8 @@ namespace DotPub.DataContracts.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
+
         #endregion Operators
     }
 }

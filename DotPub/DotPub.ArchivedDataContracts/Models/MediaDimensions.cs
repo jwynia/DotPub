@@ -13,19 +13,19 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class MediaDimensions : IEquatable<MediaDimensions>
-    { 
+    {
         /// <summary>
         /// Aspect ratio of the media. Equal to width / height.
         /// </summary>
         /// <value>Aspect ratio of the media. Equal to width / height.</value>
 
-        [DataMember(Name="aspect")]
+        [DataMember(Name = "aspect")]
         public float? Aspect { get; set; }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Bitrate of the media in bits per second.</value>
 
-        [DataMember(Name="bitrate")]
+        [DataMember(Name = "bitrate")]
         public long? Bitrate { get; set; }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Duration of the media in seconds. Only set for video and audio.</value>
 
-        [DataMember(Name="duration")]
+        [DataMember(Name = "duration")]
         public float? Duration { get; set; }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Framerate of the media. Only set for video and gifs.</value>
 
-        [DataMember(Name="frame_rate")]
+        [DataMember(Name = "frame_rate")]
         public string FrameRate { get; set; }
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Height of the media in pixels. Not set for audio.</value>
 
-        [DataMember(Name="height")]
+        [DataMember(Name = "height")]
         public long? Height { get; set; }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Size of the media, in the format &#x60;[width]x[height]&#x60;. Not set for audio.</value>
 
-        [DataMember(Name="size")]
+        [DataMember(Name = "size")]
         public string Size { get; set; }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Width of the media in pixels. Not set for audio.</value>
 
-        [DataMember(Name="width")]
+        [DataMember(Name = "width")]
         public long? Width { get; set; }
 
         /// <summary>
@@ -126,37 +126,37 @@ namespace DotPub.DataContracts.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Aspect == other.Aspect ||
                     Aspect != null &&
                     Aspect.Equals(other.Aspect)
-                ) && 
+                ) &&
                 (
                     Bitrate == other.Bitrate ||
                     Bitrate != null &&
                     Bitrate.Equals(other.Bitrate)
-                ) && 
+                ) &&
                 (
                     Duration == other.Duration ||
                     Duration != null &&
                     Duration.Equals(other.Duration)
-                ) && 
+                ) &&
                 (
                     FrameRate == other.FrameRate ||
                     FrameRate != null &&
                     FrameRate.Equals(other.FrameRate)
-                ) && 
+                ) &&
                 (
                     Height == other.Height ||
                     Height != null &&
                     Height.Equals(other.Height)
-                ) && 
+                ) &&
                 (
                     Size == other.Size ||
                     Size != null &&
                     Size.Equals(other.Size)
-                ) && 
+                ) &&
                 (
                     Width == other.Width ||
                     Width != null &&
@@ -174,26 +174,27 @@ namespace DotPub.DataContracts.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Aspect != null)
+                if (Aspect != null)
                     hashCode = hashCode * 59 + Aspect.GetHashCode();
-                    if (Bitrate != null)
+                if (Bitrate != null)
                     hashCode = hashCode * 59 + Bitrate.GetHashCode();
-                    if (Duration != null)
+                if (Duration != null)
                     hashCode = hashCode * 59 + Duration.GetHashCode();
-                    if (FrameRate != null)
+                if (FrameRate != null)
                     hashCode = hashCode * 59 + FrameRate.GetHashCode();
-                    if (Height != null)
+                if (Height != null)
                     hashCode = hashCode * 59 + Height.GetHashCode();
-                    if (Size != null)
+                if (Size != null)
                     hashCode = hashCode * 59 + Size.GetHashCode();
-                    if (Width != null)
+                if (Width != null)
                     hashCode = hashCode * 59 + Width.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+
+#pragma warning disable 1591
 
         public static bool operator ==(MediaDimensions left, MediaDimensions right)
         {
@@ -205,7 +206,8 @@ namespace DotPub.DataContracts.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
+
         #endregion Operators
     }
 }

@@ -13,19 +13,19 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class AdminEmoji : IEquatable<AdminEmoji>
-    { 
+    {
         /// <summary>
         /// Used for sorting custom emoji in the picker.
         /// </summary>
         /// <value>Used for sorting custom emoji in the picker.</value>
 
-        [DataMember(Name="category")]
+        [DataMember(Name = "category")]
         public string Category { get; set; }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>The MIME content type of the emoji.</value>
 
-        [DataMember(Name="content_type")]
+        [DataMember(Name = "content_type")]
         public string ContentType { get; set; }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>True if this emoji has been disabled by an admin action.</value>
 
-        [DataMember(Name="disabled")]
+        [DataMember(Name = "disabled")]
         public bool? Disabled { get; set; }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>The domain from which the emoji originated. Only defined for remote domains, otherwise key will not be set.</value>
 
-        [DataMember(Name="domain")]
+        [DataMember(Name = "domain")]
         public string Domain { get; set; }
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>The ID of the emoji.</value>
 
-        [DataMember(Name="id")]
+        [DataMember(Name = "id")]
         public string Id { get; set; }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>The name of the custom emoji.</value>
 
-        [DataMember(Name="shortcode")]
+        [DataMember(Name = "shortcode")]
         public string Shortcode { get; set; }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>A link to a static copy of the custom emoji.</value>
 
-        [DataMember(Name="static_url")]
+        [DataMember(Name = "static_url")]
         public string StaticUrl { get; set; }
 
         /// <summary>
@@ -81,7 +81,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>The total file size taken up by the emoji in bytes, including static and animated versions.</value>
 
-        [DataMember(Name="total_file_size")]
+        [DataMember(Name = "total_file_size")]
         public long? TotalFileSize { get; set; }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Time when the emoji image was last updated.</value>
 
-        [DataMember(Name="updated_at")]
+        [DataMember(Name = "updated_at")]
         public string UpdatedAt { get; set; }
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>The ActivityPub URI of the emoji.</value>
 
-        [DataMember(Name="uri")]
+        [DataMember(Name = "uri")]
         public string Uri { get; set; }
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Web URL of the custom emoji.</value>
 
-        [DataMember(Name="url")]
+        [DataMember(Name = "url")]
         public string Url { get; set; }
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Emoji is visible in the emoji picker of the instance.</value>
 
-        [DataMember(Name="visible_in_picker")]
+        [DataMember(Name = "visible_in_picker")]
         public bool? VisibleInPicker { get; set; }
 
         /// <summary>
@@ -146,7 +146,7 @@ namespace DotPub.DataContracts.Models
         /// <returns>JSON string presentation of the object</returns>
         public string ToJson()
         {
-            return JsonSerializer.Serialize(this,new JsonSerializerOptions(){WriteIndented = true});
+            return JsonSerializer.Serialize(this, new JsonSerializerOptions() { WriteIndented = true });
         }
 
         /// <summary>
@@ -171,62 +171,62 @@ namespace DotPub.DataContracts.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Category == other.Category ||
                     Category != null &&
                     Category.Equals(other.Category)
-                ) && 
+                ) &&
                 (
                     ContentType == other.ContentType ||
                     ContentType != null &&
                     ContentType.Equals(other.ContentType)
-                ) && 
+                ) &&
                 (
                     Disabled == other.Disabled ||
                     Disabled != null &&
                     Disabled.Equals(other.Disabled)
-                ) && 
+                ) &&
                 (
                     Domain == other.Domain ||
                     Domain != null &&
                     Domain.Equals(other.Domain)
-                ) && 
+                ) &&
                 (
                     Id == other.Id ||
                     Id != null &&
                     Id.Equals(other.Id)
-                ) && 
+                ) &&
                 (
                     Shortcode == other.Shortcode ||
                     Shortcode != null &&
                     Shortcode.Equals(other.Shortcode)
-                ) && 
+                ) &&
                 (
                     StaticUrl == other.StaticUrl ||
                     StaticUrl != null &&
                     StaticUrl.Equals(other.StaticUrl)
-                ) && 
+                ) &&
                 (
                     TotalFileSize == other.TotalFileSize ||
                     TotalFileSize != null &&
                     TotalFileSize.Equals(other.TotalFileSize)
-                ) && 
+                ) &&
                 (
                     UpdatedAt == other.UpdatedAt ||
                     UpdatedAt != null &&
                     UpdatedAt.Equals(other.UpdatedAt)
-                ) && 
+                ) &&
                 (
                     Uri == other.Uri ||
                     Uri != null &&
                     Uri.Equals(other.Uri)
-                ) && 
+                ) &&
                 (
                     Url == other.Url ||
                     Url != null &&
                     Url.Equals(other.Url)
-                ) && 
+                ) &&
                 (
                     VisibleInPicker == other.VisibleInPicker ||
                     VisibleInPicker != null &&
@@ -244,36 +244,37 @@ namespace DotPub.DataContracts.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Category != null)
+                if (Category != null)
                     hashCode = hashCode * 59 + Category.GetHashCode();
-                    if (ContentType != null)
+                if (ContentType != null)
                     hashCode = hashCode * 59 + ContentType.GetHashCode();
-                    if (Disabled != null)
+                if (Disabled != null)
                     hashCode = hashCode * 59 + Disabled.GetHashCode();
-                    if (Domain != null)
+                if (Domain != null)
                     hashCode = hashCode * 59 + Domain.GetHashCode();
-                    if (Id != null)
+                if (Id != null)
                     hashCode = hashCode * 59 + Id.GetHashCode();
-                    if (Shortcode != null)
+                if (Shortcode != null)
                     hashCode = hashCode * 59 + Shortcode.GetHashCode();
-                    if (StaticUrl != null)
+                if (StaticUrl != null)
                     hashCode = hashCode * 59 + StaticUrl.GetHashCode();
-                    if (TotalFileSize != null)
+                if (TotalFileSize != null)
                     hashCode = hashCode * 59 + TotalFileSize.GetHashCode();
-                    if (UpdatedAt != null)
+                if (UpdatedAt != null)
                     hashCode = hashCode * 59 + UpdatedAt.GetHashCode();
-                    if (Uri != null)
+                if (Uri != null)
                     hashCode = hashCode * 59 + Uri.GetHashCode();
-                    if (Url != null)
+                if (Url != null)
                     hashCode = hashCode * 59 + Url.GetHashCode();
-                    if (VisibleInPicker != null)
+                if (VisibleInPicker != null)
                     hashCode = hashCode * 59 + VisibleInPicker.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+
+#pragma warning disable 1591
 
         public static bool operator ==(AdminEmoji left, AdminEmoji right)
         {
@@ -285,7 +286,8 @@ namespace DotPub.DataContracts.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
+
         #endregion Operators
     }
 }

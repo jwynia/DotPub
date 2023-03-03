@@ -13,19 +13,19 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class StatusContext : IEquatable<StatusContext>
-    { 
+    {
         /// <summary>
         /// Parents in the thread.
         /// </summary>
         /// <value>Parents in the thread.</value>
 
-        [DataMember(Name="ancestors")]
+        [DataMember(Name = "ancestors")]
         public List<Status> Ancestors { get; set; }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Children in the thread.</value>
 
-        [DataMember(Name="descendants")]
+        [DataMember(Name = "descendants")]
         public List<Status> Descendants { get; set; }
 
         /// <summary>
@@ -81,12 +81,12 @@ namespace DotPub.DataContracts.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Ancestors == other.Ancestors ||
                     Ancestors != null &&
                     Ancestors.SequenceEqual(other.Ancestors)
-                ) && 
+                ) &&
                 (
                     Descendants == other.Descendants ||
                     Descendants != null &&
@@ -104,16 +104,17 @@ namespace DotPub.DataContracts.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Ancestors != null)
+                if (Ancestors != null)
                     hashCode = hashCode * 59 + Ancestors.GetHashCode();
-                    if (Descendants != null)
+                if (Descendants != null)
                     hashCode = hashCode * 59 + Descendants.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+
+#pragma warning disable 1591
 
         public static bool operator ==(StatusContext left, StatusContext right)
         {
@@ -125,7 +126,8 @@ namespace DotPub.DataContracts.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
+
         #endregion Operators
     }
 }

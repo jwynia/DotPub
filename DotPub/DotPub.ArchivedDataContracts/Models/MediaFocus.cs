@@ -13,19 +13,19 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class MediaFocus : IEquatable<MediaFocus>
-    { 
+    {
         /// <summary>
         /// x position of the focus should be between -1 and 1
         /// </summary>
         /// <value>x position of the focus should be between -1 and 1</value>
 
-        [DataMember(Name="x")]
+        [DataMember(Name = "x")]
         public float? X { get; set; }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>y position of the focus should be between -1 and 1</value>
 
-        [DataMember(Name="y")]
+        [DataMember(Name = "y")]
         public float? Y { get; set; }
 
         /// <summary>
@@ -81,12 +81,12 @@ namespace DotPub.DataContracts.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     X == other.X ||
                     X != null &&
                     X.Equals(other.X)
-                ) && 
+                ) &&
                 (
                     Y == other.Y ||
                     Y != null &&
@@ -104,16 +104,17 @@ namespace DotPub.DataContracts.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (X != null)
+                if (X != null)
                     hashCode = hashCode * 59 + X.GetHashCode();
-                    if (Y != null)
+                if (Y != null)
                     hashCode = hashCode * 59 + Y.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+
+#pragma warning disable 1591
 
         public static bool operator ==(MediaFocus left, MediaFocus right)
         {
@@ -125,7 +126,8 @@ namespace DotPub.DataContracts.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
+
         #endregion Operators
     }
 }

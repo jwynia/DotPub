@@ -13,19 +13,19 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class Tag : IEquatable<Tag>
-    { 
+    {
         /// <summary>
         /// The value of the hashtag after the # sign.
         /// </summary>
         /// <value>The value of the hashtag after the # sign.</value>
 
-        [DataMember(Name="name")]
+        [DataMember(Name = "name")]
         public string Name { get; set; }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Web link to the hashtag.</value>
 
-        [DataMember(Name="url")]
+        [DataMember(Name = "url")]
         public string Url { get; set; }
 
         /// <summary>
@@ -81,12 +81,12 @@ namespace DotPub.DataContracts.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Name == other.Name ||
                     Name != null &&
                     Name.Equals(other.Name)
-                ) && 
+                ) &&
                 (
                     Url == other.Url ||
                     Url != null &&
@@ -104,16 +104,17 @@ namespace DotPub.DataContracts.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Name != null)
+                if (Name != null)
                     hashCode = hashCode * 59 + Name.GetHashCode();
-                    if (Url != null)
+                if (Url != null)
                     hashCode = hashCode * 59 + Url.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+
+#pragma warning disable 1591
 
         public static bool operator ==(Tag left, Tag right)
         {
@@ -125,7 +126,8 @@ namespace DotPub.DataContracts.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
+
         #endregion Operators
     }
 }

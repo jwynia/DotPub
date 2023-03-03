@@ -13,19 +13,19 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
+{
     /// <summary>
     /// The modelled account can be either a remote account, or one on this instance.
     /// </summary>
     [DataContract]
     public partial class Account : IEquatable<Account>
-    { 
+    {
         /// <summary>
         /// The account URI as discovered via webfinger. Equal to username for local users, or username@domain for remote users.
         /// </summary>
         /// <value>The account URI as discovered via webfinger. Equal to username for local users, or username@domain for remote users.</value>
 
-        [DataMember(Name="acct")]
+        [DataMember(Name = "acct")]
         public string Acct { get; set; }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Web location of the account&#39;s avatar.</value>
 
-        [DataMember(Name="avatar")]
+        [DataMember(Name = "avatar")]
         public string Avatar { get; set; }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Web location of a static version of the account&#39;s avatar. Only relevant when the account&#39;s main avatar is a video or a gif.</value>
 
-        [DataMember(Name="avatar_static")]
+        [DataMember(Name = "avatar_static")]
         public string AvatarStatic { get; set; }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Account identifies as a bot.</value>
 
-        [DataMember(Name="bot")]
+        [DataMember(Name = "bot")]
         public bool? Bot { get; set; }
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>When the account was created (ISO 8601 Datetime).</value>
 
-        [DataMember(Name="created_at")]
+        [DataMember(Name = "created_at")]
         public string CreatedAt { get; set; }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>CustomCSS to include when rendering this account&#39;s profile or statuses.</value>
 
-        [DataMember(Name="custom_css")]
+        [DataMember(Name = "custom_css")]
         public string CustomCss { get; set; }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Account has opted into discovery features.</value>
 
-        [DataMember(Name="discoverable")]
+        [DataMember(Name = "discoverable")]
         public bool? Discoverable { get; set; }
 
         /// <summary>
@@ -81,7 +81,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>The account&#39;s display name.</value>
 
-        [DataMember(Name="display_name")]
+        [DataMember(Name = "display_name")]
         public string DisplayName { get; set; }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Array of custom emojis used in this account&#39;s note or display name.</value>
 
-        [DataMember(Name="emojis")]
+        [DataMember(Name = "emojis")]
         public List<Emoji> Emojis { get; set; }
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Account has enabled RSS feed.</value>
 
-        [DataMember(Name="enable_rss")]
+        [DataMember(Name = "enable_rss")]
         public bool? EnableRss { get; set; }
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Additional metadata attached to this account&#39;s profile.</value>
 
-        [DataMember(Name="fields")]
+        [DataMember(Name = "fields")]
         public List<Field> Fields { get; set; }
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Number of accounts following this account, according to our instance.</value>
 
-        [DataMember(Name="followers_count")]
+        [DataMember(Name = "followers_count")]
         public long? FollowersCount { get; set; }
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Number of account&#39;s followed by this account, according to our instance.</value>
 
-        [DataMember(Name="following_count")]
+        [DataMember(Name = "following_count")]
         public long? FollowingCount { get; set; }
 
         /// <summary>
@@ -129,7 +129,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Web location of the account&#39;s header image.</value>
 
-        [DataMember(Name="header")]
+        [DataMember(Name = "header")]
         public string Header { get; set; }
 
         /// <summary>
@@ -137,7 +137,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Web location of a static version of the account&#39;s header. Only relevant when the account&#39;s main header is a video or a gif.</value>
 
-        [DataMember(Name="header_static")]
+        [DataMember(Name = "header_static")]
         public string HeaderStatic { get; set; }
 
         /// <summary>
@@ -145,7 +145,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>The account id.</value>
 
-        [DataMember(Name="id")]
+        [DataMember(Name = "id")]
         public string Id { get; set; }
 
         /// <summary>
@@ -153,7 +153,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>When the account&#39;s most recent status was posted (ISO 8601 Datetime).</value>
 
-        [DataMember(Name="last_status_at")]
+        [DataMember(Name = "last_status_at")]
         public string LastStatusAt { get; set; }
 
         /// <summary>
@@ -161,7 +161,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Account manually approves follow requests.</value>
 
-        [DataMember(Name="locked")]
+        [DataMember(Name = "locked")]
         public bool? Locked { get; set; }
 
         /// <summary>
@@ -169,7 +169,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>If this account has been muted, when will the mute expire (ISO 8601 Datetime).</value>
 
-        [DataMember(Name="mute_expires_at")]
+        [DataMember(Name = "mute_expires_at")]
         public string MuteExpiresAt { get; set; }
 
         /// <summary>
@@ -177,7 +177,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Bio/description of this account.</value>
 
-        [DataMember(Name="note")]
+        [DataMember(Name = "note")]
         public string Note { get; set; }
 
         /// <summary>
@@ -185,14 +185,14 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Role of the account on this instance. Omitted for remote accounts.</value>
 
-        [DataMember(Name="role")]
+        [DataMember(Name = "role")]
         public string Role { get; set; }
 
         /// <summary>
         /// Gets or Sets Source
         /// </summary>
 
-        [DataMember(Name="source")]
+        [DataMember(Name = "source")]
         public Source Source { get; set; }
 
         /// <summary>
@@ -200,7 +200,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Number of statuses posted by this account, according to our instance.</value>
 
-        [DataMember(Name="statuses_count")]
+        [DataMember(Name = "statuses_count")]
         public long? StatusesCount { get; set; }
 
         /// <summary>
@@ -208,7 +208,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Account has been suspended by our instance.</value>
 
-        [DataMember(Name="suspended")]
+        [DataMember(Name = "suspended")]
         public bool? Suspended { get; set; }
 
         /// <summary>
@@ -216,7 +216,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Web location of the account&#39;s profile page.</value>
 
-        [DataMember(Name="url")]
+        [DataMember(Name = "url")]
         public string Url { get; set; }
 
         /// <summary>
@@ -224,7 +224,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>The username of the account, not including domain.</value>
 
-        [DataMember(Name="username")]
+        [DataMember(Name = "username")]
         public string Username { get; set; }
 
         /// <summary>
@@ -271,7 +271,7 @@ namespace DotPub.DataContracts.Models
         /// <returns>JSON string presentation of the object</returns>
         public string ToJson()
         {
-            return JsonSerializer.Serialize(this,new JsonSerializerOptions(){WriteIndented = true});
+            return JsonSerializer.Serialize(this, new JsonSerializerOptions() { WriteIndented = true });
         }
 
         /// <summary>
@@ -296,132 +296,132 @@ namespace DotPub.DataContracts.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Acct == other.Acct ||
                     Acct != null &&
                     Acct.Equals(other.Acct)
-                ) && 
+                ) &&
                 (
                     Avatar == other.Avatar ||
                     Avatar != null &&
                     Avatar.Equals(other.Avatar)
-                ) && 
+                ) &&
                 (
                     AvatarStatic == other.AvatarStatic ||
                     AvatarStatic != null &&
                     AvatarStatic.Equals(other.AvatarStatic)
-                ) && 
+                ) &&
                 (
                     Bot == other.Bot ||
                     Bot != null &&
                     Bot.Equals(other.Bot)
-                ) && 
+                ) &&
                 (
                     CreatedAt == other.CreatedAt ||
                     CreatedAt != null &&
                     CreatedAt.Equals(other.CreatedAt)
-                ) && 
+                ) &&
                 (
                     CustomCss == other.CustomCss ||
                     CustomCss != null &&
                     CustomCss.Equals(other.CustomCss)
-                ) && 
+                ) &&
                 (
                     Discoverable == other.Discoverable ||
                     Discoverable != null &&
                     Discoverable.Equals(other.Discoverable)
-                ) && 
+                ) &&
                 (
                     DisplayName == other.DisplayName ||
                     DisplayName != null &&
                     DisplayName.Equals(other.DisplayName)
-                ) && 
+                ) &&
                 (
                     Emojis == other.Emojis ||
                     Emojis != null &&
                     Emojis.SequenceEqual(other.Emojis)
-                ) && 
+                ) &&
                 (
                     EnableRss == other.EnableRss ||
                     EnableRss != null &&
                     EnableRss.Equals(other.EnableRss)
-                ) && 
+                ) &&
                 (
                     Fields == other.Fields ||
                     Fields != null &&
                     Fields.SequenceEqual(other.Fields)
-                ) && 
+                ) &&
                 (
                     FollowersCount == other.FollowersCount ||
                     FollowersCount != null &&
                     FollowersCount.Equals(other.FollowersCount)
-                ) && 
+                ) &&
                 (
                     FollowingCount == other.FollowingCount ||
                     FollowingCount != null &&
                     FollowingCount.Equals(other.FollowingCount)
-                ) && 
+                ) &&
                 (
                     Header == other.Header ||
                     Header != null &&
                     Header.Equals(other.Header)
-                ) && 
+                ) &&
                 (
                     HeaderStatic == other.HeaderStatic ||
                     HeaderStatic != null &&
                     HeaderStatic.Equals(other.HeaderStatic)
-                ) && 
+                ) &&
                 (
                     Id == other.Id ||
                     Id != null &&
                     Id.Equals(other.Id)
-                ) && 
+                ) &&
                 (
                     LastStatusAt == other.LastStatusAt ||
                     LastStatusAt != null &&
                     LastStatusAt.Equals(other.LastStatusAt)
-                ) && 
+                ) &&
                 (
                     Locked == other.Locked ||
                     Locked != null &&
                     Locked.Equals(other.Locked)
-                ) && 
+                ) &&
                 (
                     MuteExpiresAt == other.MuteExpiresAt ||
                     MuteExpiresAt != null &&
                     MuteExpiresAt.Equals(other.MuteExpiresAt)
-                ) && 
+                ) &&
                 (
                     Note == other.Note ||
                     Note != null &&
                     Note.Equals(other.Note)
-                ) && 
+                ) &&
                 (
                     Role == other.Role ||
                     Role != null &&
                     Role.Equals(other.Role)
-                ) && 
+                ) &&
                 (
                     Source == other.Source ||
                     Source != null &&
                     Source.Equals(other.Source)
-                ) && 
+                ) &&
                 (
                     StatusesCount == other.StatusesCount ||
                     StatusesCount != null &&
                     StatusesCount.Equals(other.StatusesCount)
-                ) && 
+                ) &&
                 (
                     Suspended == other.Suspended ||
                     Suspended != null &&
                     Suspended.Equals(other.Suspended)
-                ) && 
+                ) &&
                 (
                     Url == other.Url ||
                     Url != null &&
                     Url.Equals(other.Url)
-                ) && 
+                ) &&
                 (
                     Username == other.Username ||
                     Username != null &&
@@ -439,64 +439,65 @@ namespace DotPub.DataContracts.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Acct != null)
+                if (Acct != null)
                     hashCode = hashCode * 59 + Acct.GetHashCode();
-                    if (Avatar != null)
+                if (Avatar != null)
                     hashCode = hashCode * 59 + Avatar.GetHashCode();
-                    if (AvatarStatic != null)
+                if (AvatarStatic != null)
                     hashCode = hashCode * 59 + AvatarStatic.GetHashCode();
-                    if (Bot != null)
+                if (Bot != null)
                     hashCode = hashCode * 59 + Bot.GetHashCode();
-                    if (CreatedAt != null)
+                if (CreatedAt != null)
                     hashCode = hashCode * 59 + CreatedAt.GetHashCode();
-                    if (CustomCss != null)
+                if (CustomCss != null)
                     hashCode = hashCode * 59 + CustomCss.GetHashCode();
-                    if (Discoverable != null)
+                if (Discoverable != null)
                     hashCode = hashCode * 59 + Discoverable.GetHashCode();
-                    if (DisplayName != null)
+                if (DisplayName != null)
                     hashCode = hashCode * 59 + DisplayName.GetHashCode();
-                    if (Emojis != null)
+                if (Emojis != null)
                     hashCode = hashCode * 59 + Emojis.GetHashCode();
-                    if (EnableRss != null)
+                if (EnableRss != null)
                     hashCode = hashCode * 59 + EnableRss.GetHashCode();
-                    if (Fields != null)
+                if (Fields != null)
                     hashCode = hashCode * 59 + Fields.GetHashCode();
-                    if (FollowersCount != null)
+                if (FollowersCount != null)
                     hashCode = hashCode * 59 + FollowersCount.GetHashCode();
-                    if (FollowingCount != null)
+                if (FollowingCount != null)
                     hashCode = hashCode * 59 + FollowingCount.GetHashCode();
-                    if (Header != null)
+                if (Header != null)
                     hashCode = hashCode * 59 + Header.GetHashCode();
-                    if (HeaderStatic != null)
+                if (HeaderStatic != null)
                     hashCode = hashCode * 59 + HeaderStatic.GetHashCode();
-                    if (Id != null)
+                if (Id != null)
                     hashCode = hashCode * 59 + Id.GetHashCode();
-                    if (LastStatusAt != null)
+                if (LastStatusAt != null)
                     hashCode = hashCode * 59 + LastStatusAt.GetHashCode();
-                    if (Locked != null)
+                if (Locked != null)
                     hashCode = hashCode * 59 + Locked.GetHashCode();
-                    if (MuteExpiresAt != null)
+                if (MuteExpiresAt != null)
                     hashCode = hashCode * 59 + MuteExpiresAt.GetHashCode();
-                    if (Note != null)
+                if (Note != null)
                     hashCode = hashCode * 59 + Note.GetHashCode();
-                    if (Role != null)
+                if (Role != null)
                     hashCode = hashCode * 59 + Role.GetHashCode();
-                    if (Source != null)
+                if (Source != null)
                     hashCode = hashCode * 59 + Source.GetHashCode();
-                    if (StatusesCount != null)
+                if (StatusesCount != null)
                     hashCode = hashCode * 59 + StatusesCount.GetHashCode();
-                    if (Suspended != null)
+                if (Suspended != null)
                     hashCode = hashCode * 59 + Suspended.GetHashCode();
-                    if (Url != null)
+                if (Url != null)
                     hashCode = hashCode * 59 + Url.GetHashCode();
-                    if (Username != null)
+                if (Username != null)
                     hashCode = hashCode * 59 + Username.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+
+#pragma warning disable 1591
 
         public static bool operator ==(Account left, Account right)
         {
@@ -508,7 +509,8 @@ namespace DotPub.DataContracts.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
+
         #endregion Operators
     }
 }

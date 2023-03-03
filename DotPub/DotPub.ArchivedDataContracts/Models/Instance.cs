@@ -13,19 +13,19 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class Instance : IEquatable<Instance>
-    { 
+    {
         /// <summary>
         /// The domain of accounts on this instance. This will not necessarily be the same as simply the Host part of the URI.
         /// </summary>
         /// <value>The domain of accounts on this instance. This will not necessarily be the same as simply the Host part of the URI.</value>
 
-        [DataMember(Name="account_domain")]
+        [DataMember(Name = "account_domain")]
         public string AccountDomain { get; set; }
 
         /// <summary>
@@ -33,21 +33,21 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>New account registrations require admin approval.</value>
 
-        [DataMember(Name="approval_required")]
+        [DataMember(Name = "approval_required")]
         public bool? ApprovalRequired { get; set; }
 
         /// <summary>
         /// Gets or Sets Configuration
         /// </summary>
 
-        [DataMember(Name="configuration")]
+        [DataMember(Name = "configuration")]
         public InstanceConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Gets or Sets ContactAccount
         /// </summary>
 
-        [DataMember(Name="contact_account")]
+        [DataMember(Name = "contact_account")]
         public Account ContactAccount { get; set; }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Description of the instance.  Should be HTML formatted, but might be plaintext.  This should be displayed on the &#39;about&#39; page for an instance.</value>
 
-        [DataMember(Name="description")]
+        [DataMember(Name = "description")]
         public string Description { get; set; }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>An email address that may be used for inquiries.</value>
 
-        [DataMember(Name="email")]
+        [DataMember(Name = "email")]
         public string Email { get; set; }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Invites are enabled on this instance.</value>
 
-        [DataMember(Name="invites_enabled")]
+        [DataMember(Name = "invites_enabled")]
         public bool? InvitesEnabled { get; set; }
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Primary language of the instance.</value>
 
-        [DataMember(Name="languages")]
+        [DataMember(Name = "languages")]
         public List<string> Languages { get; set; }
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Maximum allowed length of a post on this instance, in characters.  This is provided for compatibility with Tusky and other apps.</value>
 
-        [DataMember(Name="max_toot_chars")]
+        [DataMember(Name = "max_toot_chars")]
         public int? MaxTootChars { get; set; }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>New account registrations are enabled on this instance.</value>
 
-        [DataMember(Name="registrations")]
+        [DataMember(Name = "registrations")]
         public bool? Registrations { get; set; }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>A shorter description of the instance.  Should be HTML formatted, but might be plaintext.  This should be displayed on the instance splash/landing page.</value>
 
-        [DataMember(Name="short_description")]
+        [DataMember(Name = "short_description")]
         public string ShortDescription { get; set; }
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Statistics about the instance: number of posts, accounts, etc.</value>
 
-        [DataMember(Name="stats")]
+        [DataMember(Name = "stats")]
         public Dictionary<string, long?> Stats { get; set; }
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>URL of the instance avatar/banner image.</value>
 
-        [DataMember(Name="thumbnail")]
+        [DataMember(Name = "thumbnail")]
         public string Thumbnail { get; set; }
 
         /// <summary>
@@ -127,7 +127,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Description of the instance thumbnail.</value>
 
-        [DataMember(Name="thumbnail_description")]
+        [DataMember(Name = "thumbnail_description")]
         public string ThumbnailDescription { get; set; }
 
         /// <summary>
@@ -135,7 +135,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>MIME type of the instance thumbnail.</value>
 
-        [DataMember(Name="thumbnail_type")]
+        [DataMember(Name = "thumbnail_type")]
         public string ThumbnailType { get; set; }
 
         /// <summary>
@@ -143,7 +143,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>The title of the instance.</value>
 
-        [DataMember(Name="title")]
+        [DataMember(Name = "title")]
         public string Title { get; set; }
 
         /// <summary>
@@ -151,14 +151,14 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>The URI of the instance.</value>
 
-        [DataMember(Name="uri")]
+        [DataMember(Name = "uri")]
         public string Uri { get; set; }
 
         /// <summary>
         /// Gets or Sets Urls
         /// </summary>
 
-        [DataMember(Name="urls")]
+        [DataMember(Name = "urls")]
         public InstanceURLs Urls { get; set; }
 
         /// <summary>
@@ -166,7 +166,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>The version of GoToSocial installed on the instance.  This will contain at least a semantic version number.  It may also contain, after a space, the short git commit ID of the running software.</value>
 
-        [DataMember(Name="version")]
+        [DataMember(Name = "version")]
         public string Version { get; set; }
 
         /// <summary>
@@ -231,97 +231,97 @@ namespace DotPub.DataContracts.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     AccountDomain == other.AccountDomain ||
                     AccountDomain != null &&
                     AccountDomain.Equals(other.AccountDomain)
-                ) && 
+                ) &&
                 (
                     ApprovalRequired == other.ApprovalRequired ||
                     ApprovalRequired != null &&
                     ApprovalRequired.Equals(other.ApprovalRequired)
-                ) && 
+                ) &&
                 (
                     Configuration == other.Configuration ||
                     Configuration != null &&
                     Configuration.Equals(other.Configuration)
-                ) && 
+                ) &&
                 (
                     ContactAccount == other.ContactAccount ||
                     ContactAccount != null &&
                     ContactAccount.Equals(other.ContactAccount)
-                ) && 
+                ) &&
                 (
                     Description == other.Description ||
                     Description != null &&
                     Description.Equals(other.Description)
-                ) && 
+                ) &&
                 (
                     Email == other.Email ||
                     Email != null &&
                     Email.Equals(other.Email)
-                ) && 
+                ) &&
                 (
                     InvitesEnabled == other.InvitesEnabled ||
                     InvitesEnabled != null &&
                     InvitesEnabled.Equals(other.InvitesEnabled)
-                ) && 
+                ) &&
                 (
                     Languages == other.Languages ||
                     Languages != null &&
                     Languages.SequenceEqual(other.Languages)
-                ) && 
+                ) &&
                 (
                     MaxTootChars == other.MaxTootChars ||
                     MaxTootChars != null &&
                     MaxTootChars.Equals(other.MaxTootChars)
-                ) && 
+                ) &&
                 (
                     Registrations == other.Registrations ||
                     Registrations != null &&
                     Registrations.Equals(other.Registrations)
-                ) && 
+                ) &&
                 (
                     ShortDescription == other.ShortDescription ||
                     ShortDescription != null &&
                     ShortDescription.Equals(other.ShortDescription)
-                ) && 
+                ) &&
                 (
                     Stats == other.Stats ||
                     Stats != null &&
                     Stats.SequenceEqual(other.Stats)
-                ) && 
+                ) &&
                 (
                     Thumbnail == other.Thumbnail ||
                     Thumbnail != null &&
                     Thumbnail.Equals(other.Thumbnail)
-                ) && 
+                ) &&
                 (
                     ThumbnailDescription == other.ThumbnailDescription ||
                     ThumbnailDescription != null &&
                     ThumbnailDescription.Equals(other.ThumbnailDescription)
-                ) && 
+                ) &&
                 (
                     ThumbnailType == other.ThumbnailType ||
                     ThumbnailType != null &&
                     ThumbnailType.Equals(other.ThumbnailType)
-                ) && 
+                ) &&
                 (
                     Title == other.Title ||
                     Title != null &&
                     Title.Equals(other.Title)
-                ) && 
+                ) &&
                 (
                     Uri == other.Uri ||
                     Uri != null &&
                     Uri.Equals(other.Uri)
-                ) && 
+                ) &&
                 (
                     Urls == other.Urls ||
                     Urls != null &&
                     Urls.Equals(other.Urls)
-                ) && 
+                ) &&
                 (
                     Version == other.Version ||
                     Version != null &&
@@ -339,50 +339,51 @@ namespace DotPub.DataContracts.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (AccountDomain != null)
+                if (AccountDomain != null)
                     hashCode = hashCode * 59 + AccountDomain.GetHashCode();
-                    if (ApprovalRequired != null)
+                if (ApprovalRequired != null)
                     hashCode = hashCode * 59 + ApprovalRequired.GetHashCode();
-                    if (Configuration != null)
+                if (Configuration != null)
                     hashCode = hashCode * 59 + Configuration.GetHashCode();
-                    if (ContactAccount != null)
+                if (ContactAccount != null)
                     hashCode = hashCode * 59 + ContactAccount.GetHashCode();
-                    if (Description != null)
+                if (Description != null)
                     hashCode = hashCode * 59 + Description.GetHashCode();
-                    if (Email != null)
+                if (Email != null)
                     hashCode = hashCode * 59 + Email.GetHashCode();
-                    if (InvitesEnabled != null)
+                if (InvitesEnabled != null)
                     hashCode = hashCode * 59 + InvitesEnabled.GetHashCode();
-                    if (Languages != null)
+                if (Languages != null)
                     hashCode = hashCode * 59 + Languages.GetHashCode();
-                    if (MaxTootChars != null)
+                if (MaxTootChars != null)
                     hashCode = hashCode * 59 + MaxTootChars.GetHashCode();
-                    if (Registrations != null)
+                if (Registrations != null)
                     hashCode = hashCode * 59 + Registrations.GetHashCode();
-                    if (ShortDescription != null)
+                if (ShortDescription != null)
                     hashCode = hashCode * 59 + ShortDescription.GetHashCode();
-                    if (Stats != null)
+                if (Stats != null)
                     hashCode = hashCode * 59 + Stats.GetHashCode();
-                    if (Thumbnail != null)
+                if (Thumbnail != null)
                     hashCode = hashCode * 59 + Thumbnail.GetHashCode();
-                    if (ThumbnailDescription != null)
+                if (ThumbnailDescription != null)
                     hashCode = hashCode * 59 + ThumbnailDescription.GetHashCode();
-                    if (ThumbnailType != null)
+                if (ThumbnailType != null)
                     hashCode = hashCode * 59 + ThumbnailType.GetHashCode();
-                    if (Title != null)
+                if (Title != null)
                     hashCode = hashCode * 59 + Title.GetHashCode();
-                    if (Uri != null)
+                if (Uri != null)
                     hashCode = hashCode * 59 + Uri.GetHashCode();
-                    if (Urls != null)
+                if (Urls != null)
                     hashCode = hashCode * 59 + Urls.GetHashCode();
-                    if (Version != null)
+                if (Version != null)
                     hashCode = hashCode * 59 + Version.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+
+#pragma warning disable 1591
 
         public static bool operator ==(Instance left, Instance right)
         {
@@ -394,7 +395,8 @@ namespace DotPub.DataContracts.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
+
         #endregion Operators
     }
 }

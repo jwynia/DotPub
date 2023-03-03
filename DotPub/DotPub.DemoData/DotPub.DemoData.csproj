@@ -7,11 +7,24 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Auth" />
+        <Folder Include="Auth" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\DotPub.DataContracts\DotPub.DataContracts.csproj" />
+        <ProjectReference Include="..\DotPub.DataContracts\DotPub.DataContracts.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="DataTent" Version="0.1.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="Microsoft.Extensions.Configuration.Abstractions">
+        <HintPath>..\..\..\..\..\..\..\Program Files\dotnet\shared\Microsoft.AspNetCore.App\7.0.1\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+      </Reference>
+      <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions">
+        <HintPath>..\..\..\..\..\..\..\Program Files\dotnet\shared\Microsoft.AspNetCore.App\7.0.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+      </Reference>
     </ItemGroup>
 
 </Project>

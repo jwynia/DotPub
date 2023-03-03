@@ -13,19 +13,19 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class Mention : IEquatable<Mention>
-    { 
+    {
         /// <summary>
         /// The account URI as discovered via webfinger. Equal to username for local users, or username@domain for remote users.
         /// </summary>
         /// <value>The account URI as discovered via webfinger. Equal to username for local users, or username@domain for remote users.</value>
 
-        [DataMember(Name="acct")]
+        [DataMember(Name = "acct")]
         public string Acct { get; set; }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>The ID of the mentioned account.</value>
 
-        [DataMember(Name="id")]
+        [DataMember(Name = "id")]
         public string Id { get; set; }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>The web URL of the mentioned account&#39;s profile.</value>
 
-        [DataMember(Name="url")]
+        [DataMember(Name = "url")]
         public string Url { get; set; }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>The username of the mentioned account.</value>
 
-        [DataMember(Name="username")]
+        [DataMember(Name = "username")]
         public string Username { get; set; }
 
         /// <summary>
@@ -99,22 +99,22 @@ namespace DotPub.DataContracts.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Acct == other.Acct ||
                     Acct != null &&
                     Acct.Equals(other.Acct)
-                ) && 
+                ) &&
                 (
                     Id == other.Id ||
                     Id != null &&
                     Id.Equals(other.Id)
-                ) && 
+                ) &&
                 (
                     Url == other.Url ||
                     Url != null &&
                     Url.Equals(other.Url)
-                ) && 
+                ) &&
                 (
                     Username == other.Username ||
                     Username != null &&
@@ -132,20 +132,21 @@ namespace DotPub.DataContracts.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Acct != null)
+                if (Acct != null)
                     hashCode = hashCode * 59 + Acct.GetHashCode();
-                    if (Id != null)
+                if (Id != null)
                     hashCode = hashCode * 59 + Id.GetHashCode();
-                    if (Url != null)
+                if (Url != null)
                     hashCode = hashCode * 59 + Url.GetHashCode();
-                    if (Username != null)
+                if (Username != null)
                     hashCode = hashCode * 59 + Username.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+
+#pragma warning disable 1591
 
         public static bool operator ==(Mention left, Mention right)
         {
@@ -157,7 +158,8 @@ namespace DotPub.DataContracts.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
+
         #endregion Operators
     }
 }

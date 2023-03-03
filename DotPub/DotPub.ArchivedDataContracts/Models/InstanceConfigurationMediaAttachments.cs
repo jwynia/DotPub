@@ -13,19 +13,19 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class InstanceConfigurationMediaAttachments : IEquatable<InstanceConfigurationMediaAttachments>
-    { 
+    {
         /// <summary>
         /// Max allowed image size in pixels as height*width.  GtS doesn&#39;t set a limit on this, but for compatibility we give Mastodon&#39;s 4096x4096px value here.
         /// </summary>
         /// <value>Max allowed image size in pixels as height*width.  GtS doesn&#39;t set a limit on this, but for compatibility we give Mastodon&#39;s 4096x4096px value here.</value>
 
-        [DataMember(Name="image_matrix_limit")]
+        [DataMember(Name = "image_matrix_limit")]
         public long? ImageMatrixLimit { get; set; }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Max allowed image size in bytes</value>
 
-        [DataMember(Name="image_size_limit")]
+        [DataMember(Name = "image_size_limit")]
         public long? ImageSizeLimit { get; set; }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>List of mime types that it&#39;s possible to upload to this instance.</value>
 
-        [DataMember(Name="supported_mime_types")]
+        [DataMember(Name = "supported_mime_types")]
         public List<string> SupportedMimeTypes { get; set; }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Max allowed video frame rate.</value>
 
-        [DataMember(Name="video_frame_rate_limit")]
+        [DataMember(Name = "video_frame_rate_limit")]
         public long? VideoFrameRateLimit { get; set; }
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Max allowed video size in pixels as height*width.  GtS doesn&#39;t set a limit on this, but for compatibility we give Mastodon&#39;s 4096x4096px value here.</value>
 
-        [DataMember(Name="video_matrix_limit")]
+        [DataMember(Name = "video_matrix_limit")]
         public long? VideoMatrixLimit { get; set; }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Max allowed video size in bytes</value>
 
-        [DataMember(Name="video_size_limit")]
+        [DataMember(Name = "video_size_limit")]
         public long? VideoSizeLimit { get; set; }
 
         /// <summary>
@@ -117,32 +117,32 @@ namespace DotPub.DataContracts.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     ImageMatrixLimit == other.ImageMatrixLimit ||
                     ImageMatrixLimit != null &&
                     ImageMatrixLimit.Equals(other.ImageMatrixLimit)
-                ) && 
+                ) &&
                 (
                     ImageSizeLimit == other.ImageSizeLimit ||
                     ImageSizeLimit != null &&
                     ImageSizeLimit.Equals(other.ImageSizeLimit)
-                ) && 
+                ) &&
                 (
                     SupportedMimeTypes == other.SupportedMimeTypes ||
                     SupportedMimeTypes != null &&
                     SupportedMimeTypes.SequenceEqual(other.SupportedMimeTypes)
-                ) && 
+                ) &&
                 (
                     VideoFrameRateLimit == other.VideoFrameRateLimit ||
                     VideoFrameRateLimit != null &&
                     VideoFrameRateLimit.Equals(other.VideoFrameRateLimit)
-                ) && 
+                ) &&
                 (
                     VideoMatrixLimit == other.VideoMatrixLimit ||
                     VideoMatrixLimit != null &&
                     VideoMatrixLimit.Equals(other.VideoMatrixLimit)
-                ) && 
+                ) &&
                 (
                     VideoSizeLimit == other.VideoSizeLimit ||
                     VideoSizeLimit != null &&
@@ -160,36 +160,40 @@ namespace DotPub.DataContracts.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (ImageMatrixLimit != null)
+                if (ImageMatrixLimit != null)
                     hashCode = hashCode * 59 + ImageMatrixLimit.GetHashCode();
-                    if (ImageSizeLimit != null)
+                if (ImageSizeLimit != null)
                     hashCode = hashCode * 59 + ImageSizeLimit.GetHashCode();
-                    if (SupportedMimeTypes != null)
+                if (SupportedMimeTypes != null)
                     hashCode = hashCode * 59 + SupportedMimeTypes.GetHashCode();
-                    if (VideoFrameRateLimit != null)
+                if (VideoFrameRateLimit != null)
                     hashCode = hashCode * 59 + VideoFrameRateLimit.GetHashCode();
-                    if (VideoMatrixLimit != null)
+                if (VideoMatrixLimit != null)
                     hashCode = hashCode * 59 + VideoMatrixLimit.GetHashCode();
-                    if (VideoSizeLimit != null)
+                if (VideoSizeLimit != null)
                     hashCode = hashCode * 59 + VideoSizeLimit.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
 
-        public static bool operator ==(InstanceConfigurationMediaAttachments left, InstanceConfigurationMediaAttachments right)
+#pragma warning disable 1591
+
+        public static bool operator ==(InstanceConfigurationMediaAttachments left,
+            InstanceConfigurationMediaAttachments right)
         {
             return Equals(left, right);
         }
 
-        public static bool operator !=(InstanceConfigurationMediaAttachments left, InstanceConfigurationMediaAttachments right)
+        public static bool operator !=(InstanceConfigurationMediaAttachments left,
+            InstanceConfigurationMediaAttachments right)
         {
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
+
         #endregion Operators
     }
 }

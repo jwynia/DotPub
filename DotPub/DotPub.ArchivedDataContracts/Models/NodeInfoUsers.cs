@@ -13,13 +13,13 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class NodeInfoUsers : IEquatable<NodeInfoUsers>
-    { 
+    {
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -81,7 +81,8 @@ namespace DotPub.DataContracts.Models
         }
 
         #region Operators
-        #pragma warning disable 1591
+
+#pragma warning disable 1591
 
         public static bool operator ==(NodeInfoUsers left, NodeInfoUsers right)
         {
@@ -93,7 +94,8 @@ namespace DotPub.DataContracts.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
+
         #endregion Operators
     }
 }

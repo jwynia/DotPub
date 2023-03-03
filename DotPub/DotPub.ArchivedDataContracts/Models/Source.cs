@@ -13,19 +13,19 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
+{
     /// <summary>
     /// Returned as an additional entity when verifying and updated credentials, as an attribute of Account.
     /// </summary>
     [DataContract]
     public partial class Source : IEquatable<Source>
-    { 
+    {
         /// <summary>
         /// Metadata about the account.
         /// </summary>
         /// <value>Metadata about the account.</value>
 
-        [DataMember(Name="fields")]
+        [DataMember(Name = "fields")]
         public List<Field> Fields { get; set; }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>The number of pending follow requests.</value>
 
-        [DataMember(Name="follow_requests_count")]
+        [DataMember(Name = "follow_requests_count")]
         public long? FollowRequestsCount { get; set; }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>The default posting language for new statuses.</value>
 
-        [DataMember(Name="language")]
+        [DataMember(Name = "language")]
         public string Language { get; set; }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Profile bio.</value>
 
-        [DataMember(Name="note")]
+        [DataMember(Name = "note")]
         public string Note { get; set; }
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>The default post privacy to be used for new statuses. public &#x3D; Public post unlisted &#x3D; Unlisted post private &#x3D; Followers-only post direct &#x3D; Direct post</value>
 
-        [DataMember(Name="privacy")]
+        [DataMember(Name = "privacy")]
         public string Privacy { get; set; }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Whether new statuses should be marked sensitive by default.</value>
 
-        [DataMember(Name="sensitive")]
+        [DataMember(Name = "sensitive")]
         public bool? Sensitive { get; set; }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>The default posting format for new statuses.</value>
 
-        [DataMember(Name="status_format")]
+        [DataMember(Name = "status_format")]
         public string StatusFormat { get; set; }
 
         /// <summary>
@@ -126,37 +126,37 @@ namespace DotPub.DataContracts.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Fields == other.Fields ||
                     Fields != null &&
                     Fields.SequenceEqual(other.Fields)
-                ) && 
+                ) &&
                 (
                     FollowRequestsCount == other.FollowRequestsCount ||
                     FollowRequestsCount != null &&
                     FollowRequestsCount.Equals(other.FollowRequestsCount)
-                ) && 
+                ) &&
                 (
                     Language == other.Language ||
                     Language != null &&
                     Language.Equals(other.Language)
-                ) && 
+                ) &&
                 (
                     Note == other.Note ||
                     Note != null &&
                     Note.Equals(other.Note)
-                ) && 
+                ) &&
                 (
                     Privacy == other.Privacy ||
                     Privacy != null &&
                     Privacy.Equals(other.Privacy)
-                ) && 
+                ) &&
                 (
                     Sensitive == other.Sensitive ||
                     Sensitive != null &&
                     Sensitive.Equals(other.Sensitive)
-                ) && 
+                ) &&
                 (
                     StatusFormat == other.StatusFormat ||
                     StatusFormat != null &&
@@ -174,26 +174,27 @@ namespace DotPub.DataContracts.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Fields != null)
+                if (Fields != null)
                     hashCode = hashCode * 59 + Fields.GetHashCode();
-                    if (FollowRequestsCount != null)
+                if (FollowRequestsCount != null)
                     hashCode = hashCode * 59 + FollowRequestsCount.GetHashCode();
-                    if (Language != null)
+                if (Language != null)
                     hashCode = hashCode * 59 + Language.GetHashCode();
-                    if (Note != null)
+                if (Note != null)
                     hashCode = hashCode * 59 + Note.GetHashCode();
-                    if (Privacy != null)
+                if (Privacy != null)
                     hashCode = hashCode * 59 + Privacy.GetHashCode();
-                    if (Sensitive != null)
+                if (Sensitive != null)
                     hashCode = hashCode * 59 + Sensitive.GetHashCode();
-                    if (StatusFormat != null)
+                if (StatusFormat != null)
                     hashCode = hashCode * 59 + StatusFormat.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+
+#pragma warning disable 1591
 
         public static bool operator ==(Source left, Source right)
         {
@@ -205,7 +206,8 @@ namespace DotPub.DataContracts.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
+
         #endregion Operators
     }
 }

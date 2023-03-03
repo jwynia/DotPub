@@ -6,14 +6,14 @@ using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
 namespace DotPub.ArchivedWebApi.Controllers
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [Authorize]
     [ApiController]
     public class BookmarksApiController : ControllerBase
-    { 
+    {
         /// <summary>
         /// 
         /// </summary>
@@ -28,7 +28,7 @@ namespace DotPub.ArchivedWebApi.Controllers
         [SwaggerOperation("BookmarksGet")]
         [SwaggerResponse(statusCode: 200, type: typeof(List<Status>), description: "Array of bookmarked statuses")]
         public virtual IActionResult BookmarksGet()
-        { 
+        {
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(List<Status>));
 
@@ -43,10 +43,10 @@ namespace DotPub.ArchivedWebApi.Controllers
 
             string exampleJson = null;
             exampleJson = "{}";
-            
+
             var example = exampleJson != null
-            ? JsonSerializer.Deserialize <List<Status>>(exampleJson)
-            : default(List<Status>);
+                ? JsonSerializer.Deserialize<List<Status>>(exampleJson)
+                : default(List<Status>);
             //TODO: Change the data returned
             return new ObjectResult(example);
         }

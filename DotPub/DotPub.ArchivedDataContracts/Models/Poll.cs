@@ -13,19 +13,19 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class Poll : IEquatable<Poll>
-    { 
+    {
         /// <summary>
         /// Custom emoji to be used for rendering poll options.
         /// </summary>
         /// <value>Custom emoji to be used for rendering poll options.</value>
 
-        [DataMember(Name="emojis")]
+        [DataMember(Name = "emojis")]
         public List<Emoji> Emojis { get; set; }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Is the poll currently expired?</value>
 
-        [DataMember(Name="expired")]
+        [DataMember(Name = "expired")]
         public bool? Expired { get; set; }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>When the poll ends. (ISO 8601 Datetime), or null if the poll does not end</value>
 
-        [DataMember(Name="expires_at")]
+        [DataMember(Name = "expires_at")]
         public string ExpiresAt { get; set; }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>The ID of the poll in the database.</value>
 
-        [DataMember(Name="id")]
+        [DataMember(Name = "id")]
         public string Id { get; set; }
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Does the poll allow multiple-choice answers?</value>
 
-        [DataMember(Name="multiple")]
+        [DataMember(Name = "multiple")]
         public bool? Multiple { get; set; }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Possible answers for the poll.</value>
 
-        [DataMember(Name="options")]
+        [DataMember(Name = "options")]
         public List<PollOptions> Options { get; set; }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>When called with a user token, which options has the authorized user chosen? Contains an array of index values for options.</value>
 
-        [DataMember(Name="own_votes")]
+        [DataMember(Name = "own_votes")]
         public List<long?> OwnVotes { get; set; }
 
         /// <summary>
@@ -81,7 +81,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>When called with a user token, has the authorized user voted?</value>
 
-        [DataMember(Name="voted")]
+        [DataMember(Name = "voted")]
         public bool? Voted { get; set; }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>How many unique accounts have voted on a multiple-choice poll. Null if multiple is false.</value>
 
-        [DataMember(Name="voters_count")]
+        [DataMember(Name = "voters_count")]
         public long? VotersCount { get; set; }
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>How many votes have been received.</value>
 
-        [DataMember(Name="votes_count")]
+        [DataMember(Name = "votes_count")]
         public long? VotesCount { get; set; }
 
         /// <summary>
@@ -153,52 +153,52 @@ namespace DotPub.DataContracts.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Emojis == other.Emojis ||
                     Emojis != null &&
                     Emojis.SequenceEqual(other.Emojis)
-                ) && 
+                ) &&
                 (
                     Expired == other.Expired ||
                     Expired != null &&
                     Expired.Equals(other.Expired)
-                ) && 
+                ) &&
                 (
                     ExpiresAt == other.ExpiresAt ||
                     ExpiresAt != null &&
                     ExpiresAt.Equals(other.ExpiresAt)
-                ) && 
+                ) &&
                 (
                     Id == other.Id ||
                     Id != null &&
                     Id.Equals(other.Id)
-                ) && 
+                ) &&
                 (
                     Multiple == other.Multiple ||
                     Multiple != null &&
                     Multiple.Equals(other.Multiple)
-                ) && 
+                ) &&
                 (
                     Options == other.Options ||
                     Options != null &&
                     Options.SequenceEqual(other.Options)
-                ) && 
+                ) &&
                 (
                     OwnVotes == other.OwnVotes ||
                     OwnVotes != null &&
                     OwnVotes.SequenceEqual(other.OwnVotes)
-                ) && 
+                ) &&
                 (
                     Voted == other.Voted ||
                     Voted != null &&
                     Voted.Equals(other.Voted)
-                ) && 
+                ) &&
                 (
                     VotersCount == other.VotersCount ||
                     VotersCount != null &&
                     VotersCount.Equals(other.VotersCount)
-                ) && 
+                ) &&
                 (
                     VotesCount == other.VotesCount ||
                     VotesCount != null &&
@@ -216,32 +216,33 @@ namespace DotPub.DataContracts.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Emojis != null)
+                if (Emojis != null)
                     hashCode = hashCode * 59 + Emojis.GetHashCode();
-                    if (Expired != null)
+                if (Expired != null)
                     hashCode = hashCode * 59 + Expired.GetHashCode();
-                    if (ExpiresAt != null)
+                if (ExpiresAt != null)
                     hashCode = hashCode * 59 + ExpiresAt.GetHashCode();
-                    if (Id != null)
+                if (Id != null)
                     hashCode = hashCode * 59 + Id.GetHashCode();
-                    if (Multiple != null)
+                if (Multiple != null)
                     hashCode = hashCode * 59 + Multiple.GetHashCode();
-                    if (Options != null)
+                if (Options != null)
                     hashCode = hashCode * 59 + Options.GetHashCode();
-                    if (OwnVotes != null)
+                if (OwnVotes != null)
                     hashCode = hashCode * 59 + OwnVotes.GetHashCode();
-                    if (Voted != null)
+                if (Voted != null)
                     hashCode = hashCode * 59 + Voted.GetHashCode();
-                    if (VotersCount != null)
+                if (VotersCount != null)
                     hashCode = hashCode * 59 + VotersCount.GetHashCode();
-                    if (VotesCount != null)
+                if (VotesCount != null)
                     hashCode = hashCode * 59 + VotesCount.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+
+#pragma warning disable 1591
 
         public static bool operator ==(Poll left, Poll right)
         {
@@ -253,7 +254,8 @@ namespace DotPub.DataContracts.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
+
         #endregion Operators
     }
 }

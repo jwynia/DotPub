@@ -13,19 +13,19 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class InstanceConfigurationPolls : IEquatable<InstanceConfigurationPolls>
-    { 
+    {
         /// <summary>
         /// Number of characters allowed per option in the poll.
         /// </summary>
         /// <value>Number of characters allowed per option in the poll.</value>
 
-        [DataMember(Name="max_characters_per_option")]
+        [DataMember(Name = "max_characters_per_option")]
         public long? MaxCharactersPerOption { get; set; }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Maximum expiration time of the poll in seconds.</value>
 
-        [DataMember(Name="max_expiration")]
+        [DataMember(Name = "max_expiration")]
         public long? MaxExpiration { get; set; }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Number of options permitted in a poll on this instance.</value>
 
-        [DataMember(Name="max_options")]
+        [DataMember(Name = "max_options")]
         public long? MaxOptions { get; set; }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Minimum expiration time of the poll in seconds.</value>
 
-        [DataMember(Name="min_expiration")]
+        [DataMember(Name = "min_expiration")]
         public long? MinExpiration { get; set; }
 
         /// <summary>
@@ -99,22 +99,22 @@ namespace DotPub.DataContracts.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     MaxCharactersPerOption == other.MaxCharactersPerOption ||
                     MaxCharactersPerOption != null &&
                     MaxCharactersPerOption.Equals(other.MaxCharactersPerOption)
-                ) && 
+                ) &&
                 (
                     MaxExpiration == other.MaxExpiration ||
                     MaxExpiration != null &&
                     MaxExpiration.Equals(other.MaxExpiration)
-                ) && 
+                ) &&
                 (
                     MaxOptions == other.MaxOptions ||
                     MaxOptions != null &&
                     MaxOptions.Equals(other.MaxOptions)
-                ) && 
+                ) &&
                 (
                     MinExpiration == other.MinExpiration ||
                     MinExpiration != null &&
@@ -132,20 +132,21 @@ namespace DotPub.DataContracts.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (MaxCharactersPerOption != null)
+                if (MaxCharactersPerOption != null)
                     hashCode = hashCode * 59 + MaxCharactersPerOption.GetHashCode();
-                    if (MaxExpiration != null)
+                if (MaxExpiration != null)
                     hashCode = hashCode * 59 + MaxExpiration.GetHashCode();
-                    if (MaxOptions != null)
+                if (MaxOptions != null)
                     hashCode = hashCode * 59 + MaxOptions.GetHashCode();
-                    if (MinExpiration != null)
+                if (MinExpiration != null)
                     hashCode = hashCode * 59 + MinExpiration.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+
+#pragma warning disable 1591
 
         public static bool operator ==(InstanceConfigurationPolls left, InstanceConfigurationPolls right)
         {
@@ -157,7 +158,8 @@ namespace DotPub.DataContracts.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
+
         #endregion Operators
     }
 }

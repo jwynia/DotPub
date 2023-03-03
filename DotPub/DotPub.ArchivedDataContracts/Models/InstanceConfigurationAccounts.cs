@@ -13,19 +13,19 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class InstanceConfigurationAccounts : IEquatable<InstanceConfigurationAccounts>
-    { 
+    {
         /// <summary>
         /// Whether or not accounts on this instance are allowed to upload custom CSS for profiles and statuses.
         /// </summary>
         /// <value>Whether or not accounts on this instance are allowed to upload custom CSS for profiles and statuses.</value>
 
-        [DataMember(Name="allow_custom_css")]
+        [DataMember(Name = "allow_custom_css")]
         public bool? AllowCustomCss { get; set; }
 
         /// <summary>
@@ -72,12 +72,12 @@ namespace DotPub.DataContracts.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
-                (
-                    AllowCustomCss == other.AllowCustomCss ||
-                    AllowCustomCss != null &&
-                    AllowCustomCss.Equals(other.AllowCustomCss)
-                );
+            return
+            (
+                AllowCustomCss == other.AllowCustomCss ||
+                AllowCustomCss != null &&
+                AllowCustomCss.Equals(other.AllowCustomCss)
+            );
         }
 
         /// <summary>
@@ -90,14 +90,15 @@ namespace DotPub.DataContracts.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (AllowCustomCss != null)
+                if (AllowCustomCss != null)
                     hashCode = hashCode * 59 + AllowCustomCss.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+
+#pragma warning disable 1591
 
         public static bool operator ==(InstanceConfigurationAccounts left, InstanceConfigurationAccounts right)
         {
@@ -109,7 +110,8 @@ namespace DotPub.DataContracts.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
+
         #endregion Operators
     }
 }

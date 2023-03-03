@@ -7,14 +7,14 @@ using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
 namespace DotPub.ArchivedWebApi.Controllers
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [Authorize]
     [ApiController]
     public class S2sfederationApiController : ControllerBase
-    { 
+    {
         /// <summary>
         /// Get the public outbox collection for an actor.
         /// </summary>
@@ -33,8 +33,9 @@ namespace DotPub.ArchivedWebApi.Controllers
         [ValidateModelState]
         [SwaggerOperation("S2sOutboxGet")]
         [SwaggerResponse(statusCode: 200, type: typeof(SwaggerCollection), description: "")]
-        public virtual IActionResult S2sOutboxGet([FromRoute][Required]string username, [FromQuery]bool? page, [FromQuery]string minId, [FromQuery]string maxId)
-        { 
+        public virtual IActionResult S2sOutboxGet([FromRoute] [Required] string username, [FromQuery] bool? page,
+            [FromQuery] string minId, [FromQuery] string maxId)
+        {
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(SwaggerCollection));
 
@@ -52,10 +53,10 @@ namespace DotPub.ArchivedWebApi.Controllers
 
             string exampleJson = null;
             exampleJson = "";
-            
+
             var example = exampleJson != null
-            ? JsonSerializer.Deserialize<SwaggerCollection>(exampleJson)
-            : default(SwaggerCollection);
+                ? JsonSerializer.Deserialize<SwaggerCollection>(exampleJson)
+                : default(SwaggerCollection);
             //TODO: Change the data returned
             return new ObjectResult(example);
         }
@@ -79,8 +80,10 @@ namespace DotPub.ArchivedWebApi.Controllers
         [ValidateModelState]
         [SwaggerOperation("S2sRepliesGet")]
         [SwaggerResponse(statusCode: 200, type: typeof(SwaggerCollection), description: "")]
-        public virtual IActionResult S2sRepliesGet([FromRoute][Required]string username, [FromRoute][Required]string status, [FromQuery]bool? page, [FromQuery]bool? onlyOtherAccounts, [FromQuery]string minId)
-        { 
+        public virtual IActionResult S2sRepliesGet([FromRoute] [Required] string username,
+            [FromRoute] [Required] string status, [FromQuery] bool? page, [FromQuery] bool? onlyOtherAccounts,
+            [FromQuery] string minId)
+        {
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(SwaggerCollection));
 
@@ -98,10 +101,10 @@ namespace DotPub.ArchivedWebApi.Controllers
 
             string exampleJson = null;
             exampleJson = "";
-            
+
             var example = exampleJson != null
-            ? JsonSerializer.Deserialize<SwaggerCollection>(exampleJson)
-            : default(SwaggerCollection);
+                ? JsonSerializer.Deserialize<SwaggerCollection>(exampleJson)
+                : default(SwaggerCollection);
             //TODO: Change the data returned
             return new ObjectResult(example);
         }

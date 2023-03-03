@@ -13,39 +13,39 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
+{
     /// <summary>
     /// See https://webfinger.net/
     /// </summary>
     [DataContract]
     public partial class Link : IEquatable<Link>
-    { 
+    {
         /// <summary>
         /// Gets or Sets Href
         /// </summary>
 
-        [DataMember(Name="href")]
+        [DataMember(Name = "href")]
         public string Href { get; set; }
 
         /// <summary>
         /// Gets or Sets Rel
         /// </summary>
 
-        [DataMember(Name="rel")]
+        [DataMember(Name = "rel")]
         public string Rel { get; set; }
 
         /// <summary>
         /// Gets or Sets Template
         /// </summary>
 
-        [DataMember(Name="template")]
+        [DataMember(Name = "template")]
         public string Template { get; set; }
 
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
 
-        [DataMember(Name="type")]
+        [DataMember(Name = "type")]
         public string Type { get; set; }
 
         /// <summary>
@@ -95,22 +95,22 @@ namespace DotPub.DataContracts.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Href == other.Href ||
                     Href != null &&
                     Href.Equals(other.Href)
-                ) && 
+                ) &&
                 (
                     Rel == other.Rel ||
                     Rel != null &&
                     Rel.Equals(other.Rel)
-                ) && 
+                ) &&
                 (
                     Template == other.Template ||
                     Template != null &&
                     Template.Equals(other.Template)
-                ) && 
+                ) &&
                 (
                     Type == other.Type ||
                     Type != null &&
@@ -128,20 +128,21 @@ namespace DotPub.DataContracts.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Href != null)
+                if (Href != null)
                     hashCode = hashCode * 59 + Href.GetHashCode();
-                    if (Rel != null)
+                if (Rel != null)
                     hashCode = hashCode * 59 + Rel.GetHashCode();
-                    if (Template != null)
+                if (Template != null)
                     hashCode = hashCode * 59 + Template.GetHashCode();
-                    if (Type != null)
+                if (Type != null)
                     hashCode = hashCode * 59 + Type.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+
+#pragma warning disable 1591
 
         public static bool operator ==(Link left, Link right)
         {
@@ -153,7 +154,8 @@ namespace DotPub.DataContracts.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
+
         #endregion Operators
     }
 }

@@ -13,19 +13,19 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class StatusCreateRequest : IEquatable<StatusCreateRequest>
-    { 
+    {
         /// <summary>
         /// Format to use when parsing this status. in: formData
         /// </summary>
         /// <value>Format to use when parsing this status. in: formData</value>
 
-        [DataMember(Name="format")]
+        [DataMember(Name = "format")]
         public string Format { get; set; }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>ID of the status being replied to, if status is a reply. in: formData</value>
 
-        [DataMember(Name="in_reply_to_id")]
+        [DataMember(Name = "in_reply_to_id")]
         public string InReplyToId { get; set; }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>ISO 639 language code for this status. in: formData</value>
 
-        [DataMember(Name="language")]
+        [DataMember(Name = "language")]
         public string Language { get; set; }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Array of Attachment ids to be attached as media. If provided, status becomes optional, and poll cannot be used.  If the status is being submitted as a form, the key is &#39;media_ids[]&#39;, but if it&#39;s json or xml, the key is &#39;media_ids&#39;.  in: formData</value>
 
-        [DataMember(Name="media_ids")]
+        [DataMember(Name = "media_ids")]
         public List<string> MediaIds { get; set; }
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>ISO 8601 Datetime at which to schedule a status. Providing this parameter will cause ScheduledStatus to be returned instead of Status. Must be at least 5 minutes in the future. in: formData</value>
 
-        [DataMember(Name="scheduled_at")]
+        [DataMember(Name = "scheduled_at")]
         public string ScheduledAt { get; set; }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Status and attached media should be marked as sensitive. in: formData</value>
 
-        [DataMember(Name="sensitive")]
+        [DataMember(Name = "sensitive")]
         public bool? Sensitive { get; set; }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Text to be shown as a warning or subject before the actual content. Statuses are generally collapsed behind this field. in: formData</value>
 
-        [DataMember(Name="spoiler_text")]
+        [DataMember(Name = "spoiler_text")]
         public string SpoilerText { get; set; }
 
         /// <summary>
@@ -81,7 +81,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Text content of the status. If media_ids is provided, this becomes optional. Attaching a poll is optional while status is provided. in: formData</value>
 
-        [DataMember(Name="status")]
+        [DataMember(Name = "status")]
         public string Status { get; set; }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Visibility of the posted status. in: formData</value>
 
-        [DataMember(Name="visibility")]
+        [DataMember(Name = "visibility")]
         public string Visibility { get; set; }
 
         /// <summary>
@@ -144,47 +144,47 @@ namespace DotPub.DataContracts.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Format == other.Format ||
                     Format != null &&
                     Format.Equals(other.Format)
-                ) && 
+                ) &&
                 (
                     InReplyToId == other.InReplyToId ||
                     InReplyToId != null &&
                     InReplyToId.Equals(other.InReplyToId)
-                ) && 
+                ) &&
                 (
                     Language == other.Language ||
                     Language != null &&
                     Language.Equals(other.Language)
-                ) && 
+                ) &&
                 (
                     MediaIds == other.MediaIds ||
                     MediaIds != null &&
                     MediaIds.SequenceEqual(other.MediaIds)
-                ) && 
+                ) &&
                 (
                     ScheduledAt == other.ScheduledAt ||
                     ScheduledAt != null &&
                     ScheduledAt.Equals(other.ScheduledAt)
-                ) && 
+                ) &&
                 (
                     Sensitive == other.Sensitive ||
                     Sensitive != null &&
                     Sensitive.Equals(other.Sensitive)
-                ) && 
+                ) &&
                 (
                     SpoilerText == other.SpoilerText ||
                     SpoilerText != null &&
                     SpoilerText.Equals(other.SpoilerText)
-                ) && 
+                ) &&
                 (
                     Status == other.Status ||
                     Status != null &&
                     Status.Equals(other.Status)
-                ) && 
+                ) &&
                 (
                     Visibility == other.Visibility ||
                     Visibility != null &&
@@ -202,30 +202,31 @@ namespace DotPub.DataContracts.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Format != null)
+                if (Format != null)
                     hashCode = hashCode * 59 + Format.GetHashCode();
-                    if (InReplyToId != null)
+                if (InReplyToId != null)
                     hashCode = hashCode * 59 + InReplyToId.GetHashCode();
-                    if (Language != null)
+                if (Language != null)
                     hashCode = hashCode * 59 + Language.GetHashCode();
-                    if (MediaIds != null)
+                if (MediaIds != null)
                     hashCode = hashCode * 59 + MediaIds.GetHashCode();
-                    if (ScheduledAt != null)
+                if (ScheduledAt != null)
                     hashCode = hashCode * 59 + ScheduledAt.GetHashCode();
-                    if (Sensitive != null)
+                if (Sensitive != null)
                     hashCode = hashCode * 59 + Sensitive.GetHashCode();
-                    if (SpoilerText != null)
+                if (SpoilerText != null)
                     hashCode = hashCode * 59 + SpoilerText.GetHashCode();
-                    if (Status != null)
+                if (Status != null)
                     hashCode = hashCode * 59 + Status.GetHashCode();
-                    if (Visibility != null)
+                if (Visibility != null)
                     hashCode = hashCode * 59 + Visibility.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+
+#pragma warning disable 1591
 
         public static bool operator ==(StatusCreateRequest left, StatusCreateRequest right)
         {
@@ -237,7 +238,8 @@ namespace DotPub.DataContracts.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
+
         #endregion Operators
     }
 }

@@ -13,19 +13,19 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
+{
     /// <summary>
     /// DomainBlock represents a block on one domain
     /// </summary>
     [DataContract]
     public partial class DomainBlock : IEquatable<DomainBlock>
-    { 
+    {
         /// <summary>
         /// Time at which this block was created (ISO 8601 Datetime).
         /// </summary>
         /// <value>Time at which this block was created (ISO 8601 Datetime).</value>
 
-        [DataMember(Name="created_at")]
+        [DataMember(Name = "created_at")]
         public string CreatedAt { get; set; }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>ID of the account that created this domain block.</value>
 
-        [DataMember(Name="created_by")]
+        [DataMember(Name = "created_by")]
         public string CreatedBy { get; set; }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>The hostname of the domain.</value>
 
-        [DataMember(Name="domain")]
+        [DataMember(Name = "domain")]
         public string Domain { get; set; }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>The ID of the domain block.</value>
 
-        [DataMember(Name="id")]
+        [DataMember(Name = "id")]
         public string Id { get; private set; }
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Obfuscate the domain name when serving this domain block publicly. A useful anti-harassment tool.</value>
 
-        [DataMember(Name="obfuscate")]
+        [DataMember(Name = "obfuscate")]
         public bool? Obfuscate { get; set; }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Private comment for this block, visible to our instance admins only.</value>
 
-        [DataMember(Name="private_comment")]
+        [DataMember(Name = "private_comment")]
         public string PrivateComment { get; set; }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>If the domain is blocked, what&#39;s the publicly-stated reason for the block.</value>
 
-        [DataMember(Name="public_comment")]
+        [DataMember(Name = "public_comment")]
         public string PublicComment { get; set; }
 
         /// <summary>
@@ -81,7 +81,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Time at which this domain was silenced. Key will not be present on open domains.</value>
 
-        [DataMember(Name="silenced_at")]
+        [DataMember(Name = "silenced_at")]
         public string SilencedAt { get; set; }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>The ID of the subscription that created/caused this domain block.</value>
 
-        [DataMember(Name="subscription_id")]
+        [DataMember(Name = "subscription_id")]
         public string SubscriptionId { get; set; }
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Time at which this domain was suspended. Key will not be present on open domains.</value>
 
-        [DataMember(Name="suspended_at")]
+        [DataMember(Name = "suspended_at")]
         public string SuspendedAt { get; set; }
 
         /// <summary>
@@ -128,7 +128,7 @@ namespace DotPub.DataContracts.Models
         /// <returns>JSON string presentation of the object</returns>
         public string ToJson()
         {
-            return JsonSerializer.Serialize(this,new JsonSerializerOptions(){WriteIndented = true});
+            return JsonSerializer.Serialize(this, new JsonSerializerOptions() { WriteIndented = true });
         }
 
         /// <summary>
@@ -153,52 +153,52 @@ namespace DotPub.DataContracts.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     CreatedAt == other.CreatedAt ||
                     CreatedAt != null &&
                     CreatedAt.Equals(other.CreatedAt)
-                ) && 
+                ) &&
                 (
                     CreatedBy == other.CreatedBy ||
                     CreatedBy != null &&
                     CreatedBy.Equals(other.CreatedBy)
-                ) && 
+                ) &&
                 (
                     Domain == other.Domain ||
                     Domain != null &&
                     Domain.Equals(other.Domain)
-                ) && 
+                ) &&
                 (
                     Id == other.Id ||
                     Id != null &&
                     Id.Equals(other.Id)
-                ) && 
+                ) &&
                 (
                     Obfuscate == other.Obfuscate ||
                     Obfuscate != null &&
                     Obfuscate.Equals(other.Obfuscate)
-                ) && 
+                ) &&
                 (
                     PrivateComment == other.PrivateComment ||
                     PrivateComment != null &&
                     PrivateComment.Equals(other.PrivateComment)
-                ) && 
+                ) &&
                 (
                     PublicComment == other.PublicComment ||
                     PublicComment != null &&
                     PublicComment.Equals(other.PublicComment)
-                ) && 
+                ) &&
                 (
                     SilencedAt == other.SilencedAt ||
                     SilencedAt != null &&
                     SilencedAt.Equals(other.SilencedAt)
-                ) && 
+                ) &&
                 (
                     SubscriptionId == other.SubscriptionId ||
                     SubscriptionId != null &&
                     SubscriptionId.Equals(other.SubscriptionId)
-                ) && 
+                ) &&
                 (
                     SuspendedAt == other.SuspendedAt ||
                     SuspendedAt != null &&
@@ -216,32 +216,33 @@ namespace DotPub.DataContracts.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (CreatedAt != null)
+                if (CreatedAt != null)
                     hashCode = hashCode * 59 + CreatedAt.GetHashCode();
-                    if (CreatedBy != null)
+                if (CreatedBy != null)
                     hashCode = hashCode * 59 + CreatedBy.GetHashCode();
-                    if (Domain != null)
+                if (Domain != null)
                     hashCode = hashCode * 59 + Domain.GetHashCode();
-                    if (Id != null)
+                if (Id != null)
                     hashCode = hashCode * 59 + Id.GetHashCode();
-                    if (Obfuscate != null)
+                if (Obfuscate != null)
                     hashCode = hashCode * 59 + Obfuscate.GetHashCode();
-                    if (PrivateComment != null)
+                if (PrivateComment != null)
                     hashCode = hashCode * 59 + PrivateComment.GetHashCode();
-                    if (PublicComment != null)
+                if (PublicComment != null)
                     hashCode = hashCode * 59 + PublicComment.GetHashCode();
-                    if (SilencedAt != null)
+                if (SilencedAt != null)
                     hashCode = hashCode * 59 + SilencedAt.GetHashCode();
-                    if (SubscriptionId != null)
+                if (SubscriptionId != null)
                     hashCode = hashCode * 59 + SubscriptionId.GetHashCode();
-                    if (SuspendedAt != null)
+                if (SuspendedAt != null)
                     hashCode = hashCode * 59 + SuspendedAt.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+
+#pragma warning disable 1591
 
         public static bool operator ==(DomainBlock left, DomainBlock right)
         {
@@ -253,7 +254,8 @@ namespace DotPub.DataContracts.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
+
         #endregion Operators
     }
 }

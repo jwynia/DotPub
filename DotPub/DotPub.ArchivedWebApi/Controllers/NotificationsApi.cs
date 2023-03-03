@@ -6,14 +6,14 @@ using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
 namespace DotPub.ArchivedWebApi.Controllers
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [Authorize]
     [ApiController]
     public class NotificationsApiController : ControllerBase
-    { 
+    {
         /// <summary>
         /// Clear/delete all notifications for currently authorized user.
         /// </summary>
@@ -30,7 +30,7 @@ namespace DotPub.ArchivedWebApi.Controllers
         [SwaggerOperation("ClearNotifications")]
         [SwaggerResponse(statusCode: 200, type: typeof(Object), description: "")]
         public virtual IActionResult ClearNotifications()
-        { 
+        {
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(Object));
 
@@ -51,10 +51,10 @@ namespace DotPub.ArchivedWebApi.Controllers
 
             string exampleJson = null;
             exampleJson = "{\n  \"bytes\": [\n    123,\n    125\n  ],\n  \"empty\": false\n}";
-            
+
             var example = exampleJson != null
-            ? JsonSerializer.Deserialize<Object>(exampleJson)
-            : default(Object);
+                ? JsonSerializer.Deserialize<Object>(exampleJson)
+                : default(Object);
             //TODO: Change the data returned
             return new ObjectResult(example);
         }
@@ -78,8 +78,9 @@ namespace DotPub.ArchivedWebApi.Controllers
         [ValidateModelState]
         [SwaggerOperation("Notifications")]
         [SwaggerResponse(statusCode: 200, type: typeof(List<Notification>), description: "Array of notifications.")]
-        public virtual IActionResult Notifications([FromQuery]int? limit, [FromQuery]List<string> excludeTypes, [FromQuery]string maxId, [FromQuery]string sinceId)
-        { 
+        public virtual IActionResult Notifications([FromQuery] int? limit, [FromQuery] List<string> excludeTypes,
+            [FromQuery] string maxId, [FromQuery] string sinceId)
+        {
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(List<Notification>));
 
@@ -100,10 +101,10 @@ namespace DotPub.ArchivedWebApi.Controllers
 
             string exampleJson = null;
             exampleJson = "{}";
-            
+
             var example = exampleJson != null
-            ? JsonSerializer.Deserialize<List<Notification>>(exampleJson)
-            : default(List<Notification>);
+                ? JsonSerializer.Deserialize<List<Notification>>(exampleJson)
+                : default(List<Notification>);
             //TODO: Change the data returned
             return new ObjectResult(example);
         }

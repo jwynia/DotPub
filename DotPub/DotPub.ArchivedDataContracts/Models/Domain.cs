@@ -13,19 +13,19 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
+{
     /// <summary>
     /// Domain represents a remote domain
     /// </summary>
     [DataContract]
     public partial class Domain : IEquatable<Domain>
-    { 
+    {
         /// <summary>
         /// The hostname of the domain.
         /// </summary>
         /// <value>The hostname of the domain.</value>
 
-        [DataMember(Name="domain")]
+        [DataMember(Name = "domain")]
         public string _Domain { get; set; }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>If the domain is blocked, what&#39;s the publicly-stated reason for the block.</value>
 
-        [DataMember(Name="public_comment")]
+        [DataMember(Name = "public_comment")]
         public string PublicComment { get; set; }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Time at which this domain was silenced. Key will not be present on open domains.</value>
 
-        [DataMember(Name="silenced_at")]
+        [DataMember(Name = "silenced_at")]
         public string SilencedAt { get; set; }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Time at which this domain was suspended. Key will not be present on open domains.</value>
 
-        [DataMember(Name="suspended_at")]
+        [DataMember(Name = "suspended_at")]
         public string SuspendedAt { get; set; }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace DotPub.DataContracts.Models
         /// <returns>JSON string presentation of the object</returns>
         public string ToJson()
         {
-            return JsonSerializer.Serialize(this,new JsonSerializerOptions(){WriteIndented = true});
+            return JsonSerializer.Serialize(this, new JsonSerializerOptions() { WriteIndented = true });
         }
 
         /// <summary>
@@ -99,22 +99,22 @@ namespace DotPub.DataContracts.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     _Domain == other._Domain ||
                     _Domain != null &&
                     _Domain.Equals(other._Domain)
-                ) && 
+                ) &&
                 (
                     PublicComment == other.PublicComment ||
                     PublicComment != null &&
                     PublicComment.Equals(other.PublicComment)
-                ) && 
+                ) &&
                 (
                     SilencedAt == other.SilencedAt ||
                     SilencedAt != null &&
                     SilencedAt.Equals(other.SilencedAt)
-                ) && 
+                ) &&
                 (
                     SuspendedAt == other.SuspendedAt ||
                     SuspendedAt != null &&
@@ -132,20 +132,21 @@ namespace DotPub.DataContracts.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (_Domain != null)
+                if (_Domain != null)
                     hashCode = hashCode * 59 + _Domain.GetHashCode();
-                    if (PublicComment != null)
+                if (PublicComment != null)
                     hashCode = hashCode * 59 + PublicComment.GetHashCode();
-                    if (SilencedAt != null)
+                if (SilencedAt != null)
                     hashCode = hashCode * 59 + SilencedAt.GetHashCode();
-                    if (SuspendedAt != null)
+                if (SuspendedAt != null)
                     hashCode = hashCode * 59 + SuspendedAt.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+
+#pragma warning disable 1591
 
         public static bool operator ==(Domain left, Domain right)
         {
@@ -157,7 +158,8 @@ namespace DotPub.DataContracts.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
+
         #endregion Operators
     }
 }

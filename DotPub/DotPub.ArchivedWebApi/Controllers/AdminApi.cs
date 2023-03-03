@@ -7,18 +7,17 @@ using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
 namespace DotPub.ArchivedWebApi.Controllers
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [Authorize]
     [ApiController]
     public class AdminApiController : ControllerBase
-    { 
+    {
         /// <summary>
         /// Perform an admin action on an account.
         /// </summary>
-        
         /// <param name="id">ID of the account.</param>
         /// <param name="type">Type of action to be taken (&#x60;disable&#x60;, &#x60;silence&#x60;, or &#x60;suspend&#x60;).</param>
         /// <param name="text">Optional text describing why this action was taken.</param>
@@ -33,8 +32,9 @@ namespace DotPub.ArchivedWebApi.Controllers
         [Route("//api/v1/admin/accounts/{id}/action")]
         [ValidateModelState]
         [SwaggerOperation("AdminAccountAction")]
-        public virtual IActionResult AdminAccountAction([FromRoute][Required]string id, [FromForm][Required()]string type, [FromForm]string text)
-        { 
+        public virtual IActionResult AdminAccountAction([FromRoute] [Required] string id,
+            [FromForm] [Required()] string type, [FromForm] string text)
+        {
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200);
 
@@ -81,9 +81,13 @@ namespace DotPub.ArchivedWebApi.Controllers
         [Route("//api/v1/admin/domain_blocks")]
         [ValidateModelState]
         [SwaggerOperation("DomainBlockCreate")]
-        [SwaggerResponse(statusCode: 200, type: typeof(DomainBlock), description: "The newly created domain block, if &#x60;import&#x60; !&#x3D; &#x60;true&#x60;. If a list has been imported, then an &#x60;array&#x60; of newly created domain blocks will be returned instead.")]
-        public virtual IActionResult DomainBlockCreate([FromQuery]bool? import, [FromForm]System.IO.Stream domains, [FromForm]string domain, [FromForm]bool? obfuscate, [FromForm]string publicComment, [FromForm]string privateComment)
-        { 
+        [SwaggerResponse(statusCode: 200, type: typeof(DomainBlock),
+            description:
+            "The newly created domain block, if &#x60;import&#x60; !&#x3D; &#x60;true&#x60;. If a list has been imported, then an &#x60;array&#x60; of newly created domain blocks will be returned instead.")]
+        public virtual IActionResult DomainBlockCreate([FromQuery] bool? import, [FromForm] System.IO.Stream domains,
+            [FromForm] string domain, [FromForm] bool? obfuscate, [FromForm] string publicComment,
+            [FromForm] string privateComment)
+        {
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(DomainBlock));
 
@@ -107,10 +111,10 @@ namespace DotPub.ArchivedWebApi.Controllers
 
             string exampleJson = null;
             exampleJson = "{\"empty\": false}";
-            
+
             var example = exampleJson != null
-            ? JsonSerializer.Deserialize<DomainBlock>(exampleJson)
-            : default(DomainBlock);
+                ? JsonSerializer.Deserialize<DomainBlock>(exampleJson)
+                : default(DomainBlock);
             //TODO: Change the data returned
             return new ObjectResult(example);
         }
@@ -118,7 +122,6 @@ namespace DotPub.ArchivedWebApi.Controllers
         /// <summary>
         /// Delete domain block with the given ID.
         /// </summary>
-        
         /// <param name="id">The id of the domain block.</param>
         /// <response code="200">The domain block that was just deleted.</response>
         /// <response code="400">bad request</response>
@@ -131,9 +134,10 @@ namespace DotPub.ArchivedWebApi.Controllers
         [Route("//api/v1/admin/domain_blocks/{id}")]
         [ValidateModelState]
         [SwaggerOperation("DomainBlockDelete")]
-        [SwaggerResponse(statusCode: 200, type: typeof(DomainBlock), description: "The domain block that was just deleted.")]
-        public virtual IActionResult DomainBlockDelete([FromRoute][Required]string id)
-        { 
+        [SwaggerResponse(statusCode: 200, type: typeof(DomainBlock),
+            description: "The domain block that was just deleted.")]
+        public virtual IActionResult DomainBlockDelete([FromRoute] [Required] string id)
+        {
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(DomainBlock));
 
@@ -157,10 +161,10 @@ namespace DotPub.ArchivedWebApi.Controllers
 
             string exampleJson = null;
             exampleJson = "{\"empty\": false}";
-            
+
             var example = exampleJson != null
-            ? JsonSerializer.Deserialize<DomainBlock>(exampleJson)
-            : default(DomainBlock);
+                ? JsonSerializer.Deserialize<DomainBlock>(exampleJson)
+                : default(DomainBlock);
             //TODO: Change the data returned
             return new ObjectResult(example);
         }
@@ -168,7 +172,6 @@ namespace DotPub.ArchivedWebApi.Controllers
         /// <summary>
         /// View domain block with the given ID.
         /// </summary>
-        
         /// <param name="id">The id of the domain block.</param>
         /// <response code="200">The requested domain block.</response>
         /// <response code="400">bad request</response>
@@ -182,8 +185,8 @@ namespace DotPub.ArchivedWebApi.Controllers
         [ValidateModelState]
         [SwaggerOperation("DomainBlockGet")]
         [SwaggerResponse(statusCode: 200, type: typeof(DomainBlock), description: "The requested domain block.")]
-        public virtual IActionResult DomainBlockGet([FromRoute][Required]string id)
-        { 
+        public virtual IActionResult DomainBlockGet([FromRoute] [Required] string id)
+        {
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(DomainBlock));
 
@@ -207,10 +210,10 @@ namespace DotPub.ArchivedWebApi.Controllers
 
             string exampleJson = null;
             exampleJson = "{\"empty\": false}";
-            
+
             var example = exampleJson != null
-            ? JsonSerializer.Deserialize<DomainBlock>(exampleJson)
-            : default(DomainBlock);
+                ? JsonSerializer.Deserialize<DomainBlock>(exampleJson)
+                : default(DomainBlock);
             //TODO: Change the data returned
             return new ObjectResult(example);
         }
@@ -218,7 +221,6 @@ namespace DotPub.ArchivedWebApi.Controllers
         /// <summary>
         /// View all domain blocks currently in place.
         /// </summary>
-        
         /// <param name="export">If set to &#x60;true&#x60;, then each entry in the returned list of domain blocks will only consist of the fields &#x60;domain&#x60; and &#x60;public_comment&#x60;. This is perfect for when you want to save and share a list of all the domains you have blocked on your instance, so that someone else can easily import them, but you don&#39;t want them to see the database IDs of your blocks, or private comments etc.</param>
         /// <response code="200">All domain blocks currently in place.</response>
         /// <response code="400">bad request</response>
@@ -231,9 +233,10 @@ namespace DotPub.ArchivedWebApi.Controllers
         [Route("//api/v1/admin/domain_blocks")]
         [ValidateModelState]
         [SwaggerOperation("DomainBlocksGet")]
-        [SwaggerResponse(statusCode: 200, type: typeof(List<DomainBlock>), description: "All domain blocks currently in place.")]
-        public virtual IActionResult DomainBlocksGet([FromQuery]bool? export)
-        { 
+        [SwaggerResponse(statusCode: 200, type: typeof(List<DomainBlock>),
+            description: "All domain blocks currently in place.")]
+        public virtual IActionResult DomainBlocksGet([FromQuery] bool? export)
+        {
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(List<DomainBlock>));
 
@@ -257,10 +260,10 @@ namespace DotPub.ArchivedWebApi.Controllers
 
             string exampleJson = null;
             exampleJson = "{}";
-            
+
             var example = exampleJson != null
-            ? JsonSerializer.Deserialize<List<DomainBlock>>(exampleJson)
-            : default(List<DomainBlock>);
+                ? JsonSerializer.Deserialize<List<DomainBlock>>(exampleJson)
+                : default(List<DomainBlock>);
             //TODO: Change the data returned
             return new ObjectResult(example);
         }
@@ -268,7 +271,6 @@ namespace DotPub.ArchivedWebApi.Controllers
         /// <summary>
         /// Get a list of existing emoji categories.
         /// </summary>
-        
         /// <param name="id">The id of the emoji.</param>
         /// <response code="200">Array of existing emoji categories.</response>
         /// <response code="400">bad request</response>
@@ -281,9 +283,10 @@ namespace DotPub.ArchivedWebApi.Controllers
         [Route("//api/v1/admin/custom_emojis/categories")]
         [ValidateModelState]
         [SwaggerOperation("EmojiCategoriesGet")]
-        [SwaggerResponse(statusCode: 200, type: typeof(List<string>), description: "Array of existing emoji categories.")]
-        public virtual IActionResult EmojiCategoriesGet([FromRoute][Required]string id)
-        { 
+        [SwaggerResponse(statusCode: 200, type: typeof(List<string>),
+            description: "Array of existing emoji categories.")]
+        public virtual IActionResult EmojiCategoriesGet([FromRoute] [Required] string id)
+        {
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(List<AdminEmojiCategory>));
 
@@ -307,10 +310,10 @@ namespace DotPub.ArchivedWebApi.Controllers
 
             string exampleJson = null;
             exampleJson = "{}";
-            
+
             var example = exampleJson != null
-            ? JsonSerializer.Deserialize<List<string>>(exampleJson)
-            : default(List<string>);
+                ? JsonSerializer.Deserialize<List<string>>(exampleJson)
+                : default(List<string>);
             //TODO: Change the data returned
             return new ObjectResult(example);
         }
@@ -318,7 +321,6 @@ namespace DotPub.ArchivedWebApi.Controllers
         /// <summary>
         /// Upload and create a new instance emoji.
         /// </summary>
-        
         /// <param name="shortcode">The code to use for the emoji, which will be used by instance denizens to select it. This must be unique on the instance.</param>
         /// <param name="image">A png or gif image of the emoji. Animated pngs work too! To ensure compatibility with other fedi implementations, emoji size limit is 50kb by default.</param>
         /// <param name="category">Category in which to place the new emoji. 64 characters or less. If left blank, emoji will be uncategorized. If a category with the given name doesn&#39;t exist yet, it will be created.</param>
@@ -335,8 +337,10 @@ namespace DotPub.ArchivedWebApi.Controllers
         [ValidateModelState]
         [SwaggerOperation("EmojiCreate")]
         [SwaggerResponse(statusCode: 200, type: typeof(Emoji), description: "The newly-created emoji.")]
-        public virtual IActionResult EmojiCreate([FromForm][Required()][RegularExpression("/\\w{2,30}/")]string shortcode, [FromForm][Required()]System.IO.Stream image, [FromForm]string category)
-        { 
+        public virtual IActionResult EmojiCreate(
+            [FromForm] [Required()] [RegularExpression("/\\w{2,30}/")] string shortcode,
+            [FromForm] [Required()] System.IO.Stream image, [FromForm] string category)
+        {
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(Emoji));
 
@@ -363,10 +367,10 @@ namespace DotPub.ArchivedWebApi.Controllers
 
             string exampleJson = null;
             exampleJson = "{\"empty\": false}";
-            
+
             var example = exampleJson != null
-            ? JsonSerializer.Deserialize<Emoji>(exampleJson)
-            : default(Emoji);
+                ? JsonSerializer.Deserialize<Emoji>(exampleJson)
+                : default(Emoji);
             //TODO: Change the data returned
             return new ObjectResult(example);
         }
@@ -387,9 +391,10 @@ namespace DotPub.ArchivedWebApi.Controllers
         [Route("//api/v1/admin/custom_emojis/{id}")]
         [ValidateModelState]
         [SwaggerOperation("EmojiDelete")]
-        [SwaggerResponse(statusCode: 200, type: typeof(AdminEmoji), description: "The deleted emoji will be returned to the caller in case further processing is necessary.")]
-        public virtual IActionResult EmojiDelete([FromRoute][Required]string id)
-        { 
+        [SwaggerResponse(statusCode: 200, type: typeof(AdminEmoji),
+            description: "The deleted emoji will be returned to the caller in case further processing is necessary.")]
+        public virtual IActionResult EmojiDelete([FromRoute] [Required] string id)
+        {
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(AdminEmoji));
 
@@ -413,10 +418,10 @@ namespace DotPub.ArchivedWebApi.Controllers
 
             string exampleJson = null;
             exampleJson = "{\"empty\": false}";
-            
+
             var example = exampleJson != null
-            ? JsonSerializer.Deserialize<AdminEmoji>(exampleJson)
-            : default(AdminEmoji);
+                ? JsonSerializer.Deserialize<AdminEmoji>(exampleJson)
+                : default(AdminEmoji);
             //TODO: Change the data returned
             return new ObjectResult(example);
         }
@@ -424,7 +429,6 @@ namespace DotPub.ArchivedWebApi.Controllers
         /// <summary>
         /// Get the admin view of a single emoji.
         /// </summary>
-        
         /// <param name="id">The id of the emoji.</param>
         /// <response code="200">A single emoji.</response>
         /// <response code="400">bad request</response>
@@ -438,8 +442,8 @@ namespace DotPub.ArchivedWebApi.Controllers
         [ValidateModelState]
         [SwaggerOperation("EmojiGet")]
         [SwaggerResponse(statusCode: 200, type: typeof(AdminEmoji), description: "A single emoji.")]
-        public virtual IActionResult EmojiGet([FromRoute][Required]string id)
-        { 
+        public virtual IActionResult EmojiGet([FromRoute] [Required] string id)
+        {
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(AdminEmoji));
 
@@ -463,10 +467,10 @@ namespace DotPub.ArchivedWebApi.Controllers
 
             string exampleJson = null;
             exampleJson = "{\"empty\": false}";
-            
+
             var example = exampleJson != null
-            ? JsonSerializer.Deserialize<AdminEmoji>(exampleJson)
-            : default(AdminEmoji);
+                ? JsonSerializer.Deserialize<AdminEmoji>(exampleJson)
+                : default(AdminEmoji);
             //TODO: Change the data returned
             return new ObjectResult(example);
         }
@@ -492,8 +496,10 @@ namespace DotPub.ArchivedWebApi.Controllers
         [ValidateModelState]
         [SwaggerOperation("EmojiUpdate")]
         [SwaggerResponse(statusCode: 200, type: typeof(AdminEmoji), description: "The updated emoji.")]
-        public virtual IActionResult EmojiUpdate([FromRoute][Required]string id, [FromForm][Required()]string type, [FromForm][RegularExpression("/\\w{2,30}/")]string shortcode, [FromForm]System.IO.Stream image, [FromForm]string category)
-        { 
+        public virtual IActionResult EmojiUpdate([FromRoute] [Required] string id, [FromForm] [Required()] string type,
+            [FromForm] [RegularExpression("/\\w{2,30}/")] string shortcode, [FromForm] System.IO.Stream image,
+            [FromForm] string category)
+        {
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(AdminEmoji));
 
@@ -517,10 +523,10 @@ namespace DotPub.ArchivedWebApi.Controllers
 
             string exampleJson = null;
             exampleJson = "{\"empty\": false}";
-            
+
             var example = exampleJson != null
-            ? JsonSerializer.Deserialize<AdminEmoji>(exampleJson)
-            : default(AdminEmoji);
+                ? JsonSerializer.Deserialize<AdminEmoji>(exampleJson)
+                : default(AdminEmoji);
             //TODO: Change the data returned
             return new ObjectResult(example);
         }
@@ -544,9 +550,11 @@ namespace DotPub.ArchivedWebApi.Controllers
         [Route("//api/v1/admin/custom_emojis")]
         [ValidateModelState]
         [SwaggerOperation("EmojisGet")]
-        [SwaggerResponse(statusCode: 200, type: typeof(List<AdminEmoji>), description: "An array of emojis, arranged alphabetically by shortcode and domain.")]
-        public virtual IActionResult EmojisGet([FromQuery]string filter, [FromQuery]int? limit, [FromQuery]string maxShortcodeDomain, [FromQuery]string minShortcodeDomain)
-        { 
+        [SwaggerResponse(statusCode: 200, type: typeof(List<AdminEmoji>),
+            description: "An array of emojis, arranged alphabetically by shortcode and domain.")]
+        public virtual IActionResult EmojisGet([FromQuery] string filter, [FromQuery] int? limit,
+            [FromQuery] string maxShortcodeDomain, [FromQuery] string minShortcodeDomain)
+        {
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(List<AdminEmoji>));
 
@@ -570,10 +578,10 @@ namespace DotPub.ArchivedWebApi.Controllers
 
             string exampleJson = null;
             exampleJson = "{}";
-            
+
             var example = exampleJson != null
-            ? JsonSerializer.Deserialize<List<AdminEmoji>>(exampleJson)
-            : default(List<AdminEmoji>);
+                ? JsonSerializer.Deserialize<List<AdminEmoji>>(exampleJson)
+                : default(List<AdminEmoji>);
             //TODO: Change the data returned
             return new ObjectResult(example);
         }
@@ -594,8 +602,8 @@ namespace DotPub.ArchivedWebApi.Controllers
         [Route("//api/v1/admin/media_cleanup")]
         [ValidateModelState]
         [SwaggerOperation("MediaCleanup")]
-        public virtual IActionResult MediaCleanup([FromQuery]long? remoteCacheDays)
-        { 
+        public virtual IActionResult MediaCleanup([FromQuery] long? remoteCacheDays)
+        {
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200);
 
@@ -637,8 +645,8 @@ namespace DotPub.ArchivedWebApi.Controllers
         [Route("//api/v1/admin/media_refetch")]
         [ValidateModelState]
         [SwaggerOperation("MediaRefetch")]
-        public virtual IActionResult MediaRefetch([FromQuery]string domain)
-        { 
+        public virtual IActionResult MediaRefetch([FromQuery] string domain)
+        {
             //TODO: Uncomment the next line to return response 202 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(202);
 

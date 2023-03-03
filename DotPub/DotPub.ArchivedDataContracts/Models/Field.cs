@@ -13,19 +13,19 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class Field : IEquatable<Field>
-    { 
+    {
         /// <summary>
         /// The key/name of this field.
         /// </summary>
         /// <value>The key/name of this field.</value>
 
-        [DataMember(Name="name")]
+        [DataMember(Name = "name")]
         public string Name { get; set; }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>The value of this field.</value>
 
-        [DataMember(Name="value")]
+        [DataMember(Name = "value")]
         public string Value { get; set; }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>If this field has been verified, when did this occur? (ISO 8601 Datetime).</value>
 
-        [DataMember(Name="verified_at")]
+        [DataMember(Name = "verified_at")]
         public string VerifiedAt { get; set; }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace DotPub.DataContracts.Models
         /// <returns>JSON string presentation of the object</returns>
         public string ToJson()
         {
-            return JsonSerializer.Serialize(this,new JsonSerializerOptions(){WriteIndented = true});
+            return JsonSerializer.Serialize(this, new JsonSerializerOptions() { WriteIndented = true });
         }
 
         /// <summary>
@@ -90,17 +90,17 @@ namespace DotPub.DataContracts.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Name == other.Name ||
                     Name != null &&
                     Name.Equals(other.Name)
-                ) && 
+                ) &&
                 (
                     Value == other.Value ||
                     Value != null &&
                     Value.Equals(other.Value)
-                ) && 
+                ) &&
                 (
                     VerifiedAt == other.VerifiedAt ||
                     VerifiedAt != null &&
@@ -118,18 +118,19 @@ namespace DotPub.DataContracts.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Name != null)
+                if (Name != null)
                     hashCode = hashCode * 59 + Name.GetHashCode();
-                    if (Value != null)
+                if (Value != null)
                     hashCode = hashCode * 59 + Value.GetHashCode();
-                    if (VerifiedAt != null)
+                if (VerifiedAt != null)
                     hashCode = hashCode * 59 + VerifiedAt.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+
+#pragma warning disable 1591
 
         public static bool operator ==(Field left, Field right)
         {
@@ -141,7 +142,8 @@ namespace DotPub.DataContracts.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
+
         #endregion Operators
     }
 }

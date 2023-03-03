@@ -13,26 +13,26 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class SwaggerCollection : IEquatable<SwaggerCollection>
-    { 
+    {
         /// <summary>
         /// ActivityStreams context.
         /// </summary>
         /// <value>ActivityStreams context.</value>
 
-        [DataMember(Name="@context")]
+        [DataMember(Name = "@context")]
         public string Context { get; set; }
 
         /// <summary>
         /// Gets or Sets First
         /// </summary>
 
-        [DataMember(Name="first")]
+        [DataMember(Name = "first")]
         public SwaggerCollectionPage First { get; set; }
 
         /// <summary>
@@ -40,14 +40,14 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>ActivityStreams ID.</value>
 
-        [DataMember(Name="id")]
+        [DataMember(Name = "id")]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Last
         /// </summary>
 
-        [DataMember(Name="last")]
+        [DataMember(Name = "last")]
         public SwaggerCollectionPage Last { get; set; }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>ActivityStreams type.</value>
 
-        [DataMember(Name="type")]
+        [DataMember(Name = "type")]
         public string Type { get; set; }
 
         /// <summary>
@@ -106,27 +106,27 @@ namespace DotPub.DataContracts.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Context == other.Context ||
                     Context != null &&
                     Context.Equals(other.Context)
-                ) && 
+                ) &&
                 (
                     First == other.First ||
                     First != null &&
                     First.Equals(other.First)
-                ) && 
+                ) &&
                 (
                     Id == other.Id ||
                     Id != null &&
                     Id.Equals(other.Id)
-                ) && 
+                ) &&
                 (
                     Last == other.Last ||
                     Last != null &&
                     Last.Equals(other.Last)
-                ) && 
+                ) &&
                 (
                     Type == other.Type ||
                     Type != null &&
@@ -144,22 +144,23 @@ namespace DotPub.DataContracts.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Context != null)
+                if (Context != null)
                     hashCode = hashCode * 59 + Context.GetHashCode();
-                    if (First != null)
+                if (First != null)
                     hashCode = hashCode * 59 + First.GetHashCode();
-                    if (Id != null)
+                if (Id != null)
                     hashCode = hashCode * 59 + Id.GetHashCode();
-                    if (Last != null)
+                if (Last != null)
                     hashCode = hashCode * 59 + Last.GetHashCode();
-                    if (Type != null)
+                if (Type != null)
                     hashCode = hashCode * 59 + Type.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+
+#pragma warning disable 1591
 
         public static bool operator ==(SwaggerCollection left, SwaggerCollection right)
         {
@@ -171,7 +172,8 @@ namespace DotPub.DataContracts.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
+
         #endregion Operators
     }
 }

@@ -6,14 +6,14 @@ using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
 namespace DotPub.ArchivedWebApi.Controllers
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [Authorize]
     [ApiController]
     public class BlocksApiController : ControllerBase
-    { 
+    {
         /// <summary>
         /// Get an array of accounts that requesting account has blocked.
         /// </summary>
@@ -32,8 +32,9 @@ namespace DotPub.ArchivedWebApi.Controllers
         [ValidateModelState]
         [SwaggerOperation("BlocksGet")]
         [SwaggerResponse(statusCode: 200, type: typeof(List<Account>), description: "")]
-        public virtual IActionResult BlocksGet([FromQuery]int? limit, [FromQuery]string maxId, [FromQuery]string sinceId)
-        { 
+        public virtual IActionResult BlocksGet([FromQuery] int? limit, [FromQuery] string maxId,
+            [FromQuery] string sinceId)
+        {
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(List<Account>));
 
@@ -54,10 +55,10 @@ namespace DotPub.ArchivedWebApi.Controllers
 
             string exampleJson = null;
             exampleJson = "{}";
-            
+
             var example = exampleJson != null
-            ? JsonSerializer.Deserialize<List<Account>>(exampleJson)
-            : default(List<Account>);
+                ? JsonSerializer.Deserialize<List<Account>>(exampleJson)
+                : default(List<Account>);
             //TODO: Change the data returned
             return new ObjectResult(example);
         }

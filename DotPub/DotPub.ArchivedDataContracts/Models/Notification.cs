@@ -13,18 +13,18 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class Notification : IEquatable<Notification>
-    { 
+    {
         /// <summary>
         /// Gets or Sets Account
         /// </summary>
 
-        [DataMember(Name="account")]
+        [DataMember(Name = "account")]
         public Account Account { get; set; }
 
         /// <summary>
@@ -32,7 +32,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>The timestamp of the notification (ISO 8601 Datetime)</value>
 
-        [DataMember(Name="created_at")]
+        [DataMember(Name = "created_at")]
         public string CreatedAt { get; set; }
 
         /// <summary>
@@ -40,14 +40,14 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>The id of the notification in the database.</value>
 
-        [DataMember(Name="id")]
+        [DataMember(Name = "id")]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
 
-        [DataMember(Name="status")]
+        [DataMember(Name = "status")]
         public Status Status { get; set; }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>The type of event that resulted in the notification. follow &#x3D; Someone followed you follow_request &#x3D; Someone requested to follow you mention &#x3D; Someone mentioned you in their status reblog &#x3D; Someone boosted one of your statuses favourite &#x3D; Someone favourited one of your statuses poll &#x3D; A poll you have voted in or created has ended status &#x3D; Someone you enabled notifications for has posted a status</value>
 
-        [DataMember(Name="type")]
+        [DataMember(Name = "type")]
         public string Type { get; set; }
 
         /// <summary>
@@ -106,27 +106,27 @@ namespace DotPub.DataContracts.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Account == other.Account ||
                     Account != null &&
                     Account.Equals(other.Account)
-                ) && 
+                ) &&
                 (
                     CreatedAt == other.CreatedAt ||
                     CreatedAt != null &&
                     CreatedAt.Equals(other.CreatedAt)
-                ) && 
+                ) &&
                 (
                     Id == other.Id ||
                     Id != null &&
                     Id.Equals(other.Id)
-                ) && 
+                ) &&
                 (
                     Status == other.Status ||
                     Status != null &&
                     Status.Equals(other.Status)
-                ) && 
+                ) &&
                 (
                     Type == other.Type ||
                     Type != null &&
@@ -144,22 +144,23 @@ namespace DotPub.DataContracts.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Account != null)
+                if (Account != null)
                     hashCode = hashCode * 59 + Account.GetHashCode();
-                    if (CreatedAt != null)
+                if (CreatedAt != null)
                     hashCode = hashCode * 59 + CreatedAt.GetHashCode();
-                    if (Id != null)
+                if (Id != null)
                     hashCode = hashCode * 59 + Id.GetHashCode();
-                    if (Status != null)
+                if (Status != null)
                     hashCode = hashCode * 59 + Status.GetHashCode();
-                    if (Type != null)
+                if (Type != null)
                     hashCode = hashCode * 59 + Type.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+
+#pragma warning disable 1591
 
         public static bool operator ==(Notification left, Notification right)
         {
@@ -171,7 +172,8 @@ namespace DotPub.DataContracts.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
+
         #endregion Operators
     }
 }

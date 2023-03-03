@@ -5,13 +5,13 @@ using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
 namespace DotPub.ArchivedWebApi.Controllers
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [ApiController]
     public class WebfingerApiController : ControllerBase
-    { 
+    {
         /// <summary>
         /// Handles webfinger account lookup requests.
         /// </summary>
@@ -23,20 +23,20 @@ namespace DotPub.ArchivedWebApi.Controllers
         [SwaggerOperation("WebfingerGet")]
         [SwaggerResponse(statusCode: 200, type: typeof(WellKnownResponse), description: "")]
         public virtual ActionResult<WellKnownResponse> WebfingerGet()
-        { 
+        {
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(WellKnownResponse));
 
             string exampleJson = null;
             exampleJson = "{\"empty\": false}";
-            
+
             var example = exampleJson != null
-            ? JsonSerializer.Deserialize<WellKnownResponse>(exampleJson)
-            : default(WellKnownResponse);
+                ? JsonSerializer.Deserialize<WellKnownResponse>(exampleJson)
+                : default(WellKnownResponse);
             //TODO: Change the data returned
             return new ObjectResult(example);
         }
-        
+
         /// <summary>
         /// Handles lookups for authentication endpoints.
         /// </summary>
@@ -47,21 +47,21 @@ namespace DotPub.ArchivedWebApi.Controllers
         [SwaggerOperation("OpenIDConfigurationGet")]
         [SwaggerResponse(statusCode: 200, type: typeof(WellKnownResponse), description: "")]
         public virtual IActionResult OpenIDConfigurationGet()
-        { 
+        {
             //https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(WellKnownResponse));
 
             string exampleJson = null;
             exampleJson = "{\"empty\": false}";
-            
+
             var example = exampleJson != null
                 ? JsonSerializer.Deserialize<WellKnownResponse>(exampleJson)
                 : default(WellKnownResponse);
             //TODO: Change the data returned
             return new ObjectResult(example);
         }
-        
+
         //see also .well-known/oauth-authorization-server
     }
 }

@@ -13,19 +13,19 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class AccountRelationship : IEquatable<AccountRelationship>
-    { 
+    {
         /// <summary>
         /// This account is blocking you.
         /// </summary>
         /// <value>This account is blocking you.</value>
 
-        [DataMember(Name="blocked_by")]
+        [DataMember(Name = "blocked_by")]
         public bool? BlockedBy { get; set; }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>You are blocking this account.</value>
 
-        [DataMember(Name="blocking")]
+        [DataMember(Name = "blocking")]
         public bool? Blocking { get; set; }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>You are blocking this account&#39;s domain.</value>
 
-        [DataMember(Name="domain_blocking")]
+        [DataMember(Name = "domain_blocking")]
         public bool? DomainBlocking { get; set; }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>You are featuring this account on your profile.</value>
 
-        [DataMember(Name="endorsed")]
+        [DataMember(Name = "endorsed")]
         public bool? Endorsed { get; set; }
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>This account follows you.</value>
 
-        [DataMember(Name="followed_by")]
+        [DataMember(Name = "followed_by")]
         public bool? FollowedBy { get; set; }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>You are following this account.</value>
 
-        [DataMember(Name="following")]
+        [DataMember(Name = "following")]
         public bool? Following { get; set; }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>The account id.</value>
 
-        [DataMember(Name="id")]
+        [DataMember(Name = "id")]
         public string Id { get; set; }
 
         /// <summary>
@@ -81,7 +81,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>You are muting this account.</value>
 
-        [DataMember(Name="muting")]
+        [DataMember(Name = "muting")]
         public bool? Muting { get; set; }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>You are muting notifications from this account.</value>
 
-        [DataMember(Name="muting_notifications")]
+        [DataMember(Name = "muting_notifications")]
         public bool? MutingNotifications { get; set; }
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Your note on this account.</value>
 
-        [DataMember(Name="note")]
+        [DataMember(Name = "note")]
         public string Note { get; set; }
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>You are seeing notifications when this account posts.</value>
 
-        [DataMember(Name="notifying")]
+        [DataMember(Name = "notifying")]
         public bool? Notifying { get; set; }
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>You have requested to follow this account, and the request is pending.</value>
 
-        [DataMember(Name="requested")]
+        [DataMember(Name = "requested")]
         public bool? Requested { get; set; }
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>You are seeing reblogs/boosts from this account in your home timeline.</value>
 
-        [DataMember(Name="showing_reblogs")]
+        [DataMember(Name = "showing_reblogs")]
         public bool? ShowingReblogs { get; set; }
 
         /// <summary>
@@ -155,7 +155,7 @@ namespace DotPub.DataContracts.Models
         /// <returns>JSON string presentation of the object</returns>
         public string ToJson()
         {
-            return JsonSerializer.Serialize(this,new JsonSerializerOptions(){WriteIndented = true});
+            return JsonSerializer.Serialize(this, new JsonSerializerOptions() { WriteIndented = true });
         }
 
         /// <summary>
@@ -180,67 +180,67 @@ namespace DotPub.DataContracts.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     BlockedBy == other.BlockedBy ||
                     BlockedBy != null &&
                     BlockedBy.Equals(other.BlockedBy)
-                ) && 
+                ) &&
                 (
                     Blocking == other.Blocking ||
                     Blocking != null &&
                     Blocking.Equals(other.Blocking)
-                ) && 
+                ) &&
                 (
                     DomainBlocking == other.DomainBlocking ||
                     DomainBlocking != null &&
                     DomainBlocking.Equals(other.DomainBlocking)
-                ) && 
+                ) &&
                 (
                     Endorsed == other.Endorsed ||
                     Endorsed != null &&
                     Endorsed.Equals(other.Endorsed)
-                ) && 
+                ) &&
                 (
                     FollowedBy == other.FollowedBy ||
                     FollowedBy != null &&
                     FollowedBy.Equals(other.FollowedBy)
-                ) && 
+                ) &&
                 (
                     Following == other.Following ||
                     Following != null &&
                     Following.Equals(other.Following)
-                ) && 
+                ) &&
                 (
                     Id == other.Id ||
                     Id != null &&
                     Id.Equals(other.Id)
-                ) && 
+                ) &&
                 (
                     Muting == other.Muting ||
                     Muting != null &&
                     Muting.Equals(other.Muting)
-                ) && 
+                ) &&
                 (
                     MutingNotifications == other.MutingNotifications ||
                     MutingNotifications != null &&
                     MutingNotifications.Equals(other.MutingNotifications)
-                ) && 
+                ) &&
                 (
                     Note == other.Note ||
                     Note != null &&
                     Note.Equals(other.Note)
-                ) && 
+                ) &&
                 (
                     Notifying == other.Notifying ||
                     Notifying != null &&
                     Notifying.Equals(other.Notifying)
-                ) && 
+                ) &&
                 (
                     Requested == other.Requested ||
                     Requested != null &&
                     Requested.Equals(other.Requested)
-                ) && 
+                ) &&
                 (
                     ShowingReblogs == other.ShowingReblogs ||
                     ShowingReblogs != null &&
@@ -258,38 +258,39 @@ namespace DotPub.DataContracts.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (BlockedBy != null)
+                if (BlockedBy != null)
                     hashCode = hashCode * 59 + BlockedBy.GetHashCode();
-                    if (Blocking != null)
+                if (Blocking != null)
                     hashCode = hashCode * 59 + Blocking.GetHashCode();
-                    if (DomainBlocking != null)
+                if (DomainBlocking != null)
                     hashCode = hashCode * 59 + DomainBlocking.GetHashCode();
-                    if (Endorsed != null)
+                if (Endorsed != null)
                     hashCode = hashCode * 59 + Endorsed.GetHashCode();
-                    if (FollowedBy != null)
+                if (FollowedBy != null)
                     hashCode = hashCode * 59 + FollowedBy.GetHashCode();
-                    if (Following != null)
+                if (Following != null)
                     hashCode = hashCode * 59 + Following.GetHashCode();
-                    if (Id != null)
+                if (Id != null)
                     hashCode = hashCode * 59 + Id.GetHashCode();
-                    if (Muting != null)
+                if (Muting != null)
                     hashCode = hashCode * 59 + Muting.GetHashCode();
-                    if (MutingNotifications != null)
+                if (MutingNotifications != null)
                     hashCode = hashCode * 59 + MutingNotifications.GetHashCode();
-                    if (Note != null)
+                if (Note != null)
                     hashCode = hashCode * 59 + Note.GetHashCode();
-                    if (Notifying != null)
+                if (Notifying != null)
                     hashCode = hashCode * 59 + Notifying.GetHashCode();
-                    if (Requested != null)
+                if (Requested != null)
                     hashCode = hashCode * 59 + Requested.GetHashCode();
-                    if (ShowingReblogs != null)
+                if (ShowingReblogs != null)
                     hashCode = hashCode * 59 + ShowingReblogs.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+
+#pragma warning disable 1591
 
         public static bool operator ==(AccountRelationship left, AccountRelationship right)
         {
@@ -301,7 +302,8 @@ namespace DotPub.DataContracts.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
+
         #endregion Operators
     }
 }

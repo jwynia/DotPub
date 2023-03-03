@@ -7,18 +7,17 @@ using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
 namespace DotPub.ArchivedWebApi.Controllers
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [Authorize]
     [ApiController]
     public class MediaApiController : ControllerBase
-    { 
+    {
         /// <summary>
         /// Upload a new media attachment.
         /// </summary>
-        
         /// <param name="apiVersion">Version of the API to use. Must be either &#x60;v1&#x60; or &#x60;v2&#x60;.</param>
         /// <param name="_file">The media attachment to upload.</param>
         /// <param name="description">Image or media description to use as alt-text on the attachment. This is very useful for users of screenreaders! May or may not be required, depending on your instance settings.</param>
@@ -33,8 +32,9 @@ namespace DotPub.ArchivedWebApi.Controllers
         [ValidateModelState]
         [SwaggerOperation("MediaCreate")]
         [SwaggerResponse(statusCode: 200, type: typeof(Attachment), description: "The newly-created media attachment.")]
-        public virtual IActionResult MediaCreate([FromRoute][Required]string apiVersion, [FromForm][Required()]System.IO.Stream _file, [FromForm]string description, [FromForm]string focus)
-        { 
+        public virtual IActionResult MediaCreate([FromRoute] [Required] string apiVersion,
+            [FromForm] [Required()] System.IO.Stream _file, [FromForm] string description, [FromForm] string focus)
+        {
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(Attachment));
 
@@ -52,10 +52,10 @@ namespace DotPub.ArchivedWebApi.Controllers
 
             string exampleJson = null;
             exampleJson = "{\"empty\": false}";
-            
+
             var example = exampleJson != null
-            ? JsonSerializer.Deserialize<Attachment>(exampleJson)
-            : default(Attachment);
+                ? JsonSerializer.Deserialize<Attachment>(exampleJson)
+                : default(Attachment);
             //TODO: Change the data returned
             return new ObjectResult(example);
         }
@@ -63,7 +63,6 @@ namespace DotPub.ArchivedWebApi.Controllers
         /// <summary>
         /// Get a media attachment that you own.
         /// </summary>
-        
         /// <param name="id">id of the attachment</param>
         /// <response code="200">The requested media attachment.</response>
         /// <response code="400">bad request</response>
@@ -76,8 +75,8 @@ namespace DotPub.ArchivedWebApi.Controllers
         [ValidateModelState]
         [SwaggerOperation("MediaGet")]
         [SwaggerResponse(statusCode: 200, type: typeof(Attachment), description: "The requested media attachment.")]
-        public virtual IActionResult MediaGet([FromRoute][Required]string id)
-        { 
+        public virtual IActionResult MediaGet([FromRoute] [Required] string id)
+        {
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(Attachment));
 
@@ -98,10 +97,10 @@ namespace DotPub.ArchivedWebApi.Controllers
 
             string exampleJson = null;
             exampleJson = "{\"empty\": false}";
-            
+
             var example = exampleJson != null
-            ? JsonSerializer.Deserialize<Attachment>(exampleJson)
-            : default(Attachment);
+                ? JsonSerializer.Deserialize<Attachment>(exampleJson)
+                : default(Attachment);
             //TODO: Change the data returned
             return new ObjectResult(example);
         }
@@ -124,8 +123,9 @@ namespace DotPub.ArchivedWebApi.Controllers
         [ValidateModelState]
         [SwaggerOperation("MediaUpdate")]
         [SwaggerResponse(statusCode: 200, type: typeof(Attachment), description: "The newly-updated media attachment.")]
-        public virtual IActionResult MediaUpdate([FromRoute][Required]string id, [FromForm]string description, [FromForm]string focus)
-        { 
+        public virtual IActionResult MediaUpdate([FromRoute] [Required] string id, [FromForm] string description,
+            [FromForm] string focus)
+        {
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(Attachment));
 
@@ -146,10 +146,10 @@ namespace DotPub.ArchivedWebApi.Controllers
 
             string exampleJson = null;
             exampleJson = "{\"empty\": false}";
-            
+
             var example = exampleJson != null
-            ? JsonSerializer.Deserialize<Attachment>(exampleJson)
-            : default(Attachment);
+                ? JsonSerializer.Deserialize<Attachment>(exampleJson)
+                : default(Attachment);
             //TODO: Change the data returned
             return new ObjectResult(example);
         }

@@ -13,19 +13,19 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
+{
     /// <summary>
     /// By default, max 4 fields and 255 characters per property/value.
     /// </summary>
     [DataContract]
     public partial class UpdateField : IEquatable<UpdateField>
-    { 
+    {
         /// <summary>
         /// Name of the field
         /// </summary>
         /// <value>Name of the field</value>
 
-        [DataMember(Name="name")]
+        [DataMember(Name = "name")]
         public string Name { get; set; }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Value of the field</value>
 
-        [DataMember(Name="value")]
+        [DataMember(Name = "value")]
         public string Value { get; set; }
 
         /// <summary>
@@ -81,12 +81,12 @@ namespace DotPub.DataContracts.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Name == other.Name ||
                     Name != null &&
                     Name.Equals(other.Name)
-                ) && 
+                ) &&
                 (
                     Value == other.Value ||
                     Value != null &&
@@ -104,16 +104,17 @@ namespace DotPub.DataContracts.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Name != null)
+                if (Name != null)
                     hashCode = hashCode * 59 + Name.GetHashCode();
-                    if (Value != null)
+                if (Value != null)
                     hashCode = hashCode * 59 + Value.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+
+#pragma warning disable 1591
 
         public static bool operator ==(UpdateField left, UpdateField right)
         {
@@ -125,7 +126,8 @@ namespace DotPub.DataContracts.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
+
         #endregion Operators
     }
 }

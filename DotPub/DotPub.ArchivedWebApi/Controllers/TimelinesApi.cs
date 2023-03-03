@@ -6,14 +6,14 @@ using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
 namespace DotPub.ArchivedWebApi.Controllers
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [Authorize]
     [ApiController]
     public class TimelinesApiController : ControllerBase
-    { 
+    {
         /// <summary>
         /// See statuses/posts by accounts you follow.
         /// </summary>
@@ -31,8 +31,9 @@ namespace DotPub.ArchivedWebApi.Controllers
         [ValidateModelState]
         [SwaggerOperation("HomeTimeline")]
         [SwaggerResponse(statusCode: 200, type: typeof(List<Status>), description: "Array of statuses.")]
-        public virtual IActionResult HomeTimeline([FromQuery]string maxId, [FromQuery]string sinceId, [FromQuery]string minId, [FromQuery]int? limit, [FromQuery]bool? local)
-        { 
+        public virtual IActionResult HomeTimeline([FromQuery] string maxId, [FromQuery] string sinceId,
+            [FromQuery] string minId, [FromQuery] int? limit, [FromQuery] bool? local)
+        {
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(List<Status>));
 
@@ -44,10 +45,10 @@ namespace DotPub.ArchivedWebApi.Controllers
 
             string exampleJson = null;
             exampleJson = "{}";
-            
+
             var example = exampleJson != null
-            ? JsonSerializer.Deserialize<List<Status>>(exampleJson)
-            : default(List<Status>);
+                ? JsonSerializer.Deserialize<List<Status>>(exampleJson)
+                : default(List<Status>);
             //TODO: Change the data returned
             return new ObjectResult(example);
         }
@@ -69,8 +70,9 @@ namespace DotPub.ArchivedWebApi.Controllers
         [ValidateModelState]
         [SwaggerOperation("PublicTimeline")]
         [SwaggerResponse(statusCode: 200, type: typeof(List<Status>), description: "Array of statuses.")]
-        public virtual IActionResult PublicTimeline([FromQuery]string maxId, [FromQuery]string sinceId, [FromQuery]string minId, [FromQuery]int? limit, [FromQuery]bool? local)
-        { 
+        public virtual IActionResult PublicTimeline([FromQuery] string maxId, [FromQuery] string sinceId,
+            [FromQuery] string minId, [FromQuery] int? limit, [FromQuery] bool? local)
+        {
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(List<Status>));
 
@@ -82,10 +84,10 @@ namespace DotPub.ArchivedWebApi.Controllers
 
             string exampleJson = null;
             exampleJson = "{}";
-            
+
             var example = exampleJson != null
-            ? JsonSerializer.Deserialize<List<Status>>(exampleJson)
-            : default(List<Status>);
+                ? JsonSerializer.Deserialize<List<Status>>(exampleJson)
+                : default(List<Status>);
             //TODO: Change the data returned
             return new ObjectResult(example);
         }

@@ -13,19 +13,19 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class PollOptions : IEquatable<PollOptions>
-    { 
+    {
         /// <summary>
         /// The text value of the poll option. String.
         /// </summary>
         /// <value>The text value of the poll option. String.</value>
 
-        [DataMember(Name="title")]
+        [DataMember(Name = "title")]
         public string Title { get; set; }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>The number of received votes for this option. Number, or null if results are not published yet.</value>
 
-        [DataMember(Name="votes_count")]
+        [DataMember(Name = "votes_count")]
         public long? VotesCount { get; set; }
 
         /// <summary>
@@ -81,12 +81,12 @@ namespace DotPub.DataContracts.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Title == other.Title ||
                     Title != null &&
                     Title.Equals(other.Title)
-                ) && 
+                ) &&
                 (
                     VotesCount == other.VotesCount ||
                     VotesCount != null &&
@@ -104,16 +104,17 @@ namespace DotPub.DataContracts.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Title != null)
+                if (Title != null)
                     hashCode = hashCode * 59 + Title.GetHashCode();
-                    if (VotesCount != null)
+                if (VotesCount != null)
                     hashCode = hashCode * 59 + VotesCount.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+
+#pragma warning disable 1591
 
         public static bool operator ==(PollOptions left, PollOptions right)
         {
@@ -125,7 +126,8 @@ namespace DotPub.DataContracts.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
+
         #endregion Operators
     }
 }

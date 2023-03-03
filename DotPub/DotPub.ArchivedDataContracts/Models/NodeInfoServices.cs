@@ -13,25 +13,25 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class NodeInfoServices : IEquatable<NodeInfoServices>
-    { 
+    {
         /// <summary>
         /// Gets or Sets Inbound
         /// </summary>
 
-        [DataMember(Name="inbound")]
+        [DataMember(Name = "inbound")]
         public List<string> Inbound { get; set; }
 
         /// <summary>
         /// Gets or Sets Outbound
         /// </summary>
 
-        [DataMember(Name="outbound")]
+        [DataMember(Name = "outbound")]
         public List<string> Outbound { get; set; }
 
         /// <summary>
@@ -79,12 +79,12 @@ namespace DotPub.DataContracts.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Inbound == other.Inbound ||
                     Inbound != null &&
                     Inbound.SequenceEqual(other.Inbound)
-                ) && 
+                ) &&
                 (
                     Outbound == other.Outbound ||
                     Outbound != null &&
@@ -102,16 +102,17 @@ namespace DotPub.DataContracts.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Inbound != null)
+                if (Inbound != null)
                     hashCode = hashCode * 59 + Inbound.GetHashCode();
-                    if (Outbound != null)
+                if (Outbound != null)
                     hashCode = hashCode * 59 + Outbound.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+
+#pragma warning disable 1591
 
         public static bool operator ==(NodeInfoServices left, NodeInfoServices right)
         {
@@ -123,7 +124,8 @@ namespace DotPub.DataContracts.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
+
         #endregion Operators
     }
 }

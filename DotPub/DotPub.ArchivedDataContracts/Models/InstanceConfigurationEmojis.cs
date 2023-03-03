@@ -13,19 +13,19 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class InstanceConfigurationEmojis : IEquatable<InstanceConfigurationEmojis>
-    { 
+    {
         /// <summary>
         /// Max allowed emoji image size in bytes.
         /// </summary>
         /// <value>Max allowed emoji image size in bytes.</value>
 
-        [DataMember(Name="emoji_size_limit")]
+        [DataMember(Name = "emoji_size_limit")]
         public long? EmojiSizeLimit { get; set; }
 
         /// <summary>
@@ -72,12 +72,12 @@ namespace DotPub.DataContracts.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
-                (
-                    EmojiSizeLimit == other.EmojiSizeLimit ||
-                    EmojiSizeLimit != null &&
-                    EmojiSizeLimit.Equals(other.EmojiSizeLimit)
-                );
+            return
+            (
+                EmojiSizeLimit == other.EmojiSizeLimit ||
+                EmojiSizeLimit != null &&
+                EmojiSizeLimit.Equals(other.EmojiSizeLimit)
+            );
         }
 
         /// <summary>
@@ -90,14 +90,15 @@ namespace DotPub.DataContracts.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (EmojiSizeLimit != null)
+                if (EmojiSizeLimit != null)
                     hashCode = hashCode * 59 + EmojiSizeLimit.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+
+#pragma warning disable 1591
 
         public static bool operator ==(InstanceConfigurationEmojis left, InstanceConfigurationEmojis right)
         {
@@ -109,7 +110,8 @@ namespace DotPub.DataContracts.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
+
         #endregion Operators
     }
 }

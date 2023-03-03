@@ -6,14 +6,14 @@ using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
 namespace DotPub.ArchivedWebApi.Controllers
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [Authorize]
     [ApiController]
     public class StreamingApiController : ControllerBase
-    { 
+    {
         /// <summary>
         /// Initiate a websocket connection for live streaming of statuses and notifications.
         /// </summary>
@@ -28,8 +28,9 @@ namespace DotPub.ArchivedWebApi.Controllers
         [ValidateModelState]
         [SwaggerOperation("StreamGet")]
         [SwaggerResponse(statusCode: 101, type: typeof(InlineResponse101), description: "")]
-        public virtual IActionResult StreamGet([FromQuery][Required()]string accessToken, [FromQuery][Required()]string stream)
-        { 
+        public virtual IActionResult StreamGet([FromQuery] [Required()] string accessToken,
+            [FromQuery] [Required()] string stream)
+        {
             //TODO: Uncomment the next line to return response 101 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(101, default(InlineResponse101));
 

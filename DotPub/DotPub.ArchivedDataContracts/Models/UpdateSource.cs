@@ -13,19 +13,19 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class UpdateSource : IEquatable<UpdateSource>
-    { 
+    {
         /// <summary>
         /// Default language to use for authored statuses. (ISO 6391)
         /// </summary>
         /// <value>Default language to use for authored statuses. (ISO 6391)</value>
 
-        [DataMember(Name="language")]
+        [DataMember(Name = "language")]
         public string Language { get; set; }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Default post privacy for authored statuses.</value>
 
-        [DataMember(Name="privacy")]
+        [DataMember(Name = "privacy")]
         public string Privacy { get; set; }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Mark authored statuses as sensitive by default.</value>
 
-        [DataMember(Name="sensitive")]
+        [DataMember(Name = "sensitive")]
         public bool? Sensitive { get; set; }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Default format for authored statuses (plain or markdown).</value>
 
-        [DataMember(Name="status_format")]
+        [DataMember(Name = "status_format")]
         public string StatusFormat { get; set; }
 
         /// <summary>
@@ -99,22 +99,22 @@ namespace DotPub.DataContracts.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Language == other.Language ||
                     Language != null &&
                     Language.Equals(other.Language)
-                ) && 
+                ) &&
                 (
                     Privacy == other.Privacy ||
                     Privacy != null &&
                     Privacy.Equals(other.Privacy)
-                ) && 
+                ) &&
                 (
                     Sensitive == other.Sensitive ||
                     Sensitive != null &&
                     Sensitive.Equals(other.Sensitive)
-                ) && 
+                ) &&
                 (
                     StatusFormat == other.StatusFormat ||
                     StatusFormat != null &&
@@ -132,20 +132,21 @@ namespace DotPub.DataContracts.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Language != null)
+                if (Language != null)
                     hashCode = hashCode * 59 + Language.GetHashCode();
-                    if (Privacy != null)
+                if (Privacy != null)
                     hashCode = hashCode * 59 + Privacy.GetHashCode();
-                    if (Sensitive != null)
+                if (Sensitive != null)
                     hashCode = hashCode * 59 + Sensitive.GetHashCode();
-                    if (StatusFormat != null)
+                if (StatusFormat != null)
                     hashCode = hashCode * 59 + StatusFormat.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+
+#pragma warning disable 1591
 
         public static bool operator ==(UpdateSource left, UpdateSource right)
         {
@@ -157,7 +158,8 @@ namespace DotPub.DataContracts.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
+
         #endregion Operators
     }
 }

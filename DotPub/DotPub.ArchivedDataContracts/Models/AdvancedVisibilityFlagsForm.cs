@@ -13,19 +13,19 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
+{
     /// <summary>
     /// AdvancedVisibilityFlagsForm allows a few more advanced flags to be set on new statuses, in addition to the standard mastodon-compatible ones.
     /// </summary>
     [DataContract]
     public partial class AdvancedVisibilityFlagsForm : IEquatable<AdvancedVisibilityFlagsForm>
-    { 
+    {
         /// <summary>
         /// This status can be boosted/reblogged.
         /// </summary>
         /// <value>This status can be boosted/reblogged.</value>
 
-        [DataMember(Name="boostable")]
+        [DataMember(Name = "boostable")]
         public bool? Boostable { get; set; }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>This status will be federated beyond the local timeline(s).</value>
 
-        [DataMember(Name="federated")]
+        [DataMember(Name = "federated")]
         public bool? Federated { get; set; }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>This status can be liked/faved.</value>
 
-        [DataMember(Name="likeable")]
+        [DataMember(Name = "likeable")]
         public bool? Likeable { get; set; }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>This status can be replied to.</value>
 
-        [DataMember(Name="replyable")]
+        [DataMember(Name = "replyable")]
         public bool? Replyable { get; set; }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace DotPub.DataContracts.Models
         /// <returns>JSON string presentation of the object</returns>
         public string ToJson()
         {
-            return JsonSerializer.Serialize(this,new JsonSerializerOptions(){WriteIndented = true});
+            return JsonSerializer.Serialize(this, new JsonSerializerOptions() { WriteIndented = true });
         }
 
         /// <summary>
@@ -99,22 +99,22 @@ namespace DotPub.DataContracts.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Boostable == other.Boostable ||
                     Boostable != null &&
                     Boostable.Equals(other.Boostable)
-                ) && 
+                ) &&
                 (
                     Federated == other.Federated ||
                     Federated != null &&
                     Federated.Equals(other.Federated)
-                ) && 
+                ) &&
                 (
                     Likeable == other.Likeable ||
                     Likeable != null &&
                     Likeable.Equals(other.Likeable)
-                ) && 
+                ) &&
                 (
                     Replyable == other.Replyable ||
                     Replyable != null &&
@@ -132,20 +132,21 @@ namespace DotPub.DataContracts.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Boostable != null)
+                if (Boostable != null)
                     hashCode = hashCode * 59 + Boostable.GetHashCode();
-                    if (Federated != null)
+                if (Federated != null)
                     hashCode = hashCode * 59 + Federated.GetHashCode();
-                    if (Likeable != null)
+                if (Likeable != null)
                     hashCode = hashCode * 59 + Likeable.GetHashCode();
-                    if (Replyable != null)
+                if (Replyable != null)
                     hashCode = hashCode * 59 + Replyable.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+
+#pragma warning disable 1591
 
         public static bool operator ==(AdvancedVisibilityFlagsForm left, AdvancedVisibilityFlagsForm right)
         {
@@ -157,7 +158,8 @@ namespace DotPub.DataContracts.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
+
         #endregion Operators
     }
 }

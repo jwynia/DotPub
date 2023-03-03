@@ -13,19 +13,19 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class AnnouncementReaction : IEquatable<AnnouncementReaction>
-    { 
+    {
         /// <summary>
         /// The total number of users who have added this reaction.
         /// </summary>
         /// <value>The total number of users who have added this reaction.</value>
 
-        [DataMember(Name="count")]
+        [DataMember(Name = "count")]
         public long? Count { get; set; }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>This reaction belongs to the account viewing it.</value>
 
-        [DataMember(Name="me")]
+        [DataMember(Name = "me")]
         public bool? Me { get; set; }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>The emoji used for the reaction. Either a unicode emoji, or a custom emoji&#39;s shortcode.</value>
 
-        [DataMember(Name="name")]
+        [DataMember(Name = "name")]
         public string Name { get; set; }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Web link to a non-animated image of the custom emoji. Empty for unicode emojis.</value>
 
-        [DataMember(Name="static_url")]
+        [DataMember(Name = "static_url")]
         public string StaticUrl { get; set; }
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Web link to the image of the custom emoji. Empty for unicode emojis.</value>
 
-        [DataMember(Name="url")]
+        [DataMember(Name = "url")]
         public string Url { get; set; }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace DotPub.DataContracts.Models
         /// <returns>JSON string presentation of the object</returns>
         public string ToJson()
         {
-            return JsonSerializer.Serialize(this,new JsonSerializerOptions(){WriteIndented = true});
+            return JsonSerializer.Serialize(this, new JsonSerializerOptions() { WriteIndented = true });
         }
 
         /// <summary>
@@ -108,27 +108,27 @@ namespace DotPub.DataContracts.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Count == other.Count ||
                     Count != null &&
                     Count.Equals(other.Count)
-                ) && 
+                ) &&
                 (
                     Me == other.Me ||
                     Me != null &&
                     Me.Equals(other.Me)
-                ) && 
+                ) &&
                 (
                     Name == other.Name ||
                     Name != null &&
                     Name.Equals(other.Name)
-                ) && 
+                ) &&
                 (
                     StaticUrl == other.StaticUrl ||
                     StaticUrl != null &&
                     StaticUrl.Equals(other.StaticUrl)
-                ) && 
+                ) &&
                 (
                     Url == other.Url ||
                     Url != null &&
@@ -146,22 +146,23 @@ namespace DotPub.DataContracts.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Count != null)
+                if (Count != null)
                     hashCode = hashCode * 59 + Count.GetHashCode();
-                    if (Me != null)
+                if (Me != null)
                     hashCode = hashCode * 59 + Me.GetHashCode();
-                    if (Name != null)
+                if (Name != null)
                     hashCode = hashCode * 59 + Name.GetHashCode();
-                    if (StaticUrl != null)
+                if (StaticUrl != null)
                     hashCode = hashCode * 59 + StaticUrl.GetHashCode();
-                    if (Url != null)
+                if (Url != null)
                     hashCode = hashCode * 59 + Url.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+
+#pragma warning disable 1591
 
         public static bool operator ==(AnnouncementReaction left, AnnouncementReaction right)
         {
@@ -173,7 +174,8 @@ namespace DotPub.DataContracts.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
+
         #endregion Operators
     }
 }

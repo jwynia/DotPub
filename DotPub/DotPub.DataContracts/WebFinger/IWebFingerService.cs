@@ -2,5 +2,6 @@
 
 public interface IWebFingerService
 {
-    WebFingerRecord GetRecordBySubjectOrAlias(string[] username);
+    WebFingerRecord GetRecordBySubjectOrAlias(string username);
+    NodeInfoRecord GetNodeInfo();
 }

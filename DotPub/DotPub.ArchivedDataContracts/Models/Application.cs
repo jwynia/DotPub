@@ -13,19 +13,19 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class Application : IEquatable<Application>
-    { 
+    {
         /// <summary>
         /// Client ID associated with this application.
         /// </summary>
         /// <value>Client ID associated with this application.</value>
 
-        [DataMember(Name="client_id")]
+        [DataMember(Name = "client_id")]
         public string ClientId { get; set; }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Client secret associated with this application.</value>
 
-        [DataMember(Name="client_secret")]
+        [DataMember(Name = "client_secret")]
         public string ClientSecret { get; set; }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>The ID of the application.</value>
 
-        [DataMember(Name="id")]
+        [DataMember(Name = "id")]
         public string Id { get; set; }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>The name of the application.</value>
 
-        [DataMember(Name="name")]
+        [DataMember(Name = "name")]
         public string Name { get; set; }
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Post-authorization redirect URI for the application (OAuth2).</value>
 
-        [DataMember(Name="redirect_uri")]
+        [DataMember(Name = "redirect_uri")]
         public string RedirectUri { get; set; }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Push API key for this application.</value>
 
-        [DataMember(Name="vapid_key")]
+        [DataMember(Name = "vapid_key")]
         public string VapidKey { get; set; }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>The website associated with the application (url)</value>
 
-        [DataMember(Name="website")]
+        [DataMember(Name = "website")]
         public string Website { get; set; }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace DotPub.DataContracts.Models
         /// <returns>JSON string presentation of the object</returns>
         public string ToJson()
         {
-            return JsonSerializer.Serialize(this,new JsonSerializerOptions(){WriteIndented = true});
+            return JsonSerializer.Serialize(this, new JsonSerializerOptions() { WriteIndented = true });
         }
 
         /// <summary>
@@ -126,37 +126,37 @@ namespace DotPub.DataContracts.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     ClientId == other.ClientId ||
                     ClientId != null &&
                     ClientId.Equals(other.ClientId)
-                ) && 
+                ) &&
                 (
                     ClientSecret == other.ClientSecret ||
                     ClientSecret != null &&
                     ClientSecret.Equals(other.ClientSecret)
-                ) && 
+                ) &&
                 (
                     Id == other.Id ||
                     Id != null &&
                     Id.Equals(other.Id)
-                ) && 
+                ) &&
                 (
                     Name == other.Name ||
                     Name != null &&
                     Name.Equals(other.Name)
-                ) && 
+                ) &&
                 (
                     RedirectUri == other.RedirectUri ||
                     RedirectUri != null &&
                     RedirectUri.Equals(other.RedirectUri)
-                ) && 
+                ) &&
                 (
                     VapidKey == other.VapidKey ||
                     VapidKey != null &&
                     VapidKey.Equals(other.VapidKey)
-                ) && 
+                ) &&
                 (
                     Website == other.Website ||
                     Website != null &&
@@ -174,26 +174,27 @@ namespace DotPub.DataContracts.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (ClientId != null)
+                if (ClientId != null)
                     hashCode = hashCode * 59 + ClientId.GetHashCode();
-                    if (ClientSecret != null)
+                if (ClientSecret != null)
                     hashCode = hashCode * 59 + ClientSecret.GetHashCode();
-                    if (Id != null)
+                if (Id != null)
                     hashCode = hashCode * 59 + Id.GetHashCode();
-                    if (Name != null)
+                if (Name != null)
                     hashCode = hashCode * 59 + Name.GetHashCode();
-                    if (RedirectUri != null)
+                if (RedirectUri != null)
                     hashCode = hashCode * 59 + RedirectUri.GetHashCode();
-                    if (VapidKey != null)
+                if (VapidKey != null)
                     hashCode = hashCode * 59 + VapidKey.GetHashCode();
-                    if (Website != null)
+                if (Website != null)
                     hashCode = hashCode * 59 + Website.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+
+#pragma warning disable 1591
 
         public static bool operator ==(Application left, Application right)
         {
@@ -205,7 +206,8 @@ namespace DotPub.DataContracts.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
+
         #endregion Operators
     }
 }

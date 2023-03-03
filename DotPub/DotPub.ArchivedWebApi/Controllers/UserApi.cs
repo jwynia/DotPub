@@ -5,14 +5,14 @@ using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
 namespace DotPub.ArchivedWebApi.Controllers
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [Authorize]
     [ApiController]
     public class UserApiController : ControllerBase
-    { 
+    {
         /// <summary>
         /// Change the password of authenticated user.
         /// </summary>
@@ -29,8 +29,9 @@ namespace DotPub.ArchivedWebApi.Controllers
         [Route("//api/v1/user/password_change")]
         [ValidateModelState]
         [SwaggerOperation("UserPasswordChange")]
-        public virtual IActionResult UserPasswordChange([FromForm][Required()]string oldPassword, [FromForm][Required()]string newPassword)
-        { 
+        public virtual IActionResult UserPasswordChange([FromForm] [Required()] string oldPassword,
+            [FromForm] [Required()] string newPassword)
+        {
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200);
 

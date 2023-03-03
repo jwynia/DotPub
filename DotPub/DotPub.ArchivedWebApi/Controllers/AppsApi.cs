@@ -7,14 +7,14 @@ using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
 namespace DotPub.ArchivedWebApi.Controllers
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [Authorize]
     [ApiController]
     public class AppsApiController : ControllerBase
-    { 
+    {
         /// <summary>
         /// Register a new application on this instance.
         /// </summary>
@@ -35,8 +35,9 @@ namespace DotPub.ArchivedWebApi.Controllers
         [ValidateModelState]
         [SwaggerOperation("AppCreate")]
         [SwaggerResponse(statusCode: 200, type: typeof(Application), description: "The newly-created application.")]
-        public virtual IActionResult AppCreate([FromForm][Required()]string clientName, [FromForm][Required()]string redirectUris, [FromForm]string scopes, [FromForm]string website)
-        { 
+        public virtual IActionResult AppCreate([FromForm] [Required()] string clientName,
+            [FromForm] [Required()] string redirectUris, [FromForm] string scopes, [FromForm] string website)
+        {
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(Application));
 
@@ -60,10 +61,10 @@ namespace DotPub.ArchivedWebApi.Controllers
 
             string exampleJson = null;
             exampleJson = "{\"empty\": false}";
-            
+
             var example = exampleJson != null
-            ? JsonSerializer.Deserialize <Application>(exampleJson)
-            : default(Application);
+                ? JsonSerializer.Deserialize<Application>(exampleJson)
+                : default(Application);
             //TODO: Change the data returned
             return new ObjectResult(example);
         }

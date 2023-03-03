@@ -13,5 +13,7 @@ public class Relationship : SmartEnum<Relationship, string>
     public static readonly Relationship OStatusSubscribe =
         new(name: nameof(OStatusSubscribe), value: "http://ostatus.org/schema/1.0/subscribe");
 
-    private Relationship(string name, string value) : base(name, value) { }
+    private Relationship(string name, string value) : base(name, value)
+    {
+    }
 }

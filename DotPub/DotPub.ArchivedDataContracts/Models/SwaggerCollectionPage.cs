@@ -13,19 +13,19 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class SwaggerCollectionPage : IEquatable<SwaggerCollectionPage>
-    { 
+    {
         /// <summary>
         /// ActivityStreams ID.
         /// </summary>
         /// <value>ActivityStreams ID.</value>
 
-        [DataMember(Name="id")]
+        [DataMember(Name = "id")]
         public string Id { get; set; }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Items on this page.</value>
 
-        [DataMember(Name="items")]
+        [DataMember(Name = "items")]
         public List<string> Items { get; set; }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Link to the next page.</value>
 
-        [DataMember(Name="next")]
+        [DataMember(Name = "next")]
         public string Next { get; set; }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>Collection this page belongs to.</value>
 
-        [DataMember(Name="partOf")]
+        [DataMember(Name = "partOf")]
         public string PartOf { get; set; }
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace DotPub.DataContracts.Models
         /// </summary>
         /// <value>ActivityStreams type.</value>
 
-        [DataMember(Name="type")]
+        [DataMember(Name = "type")]
         public string Type { get; set; }
 
         /// <summary>
@@ -108,27 +108,27 @@ namespace DotPub.DataContracts.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Id == other.Id ||
                     Id != null &&
                     Id.Equals(other.Id)
-                ) && 
+                ) &&
                 (
                     Items == other.Items ||
                     Items != null &&
                     Items.SequenceEqual(other.Items)
-                ) && 
+                ) &&
                 (
                     Next == other.Next ||
                     Next != null &&
                     Next.Equals(other.Next)
-                ) && 
+                ) &&
                 (
                     PartOf == other.PartOf ||
                     PartOf != null &&
                     PartOf.Equals(other.PartOf)
-                ) && 
+                ) &&
                 (
                     Type == other.Type ||
                     Type != null &&
@@ -146,22 +146,23 @@ namespace DotPub.DataContracts.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Id != null)
+                if (Id != null)
                     hashCode = hashCode * 59 + Id.GetHashCode();
-                    if (Items != null)
+                if (Items != null)
                     hashCode = hashCode * 59 + Items.GetHashCode();
-                    if (Next != null)
+                if (Next != null)
                     hashCode = hashCode * 59 + Next.GetHashCode();
-                    if (PartOf != null)
+                if (PartOf != null)
                     hashCode = hashCode * 59 + PartOf.GetHashCode();
-                    if (Type != null)
+                if (Type != null)
                     hashCode = hashCode * 59 + Type.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+
+#pragma warning disable 1591
 
         public static bool operator ==(SwaggerCollectionPage left, SwaggerCollectionPage right)
         {
@@ -173,7 +174,8 @@ namespace DotPub.DataContracts.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
+
         #endregion Operators
     }
 }

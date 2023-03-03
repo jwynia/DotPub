@@ -6,18 +6,17 @@ using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
 namespace DotPub.ArchivedWebApi.Controllers
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [Authorize]
     [ApiController]
     public class CustomEmojisApiController : ControllerBase
-    { 
+    {
         /// <summary>
         /// Get an array of custom emojis available on the instance.
         /// </summary>
-        
         /// <response code="200">Array of custom emojis.</response>
         /// <response code="401">unauthorized</response>
         /// <response code="406">not acceptable</response>
@@ -28,7 +27,7 @@ namespace DotPub.ArchivedWebApi.Controllers
         [SwaggerOperation("CustomEmojisGet")]
         [SwaggerResponse(statusCode: 200, type: typeof(List<Emoji>), description: "Array of custom emojis.")]
         public virtual IActionResult CustomEmojisGet()
-        { 
+        {
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(List<Emoji>));
 
@@ -43,10 +42,10 @@ namespace DotPub.ArchivedWebApi.Controllers
 
             string exampleJson = null;
             exampleJson = "{}";
-            
+
             var example = exampleJson != null
-            ? JsonSerializer.Deserialize <List<Emoji>>(exampleJson)
-            : default(List<Emoji>);
+                ? JsonSerializer.Deserialize<List<Emoji>>(exampleJson)
+                : default(List<Emoji>);
             //TODO: Change the data returned
             return new ObjectResult(example);
         }

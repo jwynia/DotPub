@@ -13,25 +13,25 @@ using System.Text;
 using System.Text.Json;
 
 namespace DotPub.DataContracts.Models
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
     public partial class NodeInfoSoftware : IEquatable<NodeInfoSoftware>
-    { 
+    {
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
 
-        [DataMember(Name="name")]
+        [DataMember(Name = "name")]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Version
         /// </summary>
 
-        [DataMember(Name="version")]
+        [DataMember(Name = "version")]
         public string Version { get; set; }
 
         /// <summary>
@@ -79,12 +79,12 @@ namespace DotPub.DataContracts.Models
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return 
+            return
                 (
                     Name == other.Name ||
                     Name != null &&
                     Name.Equals(other.Name)
-                ) && 
+                ) &&
                 (
                     Version == other.Version ||
                     Version != null &&
@@ -102,16 +102,17 @@ namespace DotPub.DataContracts.Models
             {
                 var hashCode = 41;
                 // Suitable nullity checks etc, of course :)
-                    if (Name != null)
+                if (Name != null)
                     hashCode = hashCode * 59 + Name.GetHashCode();
-                    if (Version != null)
+                if (Version != null)
                     hashCode = hashCode * 59 + Version.GetHashCode();
                 return hashCode;
             }
         }
 
         #region Operators
-        #pragma warning disable 1591
+
+#pragma warning disable 1591
 
         public static bool operator ==(NodeInfoSoftware left, NodeInfoSoftware right)
         {
@@ -123,7 +124,8 @@ namespace DotPub.DataContracts.Models
             return !Equals(left, right);
         }
 
-        #pragma warning restore 1591
+#pragma warning restore 1591
+
         #endregion Operators
     }
 }

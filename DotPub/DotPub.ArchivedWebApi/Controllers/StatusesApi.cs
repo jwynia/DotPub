@@ -7,18 +7,17 @@ using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
 namespace DotPub.ArchivedWebApi.Controllers
-{ 
+{
     /// <summary>
     /// 
     /// </summary>
     [Authorize]
     [ApiController]
     public class StatusesApiController : ControllerBase
-    { 
+    {
         /// <summary>
         /// Bookmark status with the given ID.
         /// </summary>
-        
         /// <param name="id">Target status ID.</param>
         /// <response code="200">The status.</response>
         /// <response code="400">bad request</response>
@@ -32,8 +31,8 @@ namespace DotPub.ArchivedWebApi.Controllers
         [ValidateModelState]
         [SwaggerOperation("StatusBookmark")]
         [SwaggerResponse(statusCode: 200, type: typeof(Status), description: "The status.")]
-        public virtual IActionResult StatusBookmark([FromRoute][Required]string id)
-        { 
+        public virtual IActionResult StatusBookmark([FromRoute] [Required] string id)
+        {
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(Status));
 
@@ -57,10 +56,10 @@ namespace DotPub.ArchivedWebApi.Controllers
 
             string exampleJson = null;
             exampleJson = "{\"empty\": false}";
-            
+
             var example = exampleJson != null
-            ? JsonSerializer.Deserialize<Status>(exampleJson)
-            : default(Status);
+                ? JsonSerializer.Deserialize<Status>(exampleJson)
+                : default(Status);
             //TODO: Change the data returned
             return new ObjectResult(example);
         }
@@ -68,7 +67,6 @@ namespace DotPub.ArchivedWebApi.Controllers
         /// <summary>
         /// View accounts that have reblogged/boosted the target status.
         /// </summary>
-        
         /// <param name="id">Target status ID.</param>
         /// <response code="200"></response>
         /// <response code="400">bad request</response>
@@ -80,8 +78,8 @@ namespace DotPub.ArchivedWebApi.Controllers
         [ValidateModelState]
         [SwaggerOperation("StatusBoostedBy")]
         [SwaggerResponse(statusCode: 200, type: typeof(List<Account>), description: "")]
-        public virtual IActionResult StatusBoostedBy([FromRoute][Required]string id)
-        { 
+        public virtual IActionResult StatusBoostedBy([FromRoute] [Required] string id)
+        {
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(List<Account>));
 
@@ -99,10 +97,10 @@ namespace DotPub.ArchivedWebApi.Controllers
 
             string exampleJson = null;
             exampleJson = "{}";
-            
+
             var example = exampleJson != null
-            ? JsonSerializer.Deserialize<List<Account>>(exampleJson)
-            : default(List<Account>);
+                ? JsonSerializer.Deserialize<List<Account>>(exampleJson)
+                : default(List<Account>);
             //TODO: Change the data returned
             return new ObjectResult(example);
         }
@@ -124,8 +122,8 @@ namespace DotPub.ArchivedWebApi.Controllers
         [ValidateModelState]
         [SwaggerOperation("StatusContext")]
         [SwaggerResponse(statusCode: 200, type: typeof(StatusContext), description: "Status context object.")]
-        public virtual IActionResult StatusContext([FromRoute][Required]string id)
-        { 
+        public virtual IActionResult StatusContext([FromRoute] [Required] string id)
+        {
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(StatusContext));
 
@@ -149,10 +147,10 @@ namespace DotPub.ArchivedWebApi.Controllers
 
             string exampleJson = null;
             exampleJson = "{\"empty\": false}";
-            
+
             var example = exampleJson != null
-            ? JsonSerializer.Deserialize<StatusContext>(exampleJson)
-            : default(StatusContext);
+                ? JsonSerializer.Deserialize<StatusContext>(exampleJson)
+                : default(StatusContext);
             //TODO: Change the data returned
             return new ObjectResult(example);
         }
@@ -186,8 +184,12 @@ namespace DotPub.ArchivedWebApi.Controllers
         [ValidateModelState]
         [SwaggerOperation("StatusCreate")]
         [SwaggerResponse(statusCode: 200, type: typeof(Status), description: "The newly created status.")]
-        public virtual IActionResult StatusCreate([FromForm]string status, [FromForm]List<string> mediaIds, [FromForm]string inReplyToId, [FromForm]bool? sensitive, [FromForm]string spoilerText, [FromForm]string visibility, [FromForm]string scheduledAt, [FromForm]string language, [FromForm]string format, [FromQuery]bool? federated, [FromQuery]bool? boostable, [FromQuery]bool? replyable, [FromQuery]bool? likeable)
-        { 
+        public virtual IActionResult StatusCreate([FromForm] string status, [FromForm] List<string> mediaIds,
+            [FromForm] string inReplyToId, [FromForm] bool? sensitive, [FromForm] string spoilerText,
+            [FromForm] string visibility, [FromForm] string scheduledAt, [FromForm] string language,
+            [FromForm] string format, [FromQuery] bool? federated, [FromQuery] bool? boostable,
+            [FromQuery] bool? replyable, [FromQuery] bool? likeable)
+        {
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(Status));
 
@@ -211,10 +213,10 @@ namespace DotPub.ArchivedWebApi.Controllers
 
             string exampleJson = null;
             exampleJson = "{\"empty\": false}";
-            
+
             var example = exampleJson != null
-            ? JsonSerializer.Deserialize<Status>(exampleJson)
-            : default(Status);
+                ? JsonSerializer.Deserialize<Status>(exampleJson)
+                : default(Status);
             //TODO: Change the data returned
             return new ObjectResult(example);
         }
@@ -236,8 +238,8 @@ namespace DotPub.ArchivedWebApi.Controllers
         [ValidateModelState]
         [SwaggerOperation("StatusDelete")]
         [SwaggerResponse(statusCode: 200, type: typeof(Status), description: "The status that was just deleted.")]
-        public virtual IActionResult StatusDelete([FromRoute][Required]string id)
-        { 
+        public virtual IActionResult StatusDelete([FromRoute] [Required] string id)
+        {
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(Status));
 
@@ -261,10 +263,10 @@ namespace DotPub.ArchivedWebApi.Controllers
 
             string exampleJson = null;
             exampleJson = "{\"empty\": false}";
-            
+
             var example = exampleJson != null
-            ? JsonSerializer.Deserialize<Status>(exampleJson)
-            : default(Status);
+                ? JsonSerializer.Deserialize<Status>(exampleJson)
+                : default(Status);
             //TODO: Change the data returned
             return new ObjectResult(example);
         }
@@ -272,7 +274,6 @@ namespace DotPub.ArchivedWebApi.Controllers
         /// <summary>
         /// Star/like/favourite the given status, if permitted.
         /// </summary>
-        
         /// <param name="id">Target status ID.</param>
         /// <response code="200">The newly faved status.</response>
         /// <response code="400">bad request</response>
@@ -286,8 +287,8 @@ namespace DotPub.ArchivedWebApi.Controllers
         [ValidateModelState]
         [SwaggerOperation("StatusFave")]
         [SwaggerResponse(statusCode: 200, type: typeof(Status), description: "The newly faved status.")]
-        public virtual IActionResult StatusFave([FromRoute][Required]string id)
-        { 
+        public virtual IActionResult StatusFave([FromRoute] [Required] string id)
+        {
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(Status));
 
@@ -311,10 +312,10 @@ namespace DotPub.ArchivedWebApi.Controllers
 
             string exampleJson = null;
             exampleJson = "{\"empty\": false}";
-            
+
             var example = exampleJson != null
-            ? JsonSerializer.Deserialize<Status>(exampleJson)
-            : default(Status);
+                ? JsonSerializer.Deserialize<Status>(exampleJson)
+                : default(Status);
             //TODO: Change the data returned
             return new ObjectResult(example);
         }
@@ -322,7 +323,6 @@ namespace DotPub.ArchivedWebApi.Controllers
         /// <summary>
         /// View accounts that have faved/starred/liked the target status.
         /// </summary>
-        
         /// <param name="id">Target status ID.</param>
         /// <response code="200"></response>
         /// <response code="400">bad request</response>
@@ -336,8 +336,8 @@ namespace DotPub.ArchivedWebApi.Controllers
         [ValidateModelState]
         [SwaggerOperation("StatusFavedBy")]
         [SwaggerResponse(statusCode: 200, type: typeof(List<Account>), description: "")]
-        public virtual IActionResult StatusFavedBy([FromRoute][Required]string id)
-        { 
+        public virtual IActionResult StatusFavedBy([FromRoute] [Required] string id)
+        {
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(List<Account>));
 
@@ -361,10 +361,10 @@ namespace DotPub.ArchivedWebApi.Controllers
 
             string exampleJson = null;
             exampleJson = "{}";
-            
+
             var example = exampleJson != null
-            ? JsonSerializer.Deserialize<List<Account>>(exampleJson)
-            : default(List<Account>);
+                ? JsonSerializer.Deserialize<List<Account>>(exampleJson)
+                : default(List<Account>);
             //TODO: Change the data returned
             return new ObjectResult(example);
         }
@@ -372,7 +372,6 @@ namespace DotPub.ArchivedWebApi.Controllers
         /// <summary>
         /// View status with the given ID.
         /// </summary>
-        
         /// <param name="id">Target status ID.</param>
         /// <response code="200">The requested status.</response>
         /// <response code="400">bad request</response>
@@ -386,8 +385,8 @@ namespace DotPub.ArchivedWebApi.Controllers
         [ValidateModelState]
         [SwaggerOperation("StatusGet")]
         [SwaggerResponse(statusCode: 200, type: typeof(Status), description: "The requested status.")]
-        public virtual IActionResult StatusGet([FromRoute][Required]string id)
-        { 
+        public virtual IActionResult StatusGet([FromRoute] [Required] string id)
+        {
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(Status));
 
@@ -411,10 +410,10 @@ namespace DotPub.ArchivedWebApi.Controllers
 
             string exampleJson = null;
             exampleJson = "{\"empty\": false}";
-            
+
             var example = exampleJson != null
-            ? JsonSerializer.Deserialize<Status>(exampleJson)
-            : default(Status);
+                ? JsonSerializer.Deserialize<Status>(exampleJson)
+                : default(Status);
             //TODO: Change the data returned
             return new ObjectResult(example);
         }
@@ -436,8 +435,8 @@ namespace DotPub.ArchivedWebApi.Controllers
         [ValidateModelState]
         [SwaggerOperation("StatusReblog")]
         [SwaggerResponse(statusCode: 200, type: typeof(Status), description: "The boost of the status.")]
-        public virtual IActionResult StatusReblog([FromRoute][Required]string id)
-        { 
+        public virtual IActionResult StatusReblog([FromRoute] [Required] string id)
+        {
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(Status));
 
@@ -461,10 +460,10 @@ namespace DotPub.ArchivedWebApi.Controllers
 
             string exampleJson = null;
             exampleJson = "{\"empty\": false}";
-            
+
             var example = exampleJson != null
-            ? JsonSerializer.Deserialize<Status>(exampleJson)
-            : default(Status);
+                ? JsonSerializer.Deserialize<Status>(exampleJson)
+                : default(Status);
             //TODO: Change the data returned
             return new ObjectResult(example);
         }
@@ -472,7 +471,6 @@ namespace DotPub.ArchivedWebApi.Controllers
         /// <summary>
         /// Unbookmark status with the given ID.
         /// </summary>
-        
         /// <param name="id">Target status ID.</param>
         /// <response code="200">The status.</response>
         /// <response code="400">bad request</response>
@@ -486,8 +484,8 @@ namespace DotPub.ArchivedWebApi.Controllers
         [ValidateModelState]
         [SwaggerOperation("StatusUnbookmark")]
         [SwaggerResponse(statusCode: 200, type: typeof(Status), description: "The status.")]
-        public virtual IActionResult StatusUnbookmark([FromRoute][Required]string id)
-        { 
+        public virtual IActionResult StatusUnbookmark([FromRoute] [Required] string id)
+        {
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(Status));
 
@@ -511,10 +509,10 @@ namespace DotPub.ArchivedWebApi.Controllers
 
             string exampleJson = null;
             exampleJson = "{\"empty\": false}";
-            
+
             var example = exampleJson != null
-            ? JsonSerializer.Deserialize<Status>(exampleJson)
-            : default(Status);
+                ? JsonSerializer.Deserialize<Status>(exampleJson)
+                : default(Status);
             //TODO: Change the data returned
             return new ObjectResult(example);
         }
@@ -522,7 +520,6 @@ namespace DotPub.ArchivedWebApi.Controllers
         /// <summary>
         /// Unstar/unlike/unfavourite the given status.
         /// </summary>
-        
         /// <param name="id">Target status ID.</param>
         /// <response code="200">The unfaved status.</response>
         /// <response code="400">bad request</response>
@@ -536,8 +533,8 @@ namespace DotPub.ArchivedWebApi.Controllers
         [ValidateModelState]
         [SwaggerOperation("StatusUnfave")]
         [SwaggerResponse(statusCode: 200, type: typeof(Status), description: "The unfaved status.")]
-        public virtual IActionResult StatusUnfave([FromRoute][Required]string id)
-        { 
+        public virtual IActionResult StatusUnfave([FromRoute] [Required] string id)
+        {
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(Status));
 
@@ -561,10 +558,10 @@ namespace DotPub.ArchivedWebApi.Controllers
 
             string exampleJson = null;
             exampleJson = "{\"empty\": false}";
-            
+
             var example = exampleJson != null
-            ? JsonSerializer.Deserialize<Status>(exampleJson)
-            : default(Status);
+                ? JsonSerializer.Deserialize<Status>(exampleJson)
+                : default(Status);
             //TODO: Change the data returned
             return new ObjectResult(example);
         }
@@ -572,7 +569,6 @@ namespace DotPub.ArchivedWebApi.Controllers
         /// <summary>
         /// Unreblog/unboost status with the given ID.
         /// </summary>
-        
         /// <param name="id">Target status ID.</param>
         /// <response code="200">The unboosted status.</response>
         /// <response code="400">bad request</response>
@@ -586,8 +582,8 @@ namespace DotPub.ArchivedWebApi.Controllers
         [ValidateModelState]
         [SwaggerOperation("StatusUnreblog")]
         [SwaggerResponse(statusCode: 200, type: typeof(Status), description: "The unboosted status.")]
-        public virtual IActionResult StatusUnreblog([FromRoute][Required]string id)
-        { 
+        public virtual IActionResult StatusUnreblog([FromRoute] [Required] string id)
+        {
             //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
             // return StatusCode(200, default(Status));
 
@@ -611,10 +607,10 @@ namespace DotPub.ArchivedWebApi.Controllers
 
             string exampleJson = null;
             exampleJson = "{\"empty\": false}";
-            
+
             var example = exampleJson != null
-            ? JsonSerializer.Deserialize<Status>(exampleJson)
-            : default(Status);
+                ? JsonSerializer.Deserialize<Status>(exampleJson)
+                : default(Status);
             //TODO: Change the data returned
             return new ObjectResult(example);
         }

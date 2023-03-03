@@ -7,7 +7,6 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace DotPub.WebApi.Controllers;
 
-
 [ApiController]
 [Route("//api/v1/users")]
 public class AuthController : ControllerBase
@@ -27,7 +26,8 @@ public class AuthController : ControllerBase
         var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha512);
 
         //If you've had the login module, you can also use the real user information here
-        var claims = new[] {
+        var claims = new[]
+        {
             new Claim(JwtRegisteredClaimNames.Sub, tokenRequest.client_id),
             new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
         };
@@ -41,7 +41,4 @@ public class AuthController : ControllerBase
         var tokenString = new JwtSecurityTokenHandler().WriteToken(token);
         return Content(tokenString);
     }
-    
-    
-    
 }
